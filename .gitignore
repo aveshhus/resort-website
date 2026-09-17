@@ -1,0 +1,13 @@
+# Raw uncompressed media source files (use assets/ for web assets)
+media/
+scratch/
+scratch_*.txt
+
+# Agent configs
+.agent/
+.agents/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+*.log
