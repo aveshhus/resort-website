@@ -61,8 +61,7 @@ ALL_26_PAGES_AND_ASSETS = [
     "assets/images/_DSC5158_lg.webp",
     "assets/images/_DSC5117_lg.webp",
     "assets/images/_DSC5114_lg.webp",
-    "assets/images/_DSC5111_lg.webp",
-    "assets/videos/hero-drone.mp4",
+    "media/video/WhatsApp Video 2026-09-16 at 3.36.05 PM.mp4",
     "robots.txt",
     "sitemap.xml",
 ]

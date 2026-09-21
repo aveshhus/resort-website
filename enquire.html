@@ -116,14 +116,14 @@
     <!-- Interactive Planning Form -->
     <section class="section-brand-atmosphere">
       <div class="container">
-        <div style="max-width: 760px; margin: 0 auto; background: var(--color-obsidian-card); padding: clamp(2rem, 5vw, 4rem); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 35px 80px -20px rgba(0,0,0,0.8);">
+        <div style="max-width: 760px; margin: 0 auto; background: #FFFFFF; padding: clamp(2rem, 5vw, 4rem); border: 1px solid var(--color-obsidian-border); box-shadow: 0 25px 60px -15px rgba(30,66,77,0.08); border-radius: var(--radius-sm);">
           
           <form id="conciergeForm" onsubmit="event.preventDefault(); handleConciergeSubmit();">
             <div style="margin-bottom: 2rem;">
-              <label style="font-family: var(--font-royal); font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.75rem;">
+              <label style="font-family: var(--font-royal); font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.75rem; font-weight: 700;">
                 01. What are you planning?
               </label>
-              <select id="intentSelect" style="width: 100%; padding: 0.95rem 1.25rem; font-family: var(--font-sans); font-size: 0.95rem; background: rgba(8,9,11,0.9); border: 1px solid rgba(255,255,255,0.12); color: var(--text-primary); outline: none;">
+              <select id="intentSelect" style="width: 100%; padding: 0.95rem 1.25rem; font-family: var(--font-sans); font-size: 0.95rem; background: var(--bg-primary); border: 1px solid rgba(30,66,77,0.18); color: var(--text-primary); outline: none; border-radius: var(--radius-sm);">
                 <option value="Room Stay">Room Stay / Vacation</option>
                 <option value="Royal Destination Wedding">Royal Destination Wedding</option>
                 <option value="Corporate Offsite or Summit">Corporate Offsite / Conference</option>
@@ -133,10 +133,10 @@
             </div>
 
             <div style="margin-bottom: 2rem;">
-              <label style="font-family: var(--font-royal); font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.75rem;">
+              <label style="font-family: var(--font-royal); font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.75rem; font-weight: 700;">
                 02. Preferred Destination
               </label>
-              <select id="destSelect" style="width: 100%; padding: 0.95rem 1.25rem; font-family: var(--font-sans); font-size: 0.95rem; background: rgba(8,9,11,0.9); border: 1px solid rgba(255,255,255,0.12); color: var(--text-primary); outline: none;">
+              <select id="destSelect" style="width: 100%; padding: 0.95rem 1.25rem; font-family: var(--font-sans); font-size: 0.95rem; background: var(--bg-primary); border: 1px solid rgba(30,66,77,0.18); color: var(--text-primary); outline: none; border-radius: var(--radius-sm);">
                 <option value="Shrii Palace Udaipurwati (Celebration Resort & Lawns)">Shrii Palace Udaipurwati (Celebration Lawns & SH-37)</option>
                 <option value="Shrii Palace Nangal (Resort Stays, Pool & Sikar Rd)">Shrii Palace Nangal (Resort Stays, Pool & Mountains)</option>
                 <option value="Both Destinations / Recommend Best Fit">Guide Me / Recommend Best Property</option>
@@ -145,39 +145,39 @@
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
               <div>
-                <label style="font-family: var(--font-royal); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.5rem;">
+                <label style="font-family: var(--font-royal); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.5rem; font-weight: 700;">
                   Your Name *
                 </label>
-                <input type="text" id="guestName" required placeholder="Full Name" style="width: 100%; padding: 0.9rem 1rem; font-family: var(--font-sans); font-size: 0.95rem; background: rgba(8,9,11,0.9); border: 1px solid rgba(255,255,255,0.12); color: var(--text-primary); outline: none;">
+                <input type="text" id="guestName" required placeholder="Full Name" style="width: 100%; padding: 0.9rem 1rem; font-family: var(--font-sans); font-size: 0.95rem; background: var(--bg-primary); border: 1px solid rgba(30,66,77,0.18); color: var(--text-primary); outline: none; border-radius: var(--radius-sm);">
               </div>
               <div>
-                <label style="font-family: var(--font-royal); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.5rem;">
+                <label style="font-family: var(--font-royal); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.5rem; font-weight: 700;">
                   WhatsApp / Phone *
                 </label>
-                <input type="tel" id="guestPhone" required placeholder="+91..." style="width: 100%; padding: 0.9rem 1rem; font-family: var(--font-sans); font-size: 0.95rem; background: rgba(8,9,11,0.9); border: 1px solid rgba(255,255,255,0.12); color: var(--text-primary); outline: none;">
+                <input type="tel" id="guestPhone" required placeholder="+91..." style="width: 100%; padding: 0.9rem 1rem; font-family: var(--font-sans); font-size: 0.95rem; background: var(--bg-primary); border: 1px solid rgba(30,66,77,0.18); color: var(--text-primary); outline: none; border-radius: var(--radius-sm);">
               </div>
             </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
               <div>
-                <label style="font-family: var(--font-royal); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.5rem;">
+                <label style="font-family: var(--font-royal); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.5rem; font-weight: 700;">
                   Preferred Dates
                 </label>
-                <input type="text" id="guestDates" placeholder="e.g. Nov 14-16, 2026" style="width: 100%; padding: 0.9rem 1rem; font-family: var(--font-sans); font-size: 0.95rem; background: rgba(8,9,11,0.9); border: 1px solid rgba(255,255,255,0.12); color: var(--text-primary); outline: none;">
+                <input type="text" id="guestDates" placeholder="e.g. Nov 14-16, 2026" style="width: 100%; padding: 0.9rem 1rem; font-family: var(--font-sans); font-size: 0.95rem; background: var(--bg-primary); border: 1px solid rgba(30,66,77,0.18); color: var(--text-primary); outline: none; border-radius: var(--radius-sm);">
               </div>
               <div>
-                <label style="font-family: var(--font-royal); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.5rem;">
+                <label style="font-family: var(--font-royal); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.5rem; font-weight: 700;">
                   Expected Guests / Rooms
                 </label>
-                <input type="text" id="guestCount" placeholder="e.g. 2 Guests / 200 Wedding Guests" style="width: 100%; padding: 0.9rem 1rem; font-family: var(--font-sans); font-size: 0.95rem; background: rgba(8,9,11,0.9); border: 1px solid rgba(255,255,255,0.12); color: var(--text-primary); outline: none;">
+                <input type="text" id="guestCount" placeholder="e.g. 2 Guests / 200 Wedding Guests" style="width: 100%; padding: 0.9rem 1rem; font-family: var(--font-sans); font-size: 0.95rem; background: var(--bg-primary); border: 1px solid rgba(30,66,77,0.18); color: var(--text-primary); outline: none; border-radius: var(--radius-sm);">
               </div>
             </div>
 
             <div style="margin-bottom: 2.5rem;">
-              <label style="font-family: var(--font-royal); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.5rem;">
+              <label style="font-family: var(--font-royal); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.5rem; font-weight: 700;">
                 Special Requirements or Notes
               </label>
-              <textarea id="guestNotes" rows="3" placeholder="Tell us about your occasion or preferences..." style="width: 100%; padding: 0.9rem 1rem; font-family: var(--font-sans); font-size: 0.95rem; background: rgba(8,9,11,0.9); border: 1px solid rgba(255,255,255,0.12); color: var(--text-primary); outline: none; resize: vertical;"></textarea>
+              <textarea id="guestNotes" rows="3" placeholder="Tell us about your occasion or preferences..." style="width: 100%; padding: 0.9rem 1rem; font-family: var(--font-sans); font-size: 0.95rem; background: var(--bg-primary); border: 1px solid rgba(30,66,77,0.18); color: var(--text-primary); outline: none; resize: vertical; border-radius: var(--radius-sm);"></textarea>
             </div>
 
             <div style="display: flex; flex-direction: column; gap: 1rem;">
