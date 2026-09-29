@@ -13,38 +13,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css?v=202609291225">
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/site-components.js?v=202609291225" defer></script>
 </head>
-<body class="editorial-body">
+<body data-page="terms" class="editorial-body">
 
   <!-- Header -->
-  <header class="editorial-header" id="siteHeader">
-    <div class="header-inner container">
-      <a href="index.html" class="header-brand" aria-label="Shrii Palace Resorts Home">
-        <img src="assets/images/logo.webp" alt="Shrii Palace Crest Logo" class="brand-crest">
-        <div class="header-brand-text">
-          <span class="brand-title">Shrii Palace</span>
-          <span class="brand-subtitle">Resorts • Rajasthan</span>
-        </div>
-      </a>
 
-      <nav class="header-nav" aria-label="Primary Navigation">
-        <a href="destinations/index.html" class="nav-link">Destinations</a>
-        <a href="stay.html" class="nav-link">Stay</a>
-        <a href="weddings.html" class="nav-link">Weddings</a>
-        <a href="events.html" class="nav-link">Events</a>
-        <a href="dining.html" class="nav-link">Dining</a>
-        <a href="gallery.html" class="nav-link">Gallery</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts." target="_blank" rel="noopener" class="header-enquire-link">
-          <span>Enquire</span>
-          <span class="arrow-glyph">→</span>
-        </a>
-      </div>
-    </div>
-  </header>
+  
+  <div id="site-header-mount"></div>
 
   <main>
     <section class="subpage-hero" style="min-height:40vh; padding-top:160px;">
@@ -88,14 +64,7 @@
     </section>
   </main>
 
-  <footer class="editorial-footer">
-    <div class="container">
-      <div class="footer-bottom-row">
-        <span>© 2026 Shrii Palace Resorts. All Rights Reserved.</span>
-        <span>Rajasthan, India • Terms of Service</span>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer-mount"></div>
 
   <script src="js/main.js?v=202609291225" defer></script>
 </body>

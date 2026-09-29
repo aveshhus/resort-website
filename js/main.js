@@ -1,12 +1,19 @@
 /**
- * SHRII PALACE RESORTS — FLAGSHIP INTERACTION CONTROLLER (V2.5)
+ * SHRII PALACE RESORTS — FLAGSHIP INTERACTION CONTROLLER (V2.6)
  * Lenis Inertial Smooth Scroll, Parallax Depth Physics, Kinetic Reveals,
  * Destination Territory Expansion & Interactive Magnetic Physics.
+ *
+ * Note: Header/Footer are injected by js/site-components.js (loaded first).
+ * initEditorialHeader() is a safe no-op if site-components.js already ran.
  */
 
 function initSiteApp() {
   initPreloader();
-  initEditorialHeader();
+  // Header behaviours are handled by site-components.js after injection.
+  // initEditorialHeader() is kept as a fallback only if no mount point exists.
+  if (!document.getElementById('site-header-mount')) {
+    initEditorialHeader();
+  }
   initLenisSmoothScroll();
   initHeroCinemaTransformer();
   initTerritorialHorizons();
@@ -18,6 +25,9 @@ function initSiteApp() {
   initMagneticButtons();
   initJourneysInMotion();
 }
+
+// Expose Lenis boot so site-components.js can re-call after header inject
+window.initLenisSmoothScroll = function() { initLenisSmoothScroll(); };
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initSiteApp);

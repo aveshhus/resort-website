@@ -13,68 +13,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/main.css?v=202609291225">
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="../js/site-components.js?v=202609291225" defer></script>
 </head>
-<body class="editorial-body">
+<body data-page="nangal-dining" class="editorial-body">
 
   <!-- Header -->
-  <header class="editorial-header" id="siteHeader">
-    <div class="header-inner container">
-      <a href="../index.html" class="header-brand" aria-label="Shrii Palace Resorts Home">
-        <img src="../assets/images/logo.webp" alt="Shrii Palace Crest Logo" class="brand-crest">
-        <div class="header-brand-text">
-          <span class="brand-title">Shrii Palace</span>
-          <span class="brand-subtitle">Resorts • Rajasthan</span>
-        </div>
-      </a>
 
-      <nav class="header-nav" aria-label="Primary Navigation">
-        <a href="nangal.html" class="nav-link active">Nangal</a>
-        <a href="udaipurwati.html" class="nav-link">Udaipurwati</a>
-        <a href="../stay.html" class="nav-link">Stay</a>
-        <a href="../weddings.html" class="nav-link">Weddings</a>
-        <a href="../events.html" class="nav-link">Events</a>
-        <a href="../dining.html" class="nav-link">Dining</a>
-        <a href="../gallery.html" class="nav-link">Gallery</a>
-        <a href="../contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20reserve%20a%20table%20at%20Nangal." target="_blank" rel="noopener" class="header-enquire-link">
-          <span>Enquire</span>
-          <span class="arrow-glyph">→</span>
-        </a>
-        <button class="header-menu-btn" id="menuToggle" aria-label="Toggle Navigation">
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer -->
-  <aside class="mobile-editorial-drawer" id="mobileDrawer" data-lenis-prevent>
-    <div class="mobile-drawer-top">
-      <div class="header-brand">
-        <img src="../assets/images/logo.webp" alt="Shrii Palace Logo" class="brand-crest" style="height: 36px;">
-        <div class="header-brand-text">
-          <span class="brand-title" style="font-size: 0.95rem;">Shrii Palace</span>
-          <span class="brand-subtitle" style="font-size: 0.55rem;">Nangal Dining & Dairy</span>
-        </div>
-      </div>
-      <button class="mobile-drawer-close" id="drawerClose">✕</button>
-    </div>
-    <nav class="mobile-drawer-links">
-      <a href="../index.html">← Back to Master Homepage</a>
-      <a href="nangal.html">Nangal Overview</a>
-      <a href="nangal-rooms.html">30+ Garden Deluxe Rooms</a>
-      <a href="nangal-dining.html">In-House A2 Dairy Gaushala</a>
-      <a href="nangal-weddings.html">Aravalli Mountain Weddings</a>
-      <a href="nangal-banquets.html">Conference Hall</a>
-      <a href="nangal-location.html">Sikar Road Route</a>
-      <a href="../dining.html">Unified Brand Dining Hub</a>
-      <a href="../contact.html">Contact Concierge</a>
-    </nav>
-  </aside>
+  
+  <div id="site-header-mount"></div>
 
   <main>
     <!-- Subpage Hero -->
@@ -192,37 +138,9 @@
     </section>
   </main>
 
+  <div id="site-footer-mount"></div>
+
   <!-- Footer -->
-  <footer class="editorial-footer">
-    <div class="container">
-      <div class="footer-top-grid">
-        <div class="footer-brand-col">
-          <div class="footer-brand-title">Shrii Palace Nangal</div>
-          <p class="footer-brand-desc">Aravalli Foothills Sanctuary, Pool & In-House A2 Cow Gaushala, Sikar Road, Rajasthan.</p>
-          <div class="footer-contact-details">
-            <p><strong>Direct Concierge:</strong> <a href="tel:+919509771500">+91 95097 71500</a></p>
-            <p><strong>Email:</strong> <a href="mailto:book@nangalresort.com">book@nangalresort.com</a></p>
-          </div>
-        </div>
-        <div class="footer-dest-col">
-          <div class="footer-dest-name">Nangal Sub-Pages</div>
-          <p><a href="nangal.html" style="color:var(--text-secondary);">Overview Hub →</a></p>
-          <p><a href="nangal-rooms.html" style="color:var(--text-secondary);">30+ Garden Rooms →</a></p>
-          <p><a href="nangal-dining.html" style="color:var(--color-gold);">In-House A2 Dairy →</a></p>
-          <p><a href="nangal-weddings.html" style="color:var(--text-secondary);">Mountain Weddings →</a></p>
-        </div>
-        <div class="footer-dest-col">
-          <div class="footer-dest-name">Brand Gastronomy</div>
-          <p class="footer-dest-desc">Farm-To-Table Pure Ghee Dining</p>
-          <a href="../dining.html" class="footer-dest-link">View Unified Dining Page →</a>
-        </div>
-      </div>
-      <div class="footer-bottom-row">
-        <span>© 2026 Shrii Palace Resorts. All Rights Reserved.</span>
-        <span>Sikar Road, Opposite Power House, Nangal, Udaipurwati, Rajasthan – 333307</span>
-      </div>
-    </div>
-  </footer>
 
   <script src="../js/main.js?v=202609291225" defer></script>
 </body>
