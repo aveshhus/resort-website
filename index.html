@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="css/main.css">
 
   <!-- Lenis Smooth Scroll -->
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -498,150 +498,355 @@
     </section>
 
     <!-- ==========================================================================
-         04 — TWO DESTINATIONS (50/50 SIGNATURE EXPANDING TERRITORY)
+         04 — ONE BRAND • EQUAL PROMINENCE (THE BRAND IN MOTION)
+         Mobile-First Visual Storytelling — ONE → MANY → ONE
          ========================================================================== -->
-    <section id="destinations" class="section-two-destinations" aria-label="The Two Destinations">
-      <div class="container dual-dest-intro">
-        <div class="intro-left">
-          <span class="eyebrow-tag eyebrow-champagne">One Brand • Equal Prominence</span>
-          <h2 class="section-headline-light">Two Distinct Worlds</h2>
+    <section id="destinations" class="section-brand-story" aria-label="One Brand • Equal Prominence">
+      
+      <!-- 01. THE PRELUDE (ONE) -->
+      <div class="story-prelude container">
+        <div class="story-kicker-row">
+          <span class="story-pill-badge">
+            <span class="story-dot"></span>
+            <span>UNFOLDING IDENTITY SYSTEM</span>
+          </span>
+          <span class="story-parity-tag">1 : 1 EXPERIENCE PARITY</span>
         </div>
-        <div class="intro-right">
-          <p class="section-subtext-light">
-            Each property offers its own unique personality, architecture, and purpose within the Shrii Palace brand.
+
+        <h2 class="story-main-title">
+          <span class="title-line">ONE BRAND</span>
+          <span class="title-dot">•</span>
+          <span class="title-line title-highlight">EQUAL PROMINENCE</span>
+        </h2>
+
+        <p class="story-lead-prose">
+          Two distinct geographic horizons. Four pillars of Rajasthani hospitality. One seamless brand experience unfolding progressively as you explore.
+        </p>
+
+        <!-- Mobile-First Interactive Chapter Progress Tracker -->
+        <div class="story-nav-progress" id="storyNavProgress" aria-label="Story Chapters">
+          <button class="story-nav-btn active" data-chapter="0" type="button" aria-label="Chapter 01: Udaipurwati">
+            <span class="nav-num">01</span>
+            <span class="nav-title">Udaipurwati</span>
+            <span class="nav-bar"></span>
+          </button>
+          <button class="story-nav-btn" data-chapter="1" type="button" aria-label="Chapter 02: Nangal">
+            <span class="nav-num">02</span>
+            <span class="nav-title">Nangal</span>
+            <span class="nav-bar"></span>
+          </button>
+          <button class="story-nav-btn" data-chapter="2" type="button" aria-label="Chapter 03: Pure Gastronomy">
+            <span class="nav-num">03</span>
+            <span class="nav-title">A2 Dairy</span>
+            <span class="nav-bar"></span>
+          </button>
+          <button class="story-nav-btn" data-chapter="3" type="button" aria-label="Chapter 04: Royal Banquets">
+            <span class="nav-num">04</span>
+            <span class="nav-title">Banquets</span>
+            <span class="nav-bar"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 02. THE DISCOVERY FILM (MANY IN CONTINUOUS MOTION) -->
+      <div class="story-stage-wrapper container">
+        <div class="story-stage" id="storyStage">
+          
+          <!-- Master Visual Canvas (Full-Bleed Crossfading Photographic Viewport) -->
+          <div class="story-media-viewport">
+            
+            <!-- Chapter 01 Image -->
+            <div class="story-slide-layer active" data-slide="0">
+              <img src="assets/images/_DSC5104_lg.webp" alt="Shrii Palace Udaipurwati 30,000+ Sq.Ft. Celebration Lawns" class="story-slide-img" loading="lazy" width="1200" height="800">
+              <div class="story-slide-scrim"></div>
+              <span class="story-slide-badge">01 // CELEBRATION HORIZON</span>
+            </div>
+
+            <!-- Chapter 02 Image -->
+            <div class="story-slide-layer" data-slide="1">
+              <img src="assets/images/_DSC5117_lg.webp" alt="Shrii Palace Nangal Mountain Foothill Sanctuary" class="story-slide-img" loading="lazy" width="1200" height="800">
+              <div class="story-slide-scrim"></div>
+              <span class="story-slide-badge">02 // SANCTUARY HORIZON</span>
+            </div>
+
+            <!-- Chapter 03 Image -->
+            <div class="story-slide-layer" data-slide="2">
+              <img src="assets/images/_DSC5114_lg.webp" alt="Handcrafted Terracotta & Farm-to-Table A2 Gaushala Dairy" class="story-slide-img" loading="lazy" width="1200" height="800">
+              <div class="story-slide-scrim"></div>
+              <span class="story-slide-badge">03 // PURE GASTRONOMY</span>
+            </div>
+
+            <!-- Chapter 04 Image -->
+            <div class="story-slide-layer" data-slide="3">
+              <img src="assets/images/_DSC5142_lg.webp" alt="Pillarless AC Banquet Halls and Milestone Celebrations" class="story-slide-img" loading="lazy" width="1200" height="800">
+              <div class="story-slide-scrim"></div>
+              <span class="story-slide-badge">04 // ROYAL BANQUETS</span>
+            </div>
+
+            <!-- Minimalist Mobile Slide Controls (Tap/Swipe Facilitator) -->
+            <div class="story-mobile-arrows" aria-hidden="true">
+              <button class="arrow-btn" id="storyPrevBtn" type="button" aria-label="Previous Story Chapter">‹</button>
+              <span class="story-fraction" id="storyFraction">01 / 04</span>
+              <button class="arrow-btn" id="storyNextBtn" type="button" aria-label="Next Story Chapter">›</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Editorial Narrative Panels (Synced with Active Chapter) -->
+          <div class="story-narrative-deck" id="storyNarrativeDeck">
+            
+            <!-- Narrative 01 -->
+            <article class="story-narrative-card active" data-card="0">
+              <div class="card-meta">
+                <span class="card-chapter">01 // DESTINATION HORIZON</span>
+                <span class="card-geo">SH-37 • SHEKHAWATI</span>
+              </div>
+              <h3 class="card-title">Shrii Palace Udaipurwati</h3>
+              <span class="card-tagline">30,000+ Sq.Ft. Heritage Lawns & Grand Celebrations</span>
+              <p class="card-prose">
+                Vast open-sky celebration grounds, majestic royal mandap staging, celebration suites, and pillarless banquets engineered for milestone royal destination weddings.
+              </p>
+              <div class="card-metrics-row">
+                <span class="metric-pill">30,000+ Sq.Ft. Lawns</span>
+                <span class="metric-pill">1,200+ Capacity</span>
+                <span class="metric-pill">SH-37 Route</span>
+              </div>
+              <a href="destinations/udaipurwati.html" class="card-cta-btn">
+                <span>Explore Udaipurwati</span>
+                <span class="cta-arrow">→</span>
+              </a>
+            </article>
+
+            <!-- Narrative 02 -->
+            <article class="story-narrative-card" data-card="1">
+              <div class="card-meta">
+                <span class="card-chapter">02 // SANCTUARY HORIZON</span>
+                <span class="card-geo">SIKAR ROAD • ARAVALLI FOOTHILLS</span>
+              </div>
+              <h3 class="card-title">Shrii Palace Nangal</h3>
+              <span class="card-tagline">Aravalli Foothill Retreat & 30+ Garden Suites</span>
+              <p class="card-prose">
+                An unhurried mountain sanctuary featuring 30+ garden rooms & suites, private verandahs, serene swimming pool, pure A2 dairy feasting, and corporate retreats.
+              </p>
+              <div class="card-metrics-row">
+                <span class="metric-pill">30+ Garden Suites</span>
+                <span class="metric-pill">Swimming Pool</span>
+                <span class="metric-pill">2 Hrs from Jaipur</span>
+              </div>
+              <a href="destinations/nangal.html" class="card-cta-btn">
+                <span>Explore Nangal</span>
+                <span class="cta-arrow">→</span>
+              </a>
+            </article>
+
+            <!-- Narrative 03 -->
+            <article class="story-narrative-card" data-card="2">
+              <div class="card-meta">
+                <span class="card-chapter">03 // CULINARY PURITY</span>
+                <span class="card-geo">ORGANIC FARM-TO-TABLE</span>
+              </div>
+              <h3 class="card-title">In-House A2 Gaushala Dairy</h3>
+              <span class="card-tagline">Pure Gir Cow Milk, Artisanal Ghee & Feasts</span>
+              <p class="card-prose">
+                Uncompromising gastronomic integrity: daily fresh A2 cow milk, handcrafted Desi ghee sweets, and wholesome Shekhawati culinary traditions served across both properties.
+              </p>
+              <div class="card-metrics-row">
+                <span class="metric-pill">A2 Gir Cow Milk</span>
+                <span class="metric-pill">Artisanal Ghee</span>
+                <span class="metric-pill">Shared Daily</span>
+              </div>
+              <a href="dining.html" class="card-cta-btn">
+                <span>Discover Dining</span>
+                <span class="cta-arrow">→</span>
+              </a>
+            </article>
+
+            <!-- Narrative 04 -->
+            <article class="story-narrative-card" data-card="3">
+              <div class="card-meta">
+                <span class="card-chapter">04 // CELEBRATION MASTERY</span>
+                <span class="card-geo">GRAND BANQUETING</span>
+              </div>
+              <h3 class="card-title">Royal Banquets & Summits</h3>
+              <span class="card-tagline">Pillarless Ballrooms & Complete Event Logistics</span>
+              <p class="card-prose">
+                Flawless execution for sangeet nights, corporate conferences, and family anniversaries with dedicated event planners, regal sound, and bespoke catering.
+              </p>
+              <div class="card-metrics-row">
+                <span class="metric-pill">Pillarless Ballrooms</span>
+                <span class="metric-pill">Bridal Lounges</span>
+                <span class="metric-pill">Dedicated Teams</span>
+              </div>
+              <a href="events.html" class="card-cta-btn">
+                <span>Plan Your Occasion</span>
+                <span class="cta-arrow">→</span>
+              </a>
+            </article>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 03. THE RESOLUTION (ONE COHESIVE BRAND EXPERIENCE) -->
+      <div class="story-resolution container">
+        <div class="resolution-card">
+          <div class="resolution-tag">ONE BRAND • EQUAL PROMINENCE</div>
+          <h3 class="resolution-title">
+            ONE BRAND.<br>
+            <em>MANY EXPRESSIONS.</em><br>
+            ONE UNFORGETTABLE EXPERIENCE.
+          </h3>
+          <p class="resolution-prose">
+            Whether you choose the expansive celebrations of Udaipurwati or the serene quietude of Nangal, receive the same uncompromising standard of Rajasthani hospitality.
           </p>
+          <div class="resolution-actions">
+            <a href="tel:+919509771500" class="btn-res-primary">
+              <span>Direct Concierge Desk: +91 95097 71500</span>
+              <span class="cta-arrow">↗</span>
+            </a>
+            <a href="destinations/index.html" class="btn-res-secondary">
+              <span>Compare Both Destinations</span>
+              <span class="cta-arrow">→</span>
+            </a>
+          </div>
         </div>
       </div>
 
-      <div class="destinations-split-canvas" id="destinationSplit">
-        <!-- Territory 1: Udaipurwati -->
-        <a href="destinations/udaipurwati.html" class="destination-territory-panel panel-udaipurwati" aria-label="Explore Shrii Palace Udaipurwati">
-          <div class="panel-bg-frame">
-            <img src="assets/images/_DSC5104_lg.webp" alt="Expansive Celebration Grounds at Shrii Palace Udaipurwati" loading="lazy">
-          </div>
-          <div class="panel-vignette"></div>
-          
-          <div class="panel-content">
-            <div class="panel-index">01 / DESTINATION</div>
-            <h3 class="panel-name">Udaipurwati</h3>
-            <span class="panel-tagline">Celebration Resort & Grand Heritage Lawns</span>
-            
-            <p class="panel-narrative">
-              Vast manicured lawns, grand royal mandap setups, and spacious celebration facilities designed for royal destination weddings, large banquets, and milestone gatherings on SH-37.
-            </p>
-
-            <div class="panel-feature-pills">
-              <span>30,000+ Sq.Ft. Lawns</span>
-              <span>Bespoke Mandaps</span>
-              <span>Bridal Suites</span>
-            </div>
-
-            <span class="panel-action-link">
-              <span>Explore Udaipurwati</span>
-              <span class="arrow-glyph">→</span>
-            </span>
-          </div>
-        </a>
-
-        <!-- Territory 2: Nangal -->
-        <a href="destinations/nangal.html" class="destination-territory-panel panel-nangal" aria-label="Explore Shrii Palace Nangal">
-          <div class="panel-bg-frame">
-            <img src="assets/images/_DSC5117_lg.webp" alt="Aravalli Mountain Gateway at Shrii Palace Nangal" loading="lazy">
-          </div>
-          <div class="panel-vignette"></div>
-          
-          <div class="panel-content">
-            <div class="panel-index">02 / DESTINATION</div>
-            <h3 class="panel-name">Nangal</h3>
-            <span class="panel-tagline">Aravalli Foothill Retreat & Serene Stays</span>
-            
-            <p class="panel-narrative">
-              An unhurried mountain sanctuary along Sikar Road featuring 30+ garden rooms & suites, private verandahs, swimming pool, pure in-house A2 cow dairy, and banquet halls.
-            </p>
-
-            <div class="panel-feature-pills">
-              <span>30+ Rooms & Suites</span>
-              <span>Swimming Pool</span>
-              <span>In-House A2 Dairy</span>
-            </div>
-
-            <span class="panel-action-link">
-              <span>Explore Nangal</span>
-              <span class="arrow-glyph">→</span>
-            </span>
-          </div>
-        </a>
-      </div>
     </section>
 
     <!-- ==========================================================================
-         05 — CHOOSE YOUR EXPERIENCE ("WHAT BRINGS YOU HERE?")
+         05 — CURATED JOURNEYS (FRAMER EXPANDING CAROUSEL)
          ========================================================================== -->
-    <section id="choose-experience" class="section-choose-exp" aria-label="Choose Your Experience">
-      <div class="container">
-        <div class="section-head-center">
-          <span class="eyebrow-tag">Curated Journeys</span>
-          <h2 class="editorial-headline">What Brings You Here?</h2>
-          <p class="section-subtext">Select your intention and let our concierge guide you to the ideal setting.</p>
+    <section id="choose-experience" class="section-curated-framer" aria-label="Curated Journeys">
+      <div class="container curated-framer-container">
+        
+        <!-- Section Header -->
+        <div class="curated-framer-head">
+          <div class="curated-head-left">
+            <span class="eyebrow-tag">Curated Journeys</span>
+            <h2 class="editorial-headline curated-headline">What Brings<br><em>You Here?</em></h2>
+          </div>
+          <div class="curated-head-right">
+            <p class="curated-lead-text">
+              Four distinctive horizons of luxury hospitality across Shekhawati and the peaceful Aravalli foothills. Hover or tap to expand each chapter.
+            </p>
+            <div class="framer-carousel-progress-pill" aria-hidden="true">
+              <span class="pill-dot active" data-index="0"></span>
+              <span class="pill-dot" data-index="1"></span>
+              <span class="pill-dot" data-index="2"></span>
+              <span class="pill-dot" data-index="3"></span>
+            </div>
+          </div>
         </div>
 
-        <div class="experience-cards-grid">
-          <!-- Card 1: Stay -->
-          <a href="stay.html" class="exp-choice-card">
-            <div class="exp-card-media">
-              <img src="assets/images/_DSC5119_lg.webp" alt="Resort guest wing and garden rooms" loading="lazy">
-              <div class="exp-card-scrim"></div>
+        <!-- Framer Expanding Carousel Stage -->
+        <div class="framer-expanding-carousel" id="framerExpandingCarousel" role="tablist" aria-label="Curated Journey Panels">
+          
+          <!-- Panel 01: Sanctuary (Stay) -->
+          <div class="framer-expand-panel active" role="tab" tabindex="0" aria-selected="true" data-index="0" data-link="stay.html">
+            <img src="assets/images/_DSC5119_lg.webp" alt="Resort guest wing and garden rooms" class="framer-panel-img" loading="eager">
+            <div class="framer-panel-overlay"></div>
+            
+            <!-- Inactive Vertical Marker -->
+            <div class="framer-inactive-marker" aria-hidden="true">
+              <span class="inactive-num">01</span>
+              <span class="inactive-label">SANCTUARY</span>
             </div>
-            <div class="exp-card-body">
-              <span class="exp-card-num">01 / SANCTUARY</span>
-              <h3 class="exp-card-title">Stay & Unwind</h3>
-              <p class="exp-card-desc">Spacious garden rooms, private verandahs, and peaceful mountain vistas.</p>
-              <span class="exp-card-link">View Accommodations →</span>
-            </div>
-          </a>
 
-          <!-- Card 2: Weddings -->
-          <a href="weddings.html" class="exp-choice-card">
-            <div class="exp-card-media">
-              <img src="assets/images/_DSC5104_lg.webp" alt="Vast manicured wedding lawns" loading="lazy">
-              <div class="exp-card-scrim"></div>
+            <!-- Active Expanded Content -->
+            <div class="framer-active-content">
+              <div class="framer-panel-meta">
+                <span class="framer-badge">01 / SANCTUARY</span>
+                <span class="framer-location">Nangal &bull; Mountain Foothills</span>
+              </div>
+              <h3 class="framer-panel-title">Stay &amp; Unwind</h3>
+              <p class="framer-panel-desc">Spacious garden rooms, private verandahs, and peaceful Aravalli mountain vistas.</p>
+              <a href="stay.html" class="framer-panel-cta">
+                <span>EXPLORE JOURNEY</span>
+                <span class="framer-cta-arrow" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
-            <div class="exp-card-body">
-              <span class="exp-card-num">02 / UNIONS</span>
-              <h3 class="exp-card-title">Royal Weddings</h3>
-              <p class="exp-card-desc">Expansive celebration grounds, regal Baraat arches, and open-air mandaps.</p>
-              <span class="exp-card-link">Explore Wedding Venues →</span>
-            </div>
-          </a>
+          </div>
 
-          <!-- Card 3: Events -->
-          <a href="events.html" class="exp-choice-card">
-            <div class="exp-card-media">
-              <img src="assets/images/_DSC5142_lg.webp" alt="Banquet buffet and event setup" loading="lazy">
-              <div class="exp-card-scrim"></div>
+          <!-- Panel 02: Unions (Weddings) -->
+          <div class="framer-expand-panel" role="tab" tabindex="0" aria-selected="false" data-index="1" data-link="weddings.html">
+            <img src="assets/images/_DSC5104_lg.webp" alt="Vast manicured wedding lawns" class="framer-panel-img" loading="lazy">
+            <div class="framer-panel-overlay"></div>
+            
+            <!-- Inactive Vertical Marker -->
+            <div class="framer-inactive-marker" aria-hidden="true">
+              <span class="inactive-num">02</span>
+              <span class="inactive-label">UNIONS</span>
             </div>
-            <div class="exp-card-body">
-              <span class="exp-card-num">03 / GATHERINGS</span>
-              <h3 class="exp-card-title">Banquets & Offsites</h3>
-              <p class="exp-card-desc">Pillarless ballroom spaces, corporate conferences, and private celebrations.</p>
-              <span class="exp-card-link">Plan an Event →</span>
-            </div>
-          </a>
 
-          <!-- Card 4: Escape -->
-          <a href="experiences.html" class="exp-choice-card">
-            <div class="exp-card-media">
-              <img src="assets/images/_DSC5117_lg.webp" alt="Gateway view to Aravalli hills" loading="lazy">
-              <div class="exp-card-scrim"></div>
+            <!-- Active Expanded Content -->
+            <div class="framer-active-content">
+              <div class="framer-panel-meta">
+                <span class="framer-badge">02 / UNIONS</span>
+                <span class="framer-location">Udaipurwati &bull; Grand Lawns</span>
+              </div>
+              <h3 class="framer-panel-title">Royal Weddings</h3>
+              <p class="framer-panel-desc">Expansive celebration grounds, regal Baraat arches, and open-air mandap pavilions.</p>
+              <a href="weddings.html" class="framer-panel-cta">
+                <span>EXPLORE JOURNEY</span>
+                <span class="framer-cta-arrow" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
-            <div class="exp-card-body">
-              <span class="exp-card-num">04 / DISCOVERY</span>
-              <h3 class="exp-card-title">The Rural Escape</h3>
-              <p class="exp-card-desc">Mansamata Wildlife trails, Shakambhari Mata pilgrimage, and Shekhawati art.</p>
-              <span class="exp-card-link">Discover Experiences →</span>
+          </div>
+
+          <!-- Panel 03: Gatherings (Banquets) -->
+          <div class="framer-expand-panel" role="tab" tabindex="0" aria-selected="false" data-index="2" data-link="events.html">
+            <img src="assets/images/_DSC5142_lg.webp" alt="Pillarless banquet ballroom" class="framer-panel-img" loading="lazy">
+            <div class="framer-panel-overlay"></div>
+            
+            <!-- Inactive Vertical Marker -->
+            <div class="framer-inactive-marker" aria-hidden="true">
+              <span class="inactive-num">03</span>
+              <span class="inactive-label">GATHERINGS</span>
             </div>
-          </a>
+
+            <!-- Active Expanded Content -->
+            <div class="framer-active-content">
+              <div class="framer-panel-meta">
+                <span class="framer-badge">03 / GATHERINGS</span>
+                <span class="framer-location">Udaipurwati &bull; Grand Ballrooms</span>
+              </div>
+              <h3 class="framer-panel-title">Banquets &amp; Offsites</h3>
+              <p class="framer-panel-desc">Pillarless ballroom spaces, corporate conferences, and milestone family celebrations.</p>
+              <a href="events.html" class="framer-panel-cta">
+                <span>EXPLORE JOURNEY</span>
+                <span class="framer-cta-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Panel 04: Discovery (The Rural Escape) -->
+          <div class="framer-expand-panel" role="tab" tabindex="0" aria-selected="false" data-index="3" data-link="experiences.html">
+            <img src="assets/images/_DSC5117_lg.webp" alt="Aravalli hills and heritage trails" class="framer-panel-img" loading="lazy">
+            <div class="framer-panel-overlay"></div>
+            
+            <!-- Inactive Vertical Marker -->
+            <div class="framer-inactive-marker" aria-hidden="true">
+              <span class="inactive-num">04</span>
+              <span class="inactive-label">DISCOVERY</span>
+            </div>
+
+            <!-- Active Expanded Content -->
+            <div class="framer-active-content">
+              <div class="framer-panel-meta">
+                <span class="framer-badge">04 / DISCOVERY</span>
+                <span class="framer-location">Shekhawati &bull; Heritage Trails</span>
+              </div>
+              <h3 class="framer-panel-title">The Rural Escape</h3>
+              <p class="framer-panel-desc">Mansamata Wildlife trails, Shakambhari Mata pilgrimage, and Shekhawati frescoes.</p>
+              <a href="experiences.html" class="framer-panel-cta">
+                <span>EXPLORE JOURNEY</span>
+                <span class="framer-cta-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
         </div>
+
       </div>
     </section>
 

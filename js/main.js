@@ -4,7 +4,7 @@
  * Destination Territory Expansion & Interactive Magnetic Physics.
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initSiteApp() {
   initPreloader();
   initEditorialHeader();
   initLenisSmoothScroll();
@@ -16,7 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initIdentitySanctuarySlider();
   initFilterPills();
   initMagneticButtons();
-});
+  initJourneysInMotion();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initSiteApp);
+} else {
+  initSiteApp();
+}
 
 /* ==========================================================================
    1. HERO CINEMA TRANSFORMER (ALIVE DESTINATION MORPH)
@@ -118,38 +125,167 @@ function initTerritorialHorizons() {
    3. DESTINATION 50/50 EXPANDING SPLIT PANELS
    ========================================================================== */
 
-function initDestinationSplitInteractions() {
-  const container = document.getElementById('destinationSplit');
-  if (!container) return;
-  const panels = container.querySelectorAll('.destination-territory-panel');
-  if (!panels.length) return;
+/* ==========================================================================
+   3. SPATIAL EQUILIBRIUM DUAL-HORIZON CONTROLLER (FRAMER PHYSICS)
+   ========================================================================== */
 
-  panels.forEach(panel => {
-    panel.addEventListener('mouseenter', () => {
-      if (window.innerWidth >= 992) {
-        panels.forEach(p => {
-          if (p === panel) {
-            p.style.flex = '1.65';
-          } else {
-            p.style.flex = '0.65';
-          }
-        });
+/* ==========================================================================
+   3. THE BRAND IN MOTION — PROGRESSIVE STORYTELLING CONTROLLER
+   ========================================================================== */
+
+function initDestinationSplitInteractions() {
+  const stage = document.getElementById('storyStage');
+  if (!stage) return;
+
+  const slides = document.querySelectorAll('.story-slide-layer');
+  const cards = document.querySelectorAll('.story-narrative-card');
+  const navBtns = document.querySelectorAll('.story-nav-btn');
+  const fraction = document.getElementById('storyFraction');
+  const prevBtn = document.getElementById('storyPrevBtn');
+  const nextBtn = document.getElementById('storyNextBtn');
+
+  let currentChapter = 0;
+  const totalChapters = slides.length || 4;
+  let autoplayTimer = null;
+
+  function setChapter(index) {
+    if (index < 0) index = totalChapters - 1;
+    if (index >= totalChapters) index = 0;
+
+    currentChapter = index;
+
+    // Update slides
+    slides.forEach((slide, i) => {
+      if (i === currentChapter) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
       }
     });
 
-    panel.addEventListener('mouseleave', () => {
-      if (window.innerWidth >= 992) {
-        panels.forEach(p => {
-          p.style.flex = '1';
-        });
+    // Update narrative cards
+    cards.forEach((card, i) => {
+      if (i === currentChapter) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    });
+
+    // Update progress navigation buttons
+    navBtns.forEach((btn, i) => {
+      if (i === currentChapter) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    // Update fraction
+    if (fraction) {
+      fraction.innerText = '0' + (currentChapter + 1) + ' / 0' + totalChapters;
+    }
+  }
+
+  // Nav Button Clicks
+  navBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const ch = parseInt(btn.getAttribute('data-chapter'), 10);
+      if (!isNaN(ch)) {
+        setChapter(ch);
+        resetAutoplay();
       }
     });
   });
-}
 
-/* ==========================================================================
-   4. EDITORIAL HEADER & SCROLL CONTROLLER
-   ========================================================================== */
+  // Mobile Arrows
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setChapter(currentChapter - 1);
+      resetAutoplay();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setChapter(currentChapter + 1);
+      resetAutoplay();
+    });
+  }
+
+  // Touch Swipe on Media Viewport
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const viewport = stage.querySelector('.story-media-viewport');
+
+  if (viewport) {
+    viewport.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) {
+          // Swiped left -> next
+          setChapter(currentChapter + 1);
+        } else {
+          // Swiped right -> prev
+          setChapter(currentChapter - 1);
+        }
+        resetAutoplay();
+      }
+    }
+  }
+
+  // Subtle Autoplay when in view
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(() => {
+      setChapter(currentChapter + 1);
+    }, 4500);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  function resetAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  // IntersectionObserver to only autoplay when visible
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startAutoplay();
+        } else {
+          stopAutoplay();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(stage);
+  } else {
+    startAutoplay();
+  }
+
+  // Pause autoplay on mouse enter
+  stage.addEventListener('mouseenter', stopAutoplay);
+  stage.addEventListener('mouseleave', startAutoplay);
+}
 
 function initEditorialHeader() {
   const header = document.getElementById('siteHeader');
@@ -211,7 +347,8 @@ function initLenisSmoothScroll() {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return;
 
-  if (typeof Lenis !== 'undefined') {
+  function bootLenis() {
+    if (typeof Lenis === 'undefined') return false;
     try {
       lenisInstance = new Lenis({
         duration: 1.2,
@@ -236,9 +373,24 @@ function initLenisSmoothScroll() {
       lenisInstance.on('scroll', (e) => {
         window.dispatchEvent(new CustomEvent('lenis-scroll', { detail: e }));
       });
+
+      return true;
     } catch (e) {
       console.warn('Lenis error:', e);
+      return false;
     }
+  }
+
+  // Try immediately (Lenis loaded synchronously)
+  if (!bootLenis()) {
+    // Fallback: retry every 50ms for up to 2 seconds in case CDN is slow
+    let attempts = 0;
+    const retry = setInterval(() => {
+      attempts++;
+      if (bootLenis() || attempts >= 40) {
+        clearInterval(retry);
+      }
+    }, 50);
   }
 
   // Smooth anchor navigation
@@ -501,11 +653,21 @@ function initPreloader() {
   const fill = document.getElementById('preloaderFill');
   if (!preloader) return;
 
+  function dismiss() {
+    preloader.classList.add('fade-out');
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500);
+  }
+
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) {
     preloader.style.display = 'none';
     return;
   }
+
+  // Safety maximum fallback: never hold page for more than 1.2 seconds
+  const safetyTimeout = setTimeout(dismiss, 1200);
 
   let progress = 0;
   const interval = setInterval(() => {
@@ -513,12 +675,8 @@ function initPreloader() {
     if (fill) fill.style.width = `${progress}%`;
     if (progress >= 100) {
       clearInterval(interval);
-      setTimeout(() => {
-        preloader.classList.add('fade-out');
-        setTimeout(() => {
-          preloader.style.display = 'none';
-        }, 500);
-      }, 200);
+      clearTimeout(safetyTimeout);
+      setTimeout(dismiss, 200);
     }
   }, 90);
 }
@@ -654,4 +812,140 @@ function initIdentityEditorialExperience() {
       pillars.forEach(p => p.style.opacity = '1');
     });
   });
+}
+
+
+/* ==========================================================================
+   10. FRAMER EXPANDING CAROUSEL CONTROLLER (@ZXAYHYqajoHkc6E6NaKS)
+   High-performance expanding panels with hover/tap triggers & autoplay
+   ========================================================================== */
+
+function initJourneysInMotion() {
+  const container = document.getElementById('framerExpandingCarousel');
+  if (!container) return;
+
+  const panels = container.querySelectorAll('.framer-expand-panel');
+  const dots = document.querySelectorAll('.pill-dot');
+  if (!panels.length) return;
+
+  let activeIndex = 0;
+  let isPaused = false;
+  let autoplayTimer = null;
+  const count = panels.length;
+  const intervalMs = 4200;
+
+  function setActivePanel(index, userTriggered = false) {
+    if (index < 0 || index >= count) return;
+    activeIndex = index;
+
+    // Update Panels
+    panels.forEach((panel, i) => {
+      const isActive = i === activeIndex;
+      panel.classList.toggle('active', isActive);
+      panel.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      panel.setAttribute('tabindex', isActive ? '0' : '0');
+    });
+
+    // Update Progress Dots
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === activeIndex);
+    });
+
+    if (userTriggered) {
+      resetAutoplay();
+    }
+  }
+
+  function nextPanel() {
+    if (!isPaused) {
+      setActivePanel((activeIndex + 1) % count);
+    }
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(nextPanel, intervalMs);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  function resetAutoplay() {
+    stopAutoplay();
+    if (!isPaused) {
+      startAutoplay();
+    }
+  }
+
+  // Panel Event Listeners
+  panels.forEach((panel, i) => {
+    // Hover trigger (Desktop)
+    panel.addEventListener('mouseenter', () => {
+      isPaused = true;
+      setActivePanel(i, true);
+    });
+
+    panel.addEventListener('mouseleave', () => {
+      isPaused = false;
+    });
+
+    // Click / Touch trigger
+    panel.addEventListener('click', (e) => {
+      const link = panel.getAttribute('data-link');
+      const isAlreadyActive = panel.classList.contains('active');
+
+      if (!isAlreadyActive) {
+        e.preventDefault();
+        isPaused = true;
+        setActivePanel(i, true);
+      }
+    });
+
+    // Keyboard accessibility
+    panel.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        if (!panel.classList.contains('active')) {
+          e.preventDefault();
+          setActivePanel(i, true);
+        }
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        const next = (activeIndex + 1) % count;
+        setActivePanel(next, true);
+        panels[next].focus();
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prev = (activeIndex - 1 + count) % count;
+        setActivePanel(prev, true);
+        panels[prev].focus();
+      }
+    });
+
+    panel.addEventListener('focus', () => {
+      isPaused = true;
+      setActivePanel(i, true);
+    });
+
+    panel.addEventListener('blur', () => {
+      isPaused = false;
+    });
+  });
+
+  // Progress Dots Click Handling
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      setActivePanel(i, true);
+    });
+  });
+
+  // Container pause on hover
+  container.addEventListener('mouseenter', () => { isPaused = true; });
+  container.addEventListener('mouseleave', () => { isPaused = false; });
+
+  // Start Autoplay
+  startAutoplay();
 }
