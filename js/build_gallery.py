@@ -21,7 +21,7 @@ for f in files:
             cat = 'weddings'
             dest = 'udaipurwati'
             title = 'Celebration Grounds & Lawns'
-            caption = 'Grand outdoor wedding setups and mandap arenas at Udaipurwati.'
+            caption = 'Grand outdoor wedding setups and mandap arenas at Shrii Palace Resort.'
         elif num in [5113, 5114, 5115, 5116, 5117, 5118, 5119, 5120]:
             cat = 'rooms'
             dest = 'nangal' if num != 5117 else 'udaipurwati'

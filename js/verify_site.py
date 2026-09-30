@@ -22,14 +22,14 @@ ALL_26_PAGES_AND_ASSETS = [
     "contact.html",
     "enquire.html",
 
-    # Destination 1: Udaipurwati Hub & Sub-Pages (6)
+    # Destination 1: Shrii Palace Resort Hub & Sub-Pages (6)
     "destinations/index.html",
-    "destinations/udaipurwati.html",
-    "destinations/udaipurwati-weddings.html",
-    "destinations/udaipurwati-rooms.html",
-    "destinations/udaipurwati-banquets.html",
-    "destinations/udaipurwati-gallery.html",
-    "destinations/udaipurwati-location.html",
+    "destinations/shrii-palace-resort.html",
+    "destinations/shrii-palace-resort-weddings.html",
+    "destinations/shrii-palace-resort-rooms.html",
+    "destinations/shrii-palace-resort-banquets.html",
+    "destinations/shrii-palace-resort-gallery.html",
+    "destinations/shrii-palace-resort-location.html",
 
     # Destination 2: Nangal Hub & Sub-Pages (6)
     "destinations/nangal.html",

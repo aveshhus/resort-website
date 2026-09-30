@@ -1,5 +1,5 @@
 /**
- * Single Source of Truth for Shrii Palace Resorts (Udaipurwati & Nangal)
+ * Single Source of Truth for Shrii Palace Resorts (Shrii Palace Resort & Nangal)
  * Verified business data, rooms, wedding venues, conference halls, experiences, and imagery.
  */
 
@@ -19,10 +19,10 @@ const RESORTS_DATA = {
     logoPath: "assets/images/logo.webp"
   },
   destinations: {
-    udaipurwati: {
-      id: "udaipurwati",
-      name: "Shrii Palace Udaipurwati",
-      shortName: "Udaipurwati",
+    shrii_palace_resort: {
+      id: "shrii-palace-resort",
+      name: "Shrii Palace Resort",
+      shortName: "Shrii Palace Resort",
       subtitle: "Celebration Resort & Grand Venue",
       heroHeadline: "Royal Celebrations in the Heart of Shekhawati",
       heroDescription: "A grand celebration-led destination with magnificent outdoor lawns, majestic air-conditioned banquet spaces, bridal suites, and event-ready hospitality crafted for milestone weddings.",
@@ -104,9 +104,9 @@ const RESORTS_DATA = {
       subtitle: "Resort Stay, Poolside & Celebration Destination",
       heroHeadline: "A Tranquil Resort Retreat in the Aravalli Foothills",
       heroDescription: "Nestled away from urban noise, Nangal Resort blends heritage architectural charm with serene poolside lounging, a panoramic rooftop restaurant, 3 banquet halls, and 30+ well-appointed rooms.",
-      address: "Sikar Road, Opposite Power House, Nangal, Udaipurwati, Rajasthan – 333307",
+      address: "Sikar Road, Opposite Power House, Nangal, Shrii Palace Resort, Rajasthan – 333307",
       pincode: "333307",
-      googleMapsUrl: "https://maps.google.com/?q=Nangal+Resort+Sikar+Road+Udaipurwati+Rajasthan",
+      googleMapsUrl: "https://maps.google.com/?q=Nangal+Resort+Sikar+Road+Shrii Palace Resort+Rajasthan",
       highlightBadge: "Resort Retreat & Leisure",
       heroImage: "assets/images/_DSC4754_lg.webp",
       cardImage: "assets/images/_DSC5138_md.webp",
@@ -189,24 +189,24 @@ const RESORTS_DATA = {
   gallery: [
     { src: "assets/images/_DSC4754_lg.webp", thumb: "assets/images/_DSC4754_sm.webp", title: "Resort Architecture & Frontage", destination: "nangal", category: "architecture", caption: "Authentic Rajasthani arches and grand arrival courtyard at Nangal." },
     { src: "assets/images/_DSC5138_lg.webp", thumb: "assets/images/_DSC5138_sm.webp", title: "Resort Swimming Pool & Deck", destination: "nangal", category: "pool", caption: "Crystal blue swimming pool with sunbeds set against Aravalli foothills." },
-    { src: "assets/images/_DSC5147_lg.webp", thumb: "assets/images/_DSC5147_sm.webp", title: "Grand Celebration Lawn", destination: "udaipurwati", category: "weddings", caption: "Sprawling manicured lawn tailored for royal destination weddings." },
-    { src: "assets/images/_DSC5149_lg.webp", thumb: "assets/images/_DSC5149_sm.webp", title: "Wedding Mandap Setting", destination: "udaipurwati", category: "weddings", caption: "Elegantly illuminated open-air stage for sacred vows and evening ceremonies." },
+    { src: "assets/images/_DSC5147_lg.webp", thumb: "assets/images/_DSC5147_sm.webp", title: "Grand Celebration Lawn", destination: "shrii-palace-resort", category: "weddings", caption: "Sprawling manicured lawn tailored for royal destination weddings." },
+    { src: "assets/images/_DSC5149_lg.webp", thumb: "assets/images/_DSC5149_sm.webp", title: "Wedding Mandap Setting", destination: "shrii-palace-resort", category: "weddings", caption: "Elegantly illuminated open-air stage for sacred vows and evening ceremonies." },
     { src: "assets/images/_DSC5158_lg.webp", thumb: "assets/images/_DSC5158_sm.webp", title: "4,000 sq.ft. Grand Banquet Hall", destination: "nangal", category: "events", caption: "State-of-the-art indoor banquet and conference hall." },
     { src: "assets/images/_DSC5156_lg.webp", thumb: "assets/images/_DSC5156_sm.webp", title: "Banquet Dining Setup", destination: "nangal", category: "dining", caption: "Opulent banquet dining and reception arrangement." },
     { src: "assets/images/_DSC5113_lg.webp", thumb: "assets/images/_DSC5113_sm.webp", title: "Super Deluxe Suite Interior", destination: "nangal", category: "rooms", caption: "Warm wooden textures, heritage aesthetics, and plush bedding." },
     { src: "assets/images/_DSC5115_lg.webp", thumb: "assets/images/_DSC5115_sm.webp", title: "Deluxe Bedroom", destination: "nangal", category: "rooms", caption: "Clean contemporary comforts with traditional Rajasthani warmth." },
-    { src: "assets/images/_DSC5117_lg.webp", thumb: "assets/images/_DSC5117_sm.webp", title: "Royal Guest Suite", destination: "udaipurwati", category: "rooms", caption: "Spacious bridal and host accommodation with private vanity lounge." },
+    { src: "assets/images/_DSC5117_lg.webp", thumb: "assets/images/_DSC5117_sm.webp", title: "Royal Guest Suite", destination: "shrii-palace-resort", category: "rooms", caption: "Spacious bridal and host accommodation with private vanity lounge." },
     { src: "assets/images/_DSC5119_lg.webp", thumb: "assets/images/_DSC5119_sm.webp", title: "Family Accommodation Suite", destination: "nangal", category: "rooms", caption: "Multi-occupancy comfort tailored for extended family vacations." },
     { src: "assets/images/_DSC5142_lg.webp", thumb: "assets/images/_DSC5142_sm.webp", title: "Resort Facade at Sunset", destination: "nangal", category: "architecture", caption: "Golden hour glow highlighting the heritage stone carvings." },
     { src: "assets/images/_DSC5140_lg.webp", thumb: "assets/images/_DSC5140_sm.webp", title: "Poolside Evening Lounge", destination: "nangal", category: "pool", caption: "Ambient lighting and tranquil mountain breeze by the poolside." },
-    { src: "assets/images/_DSC5153_lg.webp", thumb: "assets/images/_DSC5153_sm.webp", title: "Grand Indoor Ballroom", destination: "udaipurwati", category: "events", caption: "High ceiling AC hall with stage for corporate meets and indoor Sangeet." },
-    { src: "assets/images/_DSC5144_lg.webp", thumb: "assets/images/_DSC5144_sm.webp", title: "Central Heritage Courtyard", destination: "udaipurwati", category: "architecture", caption: "Intimate gathering courtyard for Mehendi and cultural evenings." },
+    { src: "assets/images/_DSC5153_lg.webp", thumb: "assets/images/_DSC5153_sm.webp", title: "Grand Indoor Ballroom", destination: "shrii-palace-resort", category: "events", caption: "High ceiling AC hall with stage for corporate meets and indoor Sangeet." },
+    { src: "assets/images/_DSC5144_lg.webp", thumb: "assets/images/_DSC5144_sm.webp", title: "Central Heritage Courtyard", destination: "shrii-palace-resort", category: "architecture", caption: "Intimate gathering courtyard for Mehendi and cultural evenings." },
     { src: "assets/images/_DSC5160_lg.webp", thumb: "assets/images/_DSC5160_sm.webp", title: "Corporate Conference Hall", destination: "nangal", category: "events", caption: "Seating layout configured for corporate presentations and business summits." }
   ],
   experiences: [
     {
       title: "Shakambhari Mata Pilgrimage",
-      destination: "Both (14 km from Nangal / 22 km from Udaipurwati)",
+      destination: "Both (14 km from Nangal / 22 km from Shrii Palace Resort)",
       description: "Pay homage at the ancient Shakambhari Devi Shaktipeeth nestled in a serene mountain gorge, an easy 20-minute drive from the resorts.",
       tag: "Spiritual Heritage",
       image: "assets/images/_DSC5142_md.webp"
@@ -220,14 +220,14 @@ const RESORTS_DATA = {
     },
     {
       title: "Shekhawati Open-Air Art Gallery",
-      destination: "Udaipurwati & Nangal Region",
+      destination: "Shrii Palace Resort & Nangal Region",
       description: "Explore the world-famous painted havelis, frescoed cenotaphs, and historical forts of Nawalgarh, Mandawa, and Gudha Gorji.",
       tag: "Art & Culture",
       image: "assets/images/_DSC5144_md.webp"
     },
     {
       title: "Farm-Fresh A2 Milk & Royal Rajasthani Feasts",
-      destination: "Nangal & Udaipurwati",
+      destination: "Nangal & Shrii Palace Resort",
       description: "Indulge in authentic Dal Baati Churma, Gatte ki Sabzi, Ker Sangri, and rich desserts prepared using farm-fresh pure A2 cow milk.",
       tag: "Culinary Legacy",
       image: "assets/images/_DSC5156_md.webp"

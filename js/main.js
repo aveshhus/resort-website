@@ -43,15 +43,21 @@ function initHeroCinemaTransformer() {
   const destinationData = {
     'all': {
       title: 'Two Horizons.<br><em>One Timeless Rajasthan.</em>',
-      whisper: 'A flagship hospitality constellation uniting grand 30,000 sq.ft. celebration lawns in Udaipurwati with tranquil Aravalli mountain foothill retreats in Nangal.',
+      whisper: 'A flagship hospitality constellation uniting grand 30,000 sq.ft. celebration lawns in Shrii Palace Resort with tranquil Aravalli mountain foothill retreats in Nangal.',
       ctaText: 'Explore Both Horizons →',
       ctaHref: '#horizons'
     },
     'udaipurwati': {
-      title: 'Shrii Palace<br><em>Udaipurwati.</em>',
+      title: 'Shrii Palace<br><em>Resort.</em>',
       whisper: 'Grand Shekhawati celebration grounds with 30,000+ sq.ft. manicured lawns, royal mandap pavilions, and pillarless banquet halls engineered for milestone weddings.',
-      ctaText: 'Enter Udaipurwati Horizon →',
-      ctaHref: 'destinations/udaipurwati.html'
+      ctaText: 'Enter Shrii Palace Resort Horizon →',
+      ctaHref: 'destinations/shrii-palace-resort.html'
+    },
+    'shrii-palace-resort': {
+      title: 'Shrii Palace<br><em>Shrii Palace Resort.</em>',
+      whisper: 'Grand Shekhawati celebration grounds with 30,000+ sq.ft. manicured lawns, royal mandap pavilions, and pillarless banquet halls engineered for milestone weddings.',
+      ctaText: 'Enter Shrii Palace Resort Horizon →',
+      ctaHref: 'destinations/shrii-palace-resort.html'
     },
     'nangal': {
       title: 'Shrii Palace<br><em>Nangal.</em>',

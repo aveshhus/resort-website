@@ -7,7 +7,7 @@ template = f"""<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photo & Video Gallery | Shrii Palace Resorts Rajasthan</title>
-  <meta name="description" content="Explore genuine photo and video gallery of Shrii Palace Resorts across Udaipurwati and Nangal. Grand lawns, rooms, swimming pool, and banquets.">
+  <meta name="description" content="Explore genuine photo and video gallery of Shrii Palace Resorts across Shrii Palace Resort and Nangal. Grand lawns, rooms, swimming pool, and banquets.">
   <link rel="canonical" href="https://shriipalaceresorts.com/gallery.html">
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" type="image/webp" href="assets/images/logo.webp">
@@ -20,7 +20,7 @@ template = f"""<!DOCTYPE html>
     <div class="dest-pill-group">
       <span style="color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.72rem; margin-right: 0.25rem;">Filter:</span>
       <button class="dest-pill active" data-set-destination="all">All Photos</button>
-      <button class="dest-pill" data-set-destination="udaipurwati">Udaipurwati</button>
+      <button class="dest-pill" data-set-destination="udaipurwati">Shrii Palace Resort</button>
       <button class="dest-pill" data-set-destination="nangal">Nangal</button>
     </div>
     <div class="quick-contact-links">
@@ -67,7 +67,7 @@ template = f"""<!DOCTYPE html>
     <div>
       <div class="eyebrow" style="margin-bottom: 1.5rem;">Explore Destinations</div>
       <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem;">
-        <a href="destinations/udaipurwati.html" class="btn btn-outline btn-sm">🏛️ Shrii Palace Udaipurwati</a>
+        <a href="destinations/shrii-palace-resort.html" class="btn btn-outline btn-sm">🏛️ Shrii Palace Resort</a>
         <a href="destinations/nangal.html" class="btn btn-outline btn-sm">🌿 Shrii Palace Nangal</a>
       </div>
       <nav class="mobile-nav-links">
@@ -104,7 +104,7 @@ template = f"""<!DOCTYPE html>
     <div class="container">
       <div class="gallery-filter-tabs">
         <button class="gallery-filter-btn active" data-filter="all">All Photos</button>
-        <button class="gallery-filter-btn" data-filter="udaipurwati">Udaipurwati</button>
+        <button class="gallery-filter-btn" data-filter="udaipurwati">Shrii Palace Resort</button>
         <button class="gallery-filter-btn" data-filter="nangal">Nangal</button>
         <button class="gallery-filter-btn" data-filter="weddings">Weddings & Lawns</button>
         <button class="gallery-filter-btn" data-filter="rooms">Rooms & Suites</button>
@@ -156,7 +156,7 @@ template = f"""<!DOCTYPE html>
             <label class="form-label">Preferred Destination *</label>
             <select id="enquiry-location-select" class="form-control form-select" required>
               <option value="both">Both / Need Guidance</option>
-              <option value="udaipurwati">Shrii Palace Udaipurwati</option>
+              <option value="udaipurwati">Shrii Palace Resort</option>
               <option value="nangal">Shrii Palace Nangal</option>
             </select>
           </div>
