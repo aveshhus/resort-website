@@ -43,7 +43,7 @@ function initHeroCinemaTransformer() {
   const destinationData = {
     'all': {
       title: 'Two Horizons.<br><em>One Timeless Rajasthan.</em>',
-      whisper: 'A flagship hospitality constellation uniting grand 30,000 sq.ft. celebration lawns in Shrii Palace Resort with tranquil Aravalli mountain foothill retreats in Nangal.',
+      whisper: 'A flagship hospitality constellation uniting grand 30,000 sq.ft. celebration lawns in Shrii Palace Resort with tranquil Aravalli mountain foothill retreats in Shrii Palace Marriage Garden.',
       ctaText: 'Explore Both Horizons →',
       ctaHref: '#horizons'
     },
@@ -60,10 +60,10 @@ function initHeroCinemaTransformer() {
       ctaHref: 'destinations/shrii-palace-resort.html'
     },
     'nangal': {
-      title: 'Shrii Palace<br><em>Nangal.</em>',
+      title: 'Shrii Palace<br><em>Shrii Palace Marriage Garden.</em>',
       whisper: 'A peaceful mountain sanctuary in the Aravalli foothills featuring 30+ garden rooms with private verandahs, swimming pool, and farm-fresh A2 gaushala dairy dining.',
-      ctaText: 'Enter Nangal Horizon →',
-      ctaHref: 'destinations/nangal.html'
+      ctaText: 'Enter Shrii Palace Marriage Garden Horizon →',
+      ctaHref: 'destinations/shrii-palace-marriage-garden.html'
     }
   };
 

@@ -1,5 +1,5 @@
 /**
- * Single Source of Truth for Shrii Palace Resorts (Shrii Palace Resort & Nangal)
+ * Single Source of Truth for Shrii Palace Resorts (Shrii Palace Resort & Shrii Palace Marriage Garden)
  * Verified business data, rooms, wedding venues, conference halls, experiences, and imagery.
  */
 
@@ -99,14 +99,14 @@ const RESORTS_DATA = {
     },
     nangal: {
       id: "nangal",
-      name: "Shrii Palace Nangal",
-      shortName: "Nangal",
+      name: "Shrii Palace Marriage Garden",
+      shortName: "Shrii Palace Marriage Garden",
       subtitle: "Resort Stay, Poolside & Celebration Destination",
       heroHeadline: "A Tranquil Resort Retreat in the Aravalli Foothills",
-      heroDescription: "Nestled away from urban noise, Nangal Resort blends heritage architectural charm with serene poolside lounging, a panoramic rooftop restaurant, 3 banquet halls, and 30+ well-appointed rooms.",
-      address: "Sikar Road, Opposite Power House, Nangal, Shrii Palace Resort, Rajasthan – 333307",
+      heroDescription: "Nestled away from urban noise, Shrii Palace Marriage Garden blends heritage architectural charm with serene poolside lounging, a panoramic rooftop restaurant, 3 banquet halls, and 30+ well-appointed rooms.",
+      address: "Sikar Road, Opposite Power House, Shrii Palace Marriage Garden, Shrii Palace Resort, Rajasthan – 333307",
       pincode: "333307",
-      googleMapsUrl: "https://maps.google.com/?q=Nangal+Resort+Sikar+Road+Shrii Palace Resort+Rajasthan",
+      googleMapsUrl: "https://maps.google.com/?q=Shrii Palace Marriage Garden+Resort+Sikar+Road+Shrii Palace Resort+Rajasthan",
       highlightBadge: "Resort Retreat & Leisure",
       heroImage: "assets/images/_DSC4754_lg.webp",
       cardImage: "assets/images/_DSC5138_md.webp",
@@ -187,7 +187,7 @@ const RESORTS_DATA = {
     }
   },
   gallery: [
-    { src: "assets/images/_DSC4754_lg.webp", thumb: "assets/images/_DSC4754_sm.webp", title: "Resort Architecture & Frontage", destination: "nangal", category: "architecture", caption: "Authentic Rajasthani arches and grand arrival courtyard at Nangal." },
+    { src: "assets/images/_DSC4754_lg.webp", thumb: "assets/images/_DSC4754_sm.webp", title: "Resort Architecture & Frontage", destination: "nangal", category: "architecture", caption: "Authentic Rajasthani arches and grand arrival courtyard at Shrii Palace Marriage Garden." },
     { src: "assets/images/_DSC5138_lg.webp", thumb: "assets/images/_DSC5138_sm.webp", title: "Resort Swimming Pool & Deck", destination: "nangal", category: "pool", caption: "Crystal blue swimming pool with sunbeds set against Aravalli foothills." },
     { src: "assets/images/_DSC5147_lg.webp", thumb: "assets/images/_DSC5147_sm.webp", title: "Grand Celebration Lawn", destination: "shrii-palace-resort", category: "weddings", caption: "Sprawling manicured lawn tailored for royal destination weddings." },
     { src: "assets/images/_DSC5149_lg.webp", thumb: "assets/images/_DSC5149_sm.webp", title: "Wedding Mandap Setting", destination: "shrii-palace-resort", category: "weddings", caption: "Elegantly illuminated open-air stage for sacred vows and evening ceremonies." },
@@ -206,28 +206,28 @@ const RESORTS_DATA = {
   experiences: [
     {
       title: "Shakambhari Mata Pilgrimage",
-      destination: "Both (14 km from Nangal / 22 km from Shrii Palace Resort)",
+      destination: "Both (14 km from Shrii Palace Marriage Garden / 22 km from Shrii Palace Resort)",
       description: "Pay homage at the ancient Shakambhari Devi Shaktipeeth nestled in a serene mountain gorge, an easy 20-minute drive from the resorts.",
       tag: "Spiritual Heritage",
       image: "assets/images/_DSC5142_md.webp"
     },
     {
       title: "Mansamata Sanctuary & Kot Dam Safari",
-      destination: "Nangal (10 km)",
+      destination: "Shrii Palace Marriage Garden (10 km)",
       description: "Embark on guided open-top Jeep safaris across the rugged Aravalli slopes, Kot Dam lake bed, and wildlife sanctuary corridors.",
       tag: "Eco Adventure",
       image: "assets/images/_DSC4754_md.webp"
     },
     {
       title: "Shekhawati Open-Air Art Gallery",
-      destination: "Shrii Palace Resort & Nangal Region",
+      destination: "Shrii Palace Resort & Shrii Palace Marriage Garden Region",
       description: "Explore the world-famous painted havelis, frescoed cenotaphs, and historical forts of Nawalgarh, Mandawa, and Gudha Gorji.",
       tag: "Art & Culture",
       image: "assets/images/_DSC5144_md.webp"
     },
     {
       title: "Farm-Fresh A2 Milk & Royal Rajasthani Feasts",
-      destination: "Nangal & Shrii Palace Resort",
+      destination: "Shrii Palace Marriage Garden & Shrii Palace Resort",
       description: "Indulge in authentic Dal Baati Churma, Gatte ki Sabzi, Ker Sangri, and rich desserts prepared using farm-fresh pure A2 cow milk.",
       tag: "Culinary Legacy",
       image: "assets/images/_DSC5156_md.webp"
