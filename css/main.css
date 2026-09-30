@@ -7056,11 +7056,37 @@ button {
   box-shadow: 0 25px 60px rgba(30, 66, 77, 0.1);
 }
 
-.hospitality-card-icon {
-  font-size: 1.8rem;
+.hospitality-card-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(225, 158, 17, 0.12) 0%, rgba(20, 47, 55, 0.04) 100%);
+  border: 1px solid rgba(225, 158, 17, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 8px 20px rgba(225, 158, 17, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   color: var(--color-gamboge);
-  line-height: 1;
-  margin-bottom: 0.5rem;
+}
+
+.hospitality-card:hover .hospitality-card-icon-wrap {
+  background: linear-gradient(135deg, #E19E11 0%, #C98B0D 100%);
+  border-color: #E19E11;
+  color: #10262D;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(225, 158, 17, 0.35);
+}
+
+.hospitality-card-icon-wrap svg {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.35s ease, stroke 0.35s ease;
+}
+
+.hospitality-card:hover .hospitality-card-icon-wrap svg {
+  transform: scale(1.08);
 }
 
 .hospitality-card-title {
