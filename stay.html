@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/main.css?v=202609301315">
+  <link rel="stylesheet" href="css/main.css?v=202609301427">
 
   <!-- Lenis Smooth Scroll -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
@@ -459,162 +459,543 @@
 </aside>
 
   <main>
-    <!-- Page Hero -->
-    <section class="section-page-hero" style="background-image: linear-gradient(180deg, rgba(14,13,12,0.55) 0%, rgba(14,13,12,0.92) 100%), url('assets/images/_DSC5119_lg.webp');">
-      <div class="container">
-        <span class="eyebrow-tag eyebrow-champagne">Sanctuary & Stays</span>
-        <h1 class="page-hero-title">
-          A Place of Rest<br>
-          <em>and Tranquility.</em>
+    <!-- ============================================================
+         01. MONUMENTAL STAY HERO (Kinetic Typography + Live Stats Bar)
+         ============================================================ -->
+    <section class="stay-hero-monumental">
+      <div class="stay-hero-bg">
+        <img src="assets/images/_DSC5119_lg.webp" alt="Shrii Palace Resorts Luxury Accommodations and Garden Suites" loading="eager">
+      </div>
+      <div class="stay-hero-scrim"></div>
+
+      <div class="container stay-hero-content">
+        <span class="stay-hero-eyebrow">✦ Refined Stays • Rajasthan</span>
+        <h1 class="stay-hero-title">
+          Sanctuary of Rest<br>
+          <em>&amp; Serene Hospitality.</em>
         </h1>
-        <p class="page-hero-whisper">
-          Spacious accommodations designed with natural warmth, garden vistas, private verandahs, and unhurried comfort across both properties.
+        <p class="stay-hero-whisper">
+          Immerse in unhurried living across our two flagship destinations in Shekhawati. From expansive 30+ garden deluxe rooms in the serene Aravalli foothills to regal bridal suites in our grand celebration estate.
         </p>
 
-        <!-- Destination Filter Pills -->
-        <div class="filter-pills-bar">
-          <button class="filter-pill active" data-filter="all">All Accommodations</button>
-          <button class="filter-pill" data-filter="shrii-palace-marriage-garden">01. Shrii Palace Marriage Garden (Resort Stays & 30+ Rooms)</button>
-          <button class="filter-pill" data-filter="shrii-palace-resort">02. Shrii Palace Resort (Celebration Stays)</button>
+        <!-- Live Key Stats Grid -->
+        <div class="stay-hero-stats">
+          <div class="stay-stat-item">
+            <span class="stay-stat-val">30+</span>
+            <span class="stay-stat-lbl">Suites &amp; Rooms</span>
+          </div>
+          <div class="stay-stat-item">
+            <span class="stay-stat-val">02</span>
+            <span class="stay-stat-lbl">Flagship Horizons</span>
+          </div>
+          <div class="stay-stat-item">
+            <span class="stay-stat-val">100%</span>
+            <span class="stay-stat-lbl">Climate Controlled</span>
+          </div>
+          <div class="stay-stat-item">
+            <span class="stay-stat-val">24/7</span>
+            <span class="stay-stat-lbl">Royal Hospitality</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Rooms Editorial Stories -->
+    <!-- ============================================================
+         02. INTERACTIVE STICKY HORIZON FILTER BAR
+         ============================================================ -->
+    <nav class="stay-filter-section" id="stayFilterBar" aria-label="Room Destination Filters">
+      <div class="container stay-filter-container">
+        <div class="stay-filter-pills" role="tablist">
+          <button class="stay-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+            <span>All Accommodations</span>
+            <span class="stay-filter-count">4</span>
+          </button>
+          <button class="stay-filter-btn" data-filter="shrii-palace-resort" role="tab" aria-selected="false">
+            <span>01. Shrii Palace Resort</span>
+            <span class="stay-filter-count">1</span>
+          </button>
+          <button class="stay-filter-btn" data-filter="shrii-palace-marriage-garden" role="tab" aria-selected="false">
+            <span>02. Shrii Palace Marriage Garden</span>
+            <span class="stay-filter-count">3</span>
+          </button>
+        </div>
+
+        <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20check%20room%20availability%20for%20my%20dates." target="_blank" rel="noopener" class="stay-concierge-quick-trigger">
+          <span>WhatsApp Direct Desk</span>
+          <span>→</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+         03. HIGH-CONTRAST LUXURY SUITE SHOWCASE CARDS
+         ============================================================ -->
     <section class="section-stays-editorial" style="background-color: var(--bg-primary);">
       <div class="container">
+        <div class="stay-cards-showcase">
 
-        <!-- Story 1: Shrii Palace Marriage Garden Super Deluxe Suite -->
-        <article class="stay-story-grid" data-dest="shrii-palace-marriage-garden">
-          <div class="stay-media-col">
-            <div class="stay-image-frame">
-              <img src="assets/images/_DSC5119_lg.webp" alt="Super Deluxe Suite Exterior and Garden Wing at Shrii Palace Marriage Garden" loading="lazy">
-              <span class="stay-location-badge">Shrii Palace Marriage Garden Destination</span>
+          <!-- Suite 01: Super Deluxe Suite (Shrii Palace Marriage Garden) -->
+          <article class="stay-luxury-card" data-dest="shrii-palace-marriage-garden">
+            <div class="stay-card-media">
+              <img src="assets/images/_DSC5119_lg.webp" alt="Super Deluxe Suite with private balcony at Shrii Palace Marriage Garden" loading="lazy">
+              <span class="stay-dest-badge">02. Shrii Palace Marriage Garden Destination</span>
+              <span class="stay-gallery-count-badge">📷 4 Photos</span>
             </div>
-          </div>
-          <div class="stay-info-col">
-            <span class="eyebrow-tag">Mountain & Pool Vistas</span>
-            <h2 class="stay-title">Super Deluxe Suite</h2>
-            <p class="stay-desc">
-              Spacious rooms with private verandahs, warm timber accents, climate control, and scenic views of the Aravalli hills and garden lawns.
-            </p>
-            <div class="stay-amenities-minimal">
-              <span>2 Guests (Extra Bed Available)</span>
-              <span>King Sized Bed</span>
-              <span>Attached Modern Bath</span>
-              <span>Room Service</span>
-            </div>
-            <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20reserve%20the%20Super%20Deluxe%20Suite%20at%20Nangal." target="_blank" rel="noopener" class="editorial-text-link">
-              <span>Reserve via WhatsApp Concierge</span>
-              <span class="arrow-glyph">→</span>
-            </a>
-          </div>
-        </article>
+            <div class="stay-card-info">
+              <span class="stay-card-eyebrow">✦ Aravalli Mountain &amp; Pool Facing</span>
+              <h2 class="stay-card-title">Super Deluxe Suite</h2>
+              <p class="stay-card-desc">
+                Generously appointed sanctuary featuring panoramic views toward the Aravalli hills and azure resort pool. Includes private verandah seating, custom teak woodwork, and soothing natural daylight.
+              </p>
+              
+              <!-- Specs Grid -->
+              <div class="stay-specs-grid">
+                <div class="stay-spec-cell">
+                  <span class="spec-cell-label">Dimension</span>
+                  <span class="spec-cell-val">450 Sq.Ft.</span>
+                </div>
+                <div class="stay-spec-cell">
+                  <span class="spec-cell-label">Occupancy</span>
+                  <span class="spec-cell-val">2 - 3 Guests</span>
+                </div>
+                <div class="stay-spec-cell">
+                  <span class="spec-cell-label">Bed Type</span>
+                  <span class="spec-cell-val">King Orthopedic</span>
+                </div>
+              </div>
 
-        <!-- Story 2: Shrii Palace Marriage Garden Deluxe Room -->
-        <article class="stay-story-grid reversed" data-dest="shrii-palace-marriage-garden">
-          <div class="stay-media-col">
-            <div class="stay-image-frame">
-              <img src="assets/images/_DSC5111_lg.webp" alt="Deluxe Room Verandah Patio Entrance" loading="lazy">
-              <span class="stay-location-badge">Shrii Palace Marriage Garden Destination</span>
-            </div>
-          </div>
-          <div class="stay-info-col">
-            <span class="eyebrow-tag">Garden & Courtyard Facing</span>
-            <h2 class="stay-title">Deluxe Room</h2>
-            <p class="stay-desc">
-              Comfortably furnished guest rooms featuring modern en-suite bathrooms, high-speed Wi-Fi, 24/7 hot water, and peaceful courtyard vistas.
-            </p>
-            <div class="stay-amenities-minimal">
-              <span>2 Person Occupancy</span>
-              <span>Modern En-Suite Bathroom</span>
-              <span>High Speed Wi-Fi</span>
-              <span>Tea & Coffee Station</span>
-            </div>
-            <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20reserve%20the%20Deluxe%20Room%20at%20Nangal." target="_blank" rel="noopener" class="editorial-text-link">
-              <span>Reserve via WhatsApp Concierge</span>
-              <span class="arrow-glyph">→</span>
-            </a>
-          </div>
-        </article>
+              <!-- Amenity Badges -->
+              <div class="stay-amenities-tags">
+                <span class="stay-amenity-tag">Private Verandah</span>
+                <span class="stay-amenity-tag">Poolside Outlook</span>
+                <span class="stay-amenity-tag">Rain Shower</span>
+                <span class="stay-amenity-tag">A2 Dairy Tea Bar</span>
+                <span class="stay-amenity-tag">High-Speed Wi-Fi</span>
+                <span class="stay-amenity-tag">24/7 Room Dining</span>
+              </div>
 
-        <!-- Story 3: Shrii Palace Marriage Garden Family Suite -->
-        <article class="stay-story-grid" data-dest="shrii-palace-marriage-garden">
-          <div class="stay-media-col">
-            <div class="stay-image-frame">
-              <img src="assets/images/_DSC5158_lg.webp" alt="Family Suite Garden Grounds at Shrii Palace Marriage Garden" loading="lazy">
-              <span class="stay-location-badge">Shrii Palace Marriage Garden Destination</span>
+              <!-- Action CTAs -->
+              <div class="stay-card-actions">
+                <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20reserve%20the%20Super%20Deluxe%20Suite%20at%20Shrii%20Palace%20Marriage%20Garden." target="_blank" rel="noopener" class="btn-stay-whatsapp">
+                  <span>Reserve via WhatsApp Concierge</span>
+                  <span>→</span>
+                </a>
+                <a href="destinations/shrii-palace-marriage-garden-rooms.html" class="btn-stay-outline">
+                  <span>View Room Details</span>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="stay-info-col">
-            <span class="eyebrow-tag">Family & Group Stays</span>
-            <h2 class="stay-title">Family Suite Room</h2>
-            <p class="stay-desc">
-              Expansive accommodations tailored for family holidays and wedding groups, offering twin sleeping zones and comfortable sitting space.
-            </p>
-            <div class="stay-amenities-minimal">
-              <span>4 Person Occupancy</span>
-              <span>Double King Beds</span>
-              <span>Ensuite Bathroom</span>
-              <span>In-Room Dining</span>
-            </div>
-            <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20reserve%20the%20Family%20Suite%20at%20Nangal." target="_blank" rel="noopener" class="editorial-text-link">
-              <span>Reserve via WhatsApp Concierge</span>
-              <span class="arrow-glyph">→</span>
-            </a>
-          </div>
-        </article>
+          </article>
 
-        <!-- Story 4: Shrii Palace Resort Royal Bridal & Host Suite -->
-        <article class="stay-story-grid reversed" data-dest="shrii-palace-resort">
-          <div class="stay-media-col">
-            <div class="stay-image-frame">
-              <img src="assets/images/_DSC5108_lg.webp" alt="Royal Celebration Suite Wing at Shrii Palace Resort" loading="lazy">
-              <span class="stay-location-badge">Shrii Palace Resort Destination</span>
+          <!-- Suite 02: Royal Bridal & Host Suite (Shrii Palace Resort - Reversed) -->
+          <article class="stay-luxury-card reversed" data-dest="shrii-palace-resort">
+            <div class="stay-card-media">
+              <img src="assets/images/_DSC5108_lg.webp" alt="Royal Bridal Suite Dressing Wing at Shrii Palace Resort" loading="lazy">
+              <span class="stay-dest-badge">01. Shrii Palace Resort Destination</span>
+              <span class="stay-gallery-count-badge">👑 Celebration Wing</span>
             </div>
-          </div>
-          <div class="stay-info-col">
-            <span class="eyebrow-tag">Celebration Stays</span>
-            <h2 class="stay-title">Royal Bridal & Host Suite</h2>
-            <p class="stay-desc">
-              Dedicated dressing suites and luxury accommodations tailored for wedding hosts and couples, with direct access to the celebration lawns.
-            </p>
-            <div class="stay-amenities-minimal">
-              <span>Dedicated Dressing Zone</span>
-              <span>Vanity Lounge</span>
-              <span>Direct Lawn Access</span>
-              <span>24/7 Service</span>
-            </div>
-            <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire%20about%20Bridal%20Suites%20at%20Shrii Palace Resort." target="_blank" rel="noopener" class="editorial-text-link">
-              <span>Enquire for Wedding Hosts</span>
-              <span class="arrow-glyph">→</span>
-            </a>
-          </div>
-        </article>
+            <div class="stay-card-info">
+              <span class="stay-card-eyebrow">✦ Celebration Wing • Grand Lawns Access</span>
+              <h2 class="stay-card-title">Royal Bridal &amp; Host Suite</h2>
+              <p class="stay-card-desc">
+                Engineered specifically for wedding couples, brides, and host families. Features dedicated 360-degree vanity dressing mirrors, staging salon, climate-controlled comfort, and direct step-out access to the main 30,000 sq.ft. celebration lawns.
+              </p>
+              
+              <!-- Specs Grid -->
+              <div class="stay-specs-grid">
+                <div class="stay-spec-cell">
+                  <span class="spec-cell-label">Dimension</span>
+                  <span class="spec-cell-val">600 Sq.Ft.</span>
+                </div>
+                <div class="stay-spec-cell">
+                  <span class="spec-cell-label">Occupancy</span>
+                  <span class="spec-cell-val">Bridal Host Wing</span>
+                </div>
+                <div class="stay-spec-cell">
+                  <span class="spec-cell-label">Direct Access</span>
+                  <span class="spec-cell-val">Main Lawns</span>
+                </div>
+              </div>
 
+              <!-- Amenity Badges -->
+              <div class="stay-amenities-tags">
+                <span class="stay-amenity-tag">Bridal Dressing Salon</span>
+                <span class="stay-amenity-tag">Vanity Lighting Mirrors</span>
+                <span class="stay-amenity-tag">Direct Lawn Access</span>
+                <span class="stay-amenity-tag">24/7 Butler Service</span>
+                <span class="stay-amenity-tag">Dual Wardrobes</span>
+                <span class="stay-amenity-tag">Split AC System</span>
+              </div>
+
+              <!-- Action CTAs -->
+              <div class="stay-card-actions">
+                <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire%20about%20the%20Royal%20Bridal%20Suite%20at%20Shrii%20Palace%20Resort." target="_blank" rel="noopener" class="btn-stay-whatsapp">
+                  <span>Enquire for Wedding Hosts</span>
+                  <span>→</span>
+                </a>
+                <a href="destinations/shrii-palace-resort-rooms.html" class="btn-stay-outline">
+                  <span>Explore Celebration Suites</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Suite 03: Deluxe Garden Room (Shrii Palace Marriage Garden) -->
+          <article class="stay-luxury-card" data-dest="shrii-palace-marriage-garden">
+            <div class="stay-card-media">
+              <img src="assets/images/_DSC5111_lg.webp" alt="Deluxe Garden Room Verandah Patio Entrance" loading="lazy">
+              <span class="stay-dest-badge">02. Shrii Palace Marriage Garden Destination</span>
+              <span class="stay-gallery-count-badge">🌿 30+ Keys Available</span>
+            </div>
+            <div class="stay-card-info">
+              <span class="stay-card-eyebrow">✦ Courtyard &amp; Flora Walkway</span>
+              <h2 class="stay-card-title">Deluxe Garden Room</h2>
+              <p class="stay-card-desc">
+                Elegantly designed garden wing accommodations opening directly onto lush lawns. Designed for restful weekend retreats, visiting family groups, and heritage travelers with modern en-suite amenities.
+              </p>
+              
+              <!-- Specs Grid -->
+              <div class="stay-specs-grid">
+                <div class="stay-spec-cell">
+                  <span class="spec-cell-label">Dimension</span>
+                  <span class="spec-cell-val">350 Sq.Ft.</span>
+                </div>
+                <div class="stay-spec-cell">
+                  <span class="spec-cell-label">Occupancy</span>
+                  <span class="spec-cell-val">2 Adults</span>
+                </div>
+                <div class="stay-spec-cell">
+                  <span class="spec-cell-label">Bed Type</span>
+                  <span class="spec-cell-val">King / Twin</span>
+                </div>
+              </div>
+
+              <!-- Amenity Badges -->
+              <div class="stay-amenities-tags">
+                <span class="stay-amenity-tag">Garden Verandah</span>
+                <span class="stay-amenity-tag">Modern En-Suite Bath</span>
+                <span class="stay-amenity-tag">Tea &amp; Coffee Bar</span>
+                <span class="stay-amenity-tag">High Speed Wi-Fi</span>
+                <span class="stay-amenity-tag">HD LED Television</span>
+                <span class="stay-amenity-tag">24/7 Hot Water</span>
+              </div>
+
+              <!-- Action CTAs -->
+              <div class="stay-card-actions">
+                <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20reserve%20a%20Deluxe%20Garden%20Room%20at%20Shrii%20Palace%20Marriage%20Garden." target="_blank" rel="noopener" class="btn-stay-whatsapp">
+                  <span>Reserve via WhatsApp Concierge</span>
+                  <span>→</span>
+                </a>
+                <a href="destinations/shrii-palace-marriage-garden-rooms.html" class="btn-stay-outline">
+                  <span>View Room Specs</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Suite 04: Grand Family Suite (Shrii Palace Marriage Garden - Reversed) -->
+          <article class="stay-luxury-card reversed" data-dest="shrii-palace-marriage-garden">
+            <div class="stay-card-media">
+              <img src="assets/images/_DSC5158_lg.webp" alt="Grand Family Suite with Mountain View at Shrii Palace Marriage Garden" loading="lazy">
+              <span class="stay-dest-badge">02. Shrii Palace Marriage Garden Destination</span>
+              <span class="stay-gallery-count-badge">👨‍👩‍👧‍👦 Family Wing</span>
+            </div>
+            <div class="stay-card-info">
+              <span class="stay-card-eyebrow">✦ Group &amp; Family Sanctuary</span>
+              <h2 class="stay-card-title">Grand Family Suite</h2>
+              <p class="stay-card-desc">
+                Expansive interconnected living space offering separate sleeping zones, generous sitting lounge, and multi-guest bathroom facilities tailored for effortless family holidays and wedding guest groups.
+              </p>
+              
+              <!-- Specs Grid -->
+              <div class="stay-specs-grid">
+                <div class="stay-spec-cell">
+                  <span class="spec-cell-label">Dimension</span>
+                  <span class="spec-cell-val">650 Sq.Ft.</span>
+                </div>
+                <div class="stay-spec-cell">
+                  <span class="spec-cell-label">Occupancy</span>
+                  <span class="spec-cell-val">4 - 6 Guests</span>
+                </div>
+                <div class="stay-spec-cell">
+                  <span class="spec-cell-label">Beds</span>
+                  <span class="spec-cell-val">Dual King Beds</span>
+                </div>
+              </div>
+
+              <!-- Amenity Badges -->
+              <div class="stay-amenities-tags">
+                <span class="stay-amenity-tag">Twin Sleeping Zones</span>
+                <span class="stay-amenity-tag">Family Sitting Lounge</span>
+                <span class="stay-amenity-tag">Dual Modern Baths</span>
+                <span class="stay-amenity-tag">Garden Verandah</span>
+                <span class="stay-amenity-tag">Farm-to-Table In-Room Dining</span>
+                <span class="stay-amenity-tag">Climate AC</span>
+              </div>
+
+              <!-- Action CTAs -->
+              <div class="stay-card-actions">
+                <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20reserve%20the%20Grand%20Family%20Suite%20at%20Shrii%20Palace%20Marriage%20Garden." target="_blank" rel="noopener" class="btn-stay-whatsapp">
+                  <span>Reserve via WhatsApp Concierge</span>
+                  <span>→</span>
+                </a>
+                <a href="destinations/shrii-palace-marriage-garden-rooms.html" class="btn-stay-outline">
+                  <span>View Details</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 
-    <!-- Global CTA -->
+    <!-- ============================================================
+         04. ROOM SPECIFICATION & COMPARISON MATRIX
+         ============================================================ -->
+    <section class="stay-comparison-section">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <span class="eyebrow-tag" style="color: var(--color-gamboge);">Side-by-Side Comparison</span>
+          <h2 style="font-family: var(--font-royal); font-size: clamp(2rem, 3.2vw, 2.8rem); font-weight: 700; color: var(--text-primary); margin-top: 0.5rem;">
+            Room Specifications &amp; Features
+          </h2>
+          <p style="font-family: var(--font-sans); color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.75rem;">
+            Select the perfect accommodation tailored for your couple getaway, family holiday, or milestone wedding celebration.
+          </p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+          <table class="stay-matrix-table">
+            <thead>
+              <tr>
+                <th>Category &amp; Destination</th>
+                <th>Dimensions</th>
+                <th>Occupancy</th>
+                <th>Outlook &amp; Setting</th>
+                <th>Verandah / Patio</th>
+                <th>Signature Inclusions</th>
+                <th>Direct Booking</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="table-suite-name">Super Deluxe Suite</span>
+                  <span class="table-dest-tag">02. Shrii Palace Marriage Garden</span>
+                </td>
+                <td>450 Sq.Ft.</td>
+                <td>2-3 Guests</td>
+                <td>Aravalli Hills &amp; Pool</td>
+                <td>Private Sun Verandah</td>
+                <td>King Orthopedic Bed, Rain Shower, Tea Station</td>
+                <td>
+                  <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20reserve%20the%20Super%20Deluxe%20Suite." target="_blank" rel="noopener" style="color: var(--color-dark-brown); font-weight: 700; text-decoration: none;">Reserve →</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="table-suite-name">Royal Bridal Suite</span>
+                  <span class="table-dest-tag">01. Shrii Palace Resort</span>
+                </td>
+                <td>600 Sq.Ft.</td>
+                <td>Bridal / Hosts</td>
+                <td>Celebration Lawns</td>
+                <td>Direct Lawn Step-Out</td>
+                <td>360° Vanity Lounge, Butler Support, Dressing Salon</td>
+                <td>
+                  <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire%20about%20Bridal%20Suites." target="_blank" rel="noopener" style="color: var(--color-dark-brown); font-weight: 700; text-decoration: none;">Enquire →</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="table-suite-name">Deluxe Garden Room</span>
+                  <span class="table-dest-tag">02. Shrii Palace Marriage Garden</span>
+                </td>
+                <td>350 Sq.Ft.</td>
+                <td>2 Adults</td>
+                <td>Lush Courtyard Walkways</td>
+                <td>Garden View Porch</td>
+                <td>En-Suite Bath, High-Speed Wi-Fi, Split AC</td>
+                <td>
+                  <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20reserve%20a%20Deluxe%20Garden%20Room." target="_blank" rel="noopener" style="color: var(--color-dark-brown); font-weight: 700; text-decoration: none;">Reserve →</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="table-suite-name">Grand Family Suite</span>
+                  <span class="table-dest-tag">02. Shrii Palace Marriage Garden</span>
+                </td>
+                <td>650 Sq.Ft.</td>
+                <td>4-6 Guests</td>
+                <td>Aravalli Landscape</td>
+                <td>Private Group Balcony</td>
+                <td>Dual King Beds, Living Lounge, Dual Modern Baths</td>
+                <td>
+                  <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20reserve%20the%20Grand%20Family%20Suite." target="_blank" rel="noopener" style="color: var(--color-dark-brown); font-weight: 700; text-decoration: none;">Reserve →</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         05. SIGNATURE HOSPITALITY STANDARDS GRID
+         ============================================================ -->
+    <section class="stay-hospitality-section">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <span class="eyebrow-tag" style="color: var(--color-gamboge);">The Shrii Palace Difference</span>
+          <h2 style="font-family: var(--font-royal); font-size: clamp(2rem, 3.2vw, 2.8rem); font-weight: 700; color: var(--text-primary); margin-top: 0.5rem;">
+            Signature Hospitality Standards
+          </h2>
+          <p style="font-family: var(--font-sans); color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.75rem;">
+            Every reservation includes thoughtful details curated for an authentic, refreshing Rajasthani stay experience.
+          </p>
+        </div>
+
+        <div class="hospitality-cards-grid">
+          <div class="hospitality-card">
+            <div class="hospitality-card-icon">🥛</div>
+            <h3 class="hospitality-card-title">In-House A2 Gaushala Dairy</h3>
+            <p class="hospitality-card-desc">
+              Enjoy fresh morning milk, artisanal bilona ghee, and pure dairy delicacies served daily from our own cattle farm.
+            </p>
+          </div>
+
+          <div class="hospitality-card">
+            <div class="hospitality-card-icon">❄️</div>
+            <h3 class="hospitality-card-title">100% Climate Control</h3>
+            <p class="hospitality-card-desc">
+              All suites feature silent split air-conditioning and heating to maintain perfect comfort in every season.
+            </p>
+          </div>
+
+          <div class="hospitality-card">
+            <div class="hospitality-card-icon">🛎️</div>
+            <h3 class="hospitality-card-title">Direct WhatsApp Concierge</h3>
+            <p class="hospitality-card-desc">
+              One central line for express check-in, in-room dining orders, luggage assistance, and local safari planning.
+            </p>
+          </div>
+
+          <div class="hospitality-card">
+            <div class="hospitality-card-icon">🌿</div>
+            <h3 class="hospitality-card-title">Private Verandahs &amp; Vistas</h3>
+            <p class="hospitality-card-desc">
+              Direct outdoor step-out verandas with fresh air, garden flora, and scenic views of the Aravalli hills.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06. INTERACTIVE FAQ ACCORDION
+         ============================================================ -->
+    <section class="stay-faq-section">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <span class="eyebrow-tag" style="color: var(--color-gamboge);">Frequently Asked Questions</span>
+          <h2 style="font-family: var(--font-royal); font-size: clamp(2rem, 3.2vw, 2.8rem); font-weight: 700; color: var(--text-primary); margin-top: 0.5rem;">
+            Guest Information &amp; Stay Policies
+          </h2>
+          <p style="font-family: var(--font-sans); color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.75rem;">
+            Essential guidelines for an effortless reservation and stay experience.
+          </p>
+        </div>
+
+        <div class="stay-faq-list">
+          <div class="stay-faq-item">
+            <button class="stay-faq-header" type="button" aria-expanded="false">
+              <span class="stay-faq-question">What are the standard check-in and check-out timings?</span>
+              <span class="stay-faq-icon">+</span>
+            </button>
+            <div class="stay-faq-body">
+              <p class="stay-faq-answer">
+                Standard check-in is at 12:00 PM and check-out is at 11:00 AM. Early check-in or late check-out can be accommodated subject to room availability upon request with our concierge desk.
+              </p>
+            </div>
+          </div>
+
+          <div class="stay-faq-item">
+            <button class="stay-faq-header" type="button" aria-expanded="false">
+              <span class="stay-faq-question">Which property is better for residential weddings vs weekend leisure?</span>
+              <span class="stay-faq-icon">+</span>
+            </button>
+            <div class="stay-faq-body">
+              <p class="stay-faq-answer">
+                For large wedding celebrations and milestone events, <strong>Shrii Palace Resort</strong> offers grand 30,000+ sq.ft. lawns and dedicated bridal wings. For peaceful residential retreats, weekend leisure, swimming pool relaxation, and 30+ garden rooms, <strong>Shrii Palace Marriage Garden</strong> provides the ideal mountain foothill sanctuary.
+              </p>
+            </div>
+          </div>
+
+          <div class="stay-faq-item">
+            <button class="stay-faq-header" type="button" aria-expanded="false">
+              <span class="stay-faq-question">Is pure vegetarian and Jain food available for dining?</span>
+              <span class="stay-faq-icon">+</span>
+            </button>
+            <div class="stay-faq-body">
+              <p class="stay-faq-answer">
+                Yes, 100% pure vegetarian Rajasthani and North Indian cuisine is prepared fresh in our kitchens. Specialized Jain meals without root vegetables are happily prepared upon prior notice.
+              </p>
+            </div>
+          </div>
+
+          <div class="stay-faq-item">
+            <button class="stay-faq-header" type="button" aria-expanded="false">
+              <span class="stay-faq-question">Can we book full room blocks for marriage parties and corporate offsites?</span>
+              <span class="stay-faq-icon">+</span>
+            </button>
+            <div class="stay-faq-body">
+              <p class="stay-faq-answer">
+                Yes! We offer exclusive resort buyouts and group block allocations across both destinations, ensuring complete privacy, customized dining menus, and dedicated hospitality coordination.
+              </p>
+            </div>
+          </div>
+
+          <div class="stay-faq-item">
+            <button class="stay-faq-header" type="button" aria-expanded="false">
+              <span class="stay-faq-question">How do I confirm a direct reservation without third-party commission?</span>
+              <span class="stay-faq-icon">+</span>
+            </button>
+            <div class="stay-faq-body">
+              <p class="stay-faq-answer">
+                You can connect directly with our central reservations desk via WhatsApp or phone at <a href="tel:+919509771500" style="color: var(--color-dark-brown); font-weight: 700;">+91 95097 71500</a> to receive instant availability, custom seasonal rates, and direct booking confirmation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         07. FINAL ESCAPE RESERVATION CTA
+         ============================================================ -->
     <section class="section-final-escape">
       <div class="escape-backdrop-frame">
-        <img src="assets/images/_DSC5117_lg.webp" alt="Shrii Palace Resorts" loading="lazy">
+        <img src="assets/images/_DSC5117_lg.webp" alt="Shrii Palace Resorts Sanctuary Lawns and Suites" loading="lazy">
       </div>
       <div class="escape-scrim-deep"></div>
 
       <div class="container escape-content-center">
-        <span class="eyebrow-tag eyebrow-champagne">Check Availability Directly</span>
+        <span class="eyebrow-tag eyebrow-champagne">Check Direct Availability</span>
         <h2 class="escape-display-title">
           Reserve Your<br>
           <em>Sanctuary.</em>
         </h2>
         <p class="escape-subtext">
-          Direct reservations guarantee the best personalized service and room allocation for your dates.
+          Direct reservations guarantee the best personalized hospitality, complimentary tea service, and priority room allocation across both destinations.
         </p>
         <div class="escape-buttons-group">
           <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20check%20room%20availability." target="_blank" rel="noopener" class="btn-editorial-gold">
             <span>WhatsApp Reservations (+91 95097 71500)</span>
             <span class="arrow-glyph">→</span>
+          </a>
+          <a href="contact.html" class="btn-editorial-light">
+            <span>View Route &amp; Directions</span>
           </a>
         </div>
       </div>
@@ -681,6 +1062,6 @@
 
   <!-- Editorial Footer -->
 
-  <script src="js/main.js?v=202609301315" defer></script>
+  <script src="js/main.js?v=202609301427" defer></script>
 </body>
 </html>

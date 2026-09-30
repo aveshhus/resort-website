@@ -511,7 +511,7 @@ function initFilterPills() {
 
 function initScrollReveals() {
   const revealElements = document.querySelectorAll(
-    '.exp-choice-card, .stay-story-grid, .destination-territory-panel, .testimonial-card, .faq-editorial-item, .atmosphere-statement, .resort-identity-card, .shared-pillar-item, .moment-media-full, .moment-media-framed, .rooms-feature-frame, .rooms-secondary-frame, .subpage-spec-card, .subpage-gallery-item'
+    '.exp-choice-card, .stay-luxury-card, .stay-story-grid, .hospitality-card, .comparison-table-wrapper, .stay-faq-item, .destination-territory-panel, .testimonial-card, .faq-editorial-item, .atmosphere-statement, .resort-identity-card, .shared-pillar-item, .moment-media-full, .moment-media-framed, .rooms-feature-frame, .rooms-secondary-frame, .subpage-spec-card, .subpage-gallery-item'
   );
 
   if (!revealElements.length) return;
@@ -962,10 +962,88 @@ function initJourneysInMotion() {
     });
   });
 
-  // Container pause on hover
-  container.addEventListener('mouseenter', () => { isPaused = true; });
-  container.addEventListener('mouseleave', () => { isPaused = false; });
-
   // Start Autoplay
   startAutoplay();
+}
+
+/* ==========================================================================
+   14. STAY & ACCOMMODATIONS INTERACTIVE CONTROLLER
+   ========================================================================== */
+
+function initFilterPills() {
+  const filterButtons = document.querySelectorAll('.stay-filter-btn, .filter-pill');
+  const cards = document.querySelectorAll('.stay-luxury-card, .stay-story-grid, .gallery-item-card');
+
+  if (!filterButtons.length) return;
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      if (!filter) return;
+
+      // Update active state on buttons in the same container
+      const parentContainer = btn.parentElement;
+      if (parentContainer) {
+        parentContainer.querySelectorAll('.stay-filter-btn, .filter-pill').forEach(b => b.classList.remove('active'));
+      }
+      btn.classList.add('active');
+
+      // Filter cards
+      cards.forEach(card => {
+        const dest = card.getAttribute('data-dest');
+        if (filter === 'all' || dest === filter) {
+          card.style.display = '';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 20);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(15px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 250);
+        }
+      });
+    });
+  });
+
+  // Handle FAQ Accordion Toggles
+  const faqHeaders = document.querySelectorAll('.stay-faq-header');
+  faqHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.closest('.stay-faq-item');
+      if (!item) return;
+      const isOpen = item.classList.contains('active');
+      
+      // Close other open FAQs
+      document.querySelectorAll('.stay-faq-item.active').forEach(openItem => {
+        if (openItem !== item) openItem.classList.remove('active');
+      });
+
+      if (!isOpen) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  });
+}
+
+function initMagneticButtons() {
+  const magnets = document.querySelectorAll('.btn-stay-whatsapp, .btn-editorial-gold, .btn-editorial-light');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  magnets.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) * 0.25;
+      const y = (e.clientY - rect.top - rect.height / 2) * 0.25;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
 }
