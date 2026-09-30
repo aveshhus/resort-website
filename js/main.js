@@ -319,11 +319,13 @@ function initEditorialHeader() {
     if (open) {
       mobileDrawer?.classList.add('open');
       menuBtn?.classList.add('open');
+      menuBtn?.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
       if (window.lenisInstance) window.lenisInstance.stop();
     } else {
       mobileDrawer?.classList.remove('open');
       menuBtn?.classList.remove('open');
+      menuBtn?.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
       if (window.lenisInstance) window.lenisInstance.start();
     }
@@ -336,8 +338,16 @@ function initEditorialHeader() {
 
   drawerClose?.addEventListener('click', () => toggleMobileDrawer(false));
 
-  document.querySelectorAll('.mobile-drawer-links a').forEach(link => {
+  // Close when any link inside drawer is clicked
+  mobileDrawer?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => toggleMobileDrawer(false));
+  });
+
+  // Close on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileDrawer?.classList.contains('open')) {
+      toggleMobileDrawer(false);
+    }
   });
 }
 

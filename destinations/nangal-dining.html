@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/main.css?v=202609291242">
+  <link rel="stylesheet" href="../css/main.css?v=202609301053">
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 </head>
 <body data-page="nangal-dining" class="editorial-body">
@@ -201,56 +201,238 @@
 </header>
 
 <!-- ============================================================
-     MOBILE EDITORIAL DRAWER
+     LUXURY MOBILE EDITORIAL DRAWER (High-Contrast Obsidian & Gold)
      ============================================================ -->
 <aside class="mobile-editorial-drawer" id="mobileDrawer" aria-label="Mobile Navigation" data-lenis-prevent>
+  <div class="drawer-ambient-glow" aria-hidden="true"></div>
+
+  <!-- Top Bar: Brand Crest + Close Button -->
   <div class="mobile-drawer-top">
-    <div class="header-brand">
-      <img src="../assets/images/logo.webp" alt="Shrii Palace Logo" class="brand-crest" style="height: 36px;">
-      <div class="header-brand-text">
-        <span class="brand-title" style="font-size: 0.95rem;">Shrii Palace</span>
-        <span class="brand-subtitle" style="font-size: 0.55rem;">Resorts • Rajasthan</span>
+    <a href="../index.html" class="drawer-brand" aria-label="Shrii Palace Resorts Home">
+      <img src="../assets/images/logo.webp" alt="Shrii Palace Crest" class="brand-crest drawer-crest">
+      <div class="drawer-brand-text">
+        <span class="brand-title">Shrii Palace</span>
+        <span class="brand-subtitle">Resorts • Rajasthan</span>
       </div>
-    </div>
+    </a>
     <button class="mobile-drawer-close" id="drawerClose" aria-label="Close Navigation Menu">
-      <span>✕</span>
+      <span class="close-icon">✕</span>
     </button>
   </div>
 
-  <nav class="mobile-drawer-links">
-    <div class="mobile-drawer-group-title">01. Destination Udaipurwati</div>
-    <a href="../destinations/udaipurwati.html">— Property Overview</a>
-    <a href="../destinations/udaipurwati-weddings.html">— 30,000+ Sq.Ft. Heritage Lawns</a>
-    <a href="../destinations/udaipurwati-rooms.html">— Celebration &amp; Bridal Suites</a>
-    <a href="../destinations/udaipurwati-banquets.html">— Grand Pillarless Ballroom</a>
-    <a href="../destinations/udaipurwati-gallery.html">— Event Visual Journal</a>
-    <a href="../destinations/udaipurwati-location.html">— SH-37 Gudha Gorji Route</a>
+  <!-- Quick Access Luxury Pills -->
+  <div class="drawer-quick-pills">
+    <a href="../stay.html" class="drawer-pill">Stay</a>
+    <a href="../weddings.html" class="drawer-pill">Weddings</a>
+    <a href="../events.html" class="drawer-pill">Events</a>
+    <a href="../dining.html" class="drawer-pill">Dining</a>
+    <a href="../gallery.html" class="drawer-pill">Gallery</a>
+    <a href="../enquire.html" class="drawer-pill drawer-pill-highlight">Enquire</a>
+  </div>
 
-    <div class="mobile-drawer-group-title" style="margin-top:1.5rem;">02. Destination Nangal</div>
-    <a href="../destinations/nangal.html">— Mountain Sanctuary Hub</a>
-    <a href="../destinations/nangal-rooms.html">— 30+ Garden Deluxe Rooms</a>
-    <a href="../destinations/nangal-weddings.html">— Mountain Foothill Weddings</a>
-    <a href="../destinations/nangal-banquets.html">— Conference &amp; Banquet Hall</a>
-    <a href="../destinations/nangal-dining.html">— In-House A2 Gaushala Dairy</a>
-    <a href="../destinations/nangal-gallery.html">— Resort &amp; Pool Visuals</a>
-    <a href="../destinations/nangal-location.html">— Sikar Road Highway Route</a>
+  <!-- Main Scrollable Navigation Body -->
+  <div class="drawer-scroll-body">
+    <nav class="mobile-drawer-nav" aria-label="Mobile Directory">
+      
+      <!-- Group 1: Udaipurwati -->
+      <div class="drawer-section">
+        <div class="drawer-section-header">
+          <span class="section-num">01</span>
+          <span class="section-title">Destination Udaipurwati</span>
+          <span class="section-tag">Celebrations</span>
+        </div>
+        <div class="drawer-section-cards">
+          <a href="../destinations/udaipurwati.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Property Overview</span>
+              <span class="link-card-desc">Grand celebration grounds &amp; heritage lawns</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../destinations/udaipurwati-weddings.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">30,000+ Sq.Ft. Lawns</span>
+              <span class="link-card-desc">Royal Mandaps &amp; Baraat processions</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../destinations/udaipurwati-rooms.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Celebration Suites</span>
+              <span class="link-card-desc">Bridal dressing &amp; luxury event wings</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../destinations/udaipurwati-banquets.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Grand Pillarless Ballroom</span>
+              <span class="link-card-desc">Climate-controlled indoor banquets</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../destinations/udaipurwati-gallery.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Event Visual Journal</span>
+              <span class="link-card-desc">Photography from real celebrations</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../destinations/udaipurwati-location.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">SH-37 Highway Route</span>
+              <span class="link-card-desc">Gudha Gorji bypass access &amp; directions</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+        </div>
+      </div>
 
-    <div class="mobile-drawer-group-title" style="margin-top:1.5rem;">03. Brand Hubs &amp; Experiences</div>
-    <a href="../stay.html">Stay &amp; Accommodations Guide</a>
-    <a href="../weddings.html">Royal Destination Weddings</a>
-    <a href="../events.html">Corporate Offsites &amp; Banquets</a>
-    <a href="../dining.html">Dining &amp; Pure Dairy</a>
-    <a href="../experiences.html">Shakambhari Temple &amp; Safaris</a>
-    <a href="../gallery.html">Master Photo Journal (140+ Assets)</a>
-    <a href="../about.html">About Shrii Palace Heritage</a>
-    <a href="../contact.html">Route Maps &amp; Contact Concierge</a>
-    <a href="../enquire.html">Online Booking Enquiry Form</a>
-  </nav>
+      <!-- Group 2: Nangal -->
+      <div class="drawer-section">
+        <div class="drawer-section-header">
+          <span class="section-num">02</span>
+          <span class="section-title">Destination Nangal</span>
+          <span class="section-tag">Sanctuary</span>
+        </div>
+        <div class="drawer-section-cards">
+          <a href="../destinations/nangal.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Property Overview</span>
+              <span class="link-card-desc">Aravalli mountain foothill retreat</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../destinations/nangal-rooms.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">30+ Garden Deluxe Rooms</span>
+              <span class="link-card-desc">Private verandahs &amp; mountain views</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../destinations/nangal-weddings.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Mountain Foothill Weddings</span>
+              <span class="link-card-desc">Poolside sangeet &amp; residential ceremonies</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../destinations/nangal-banquets.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Conference &amp; Banquet Hall</span>
+              <span class="link-card-desc">Indoor seminars &amp; private dining</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../destinations/nangal-dining.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">In-House A2 Gaushala Dairy</span>
+              <span class="link-card-desc">Pure milk, artisanal ghee &amp; Rajasthani feasts</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../destinations/nangal-gallery.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Resort &amp; Pool Visuals</span>
+              <span class="link-card-desc">Aravalli gardens &amp; scenic photography</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../destinations/nangal-location.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Sikar Road Route</span>
+              <span class="link-card-desc">30km Sikar, 118km Jaipur (2 hrs drive)</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+        </div>
+      </div>
 
+      <!-- Group 3: Brand Hubs & Discovery -->
+      <div class="drawer-section">
+        <div class="drawer-section-header">
+          <span class="section-num">03</span>
+          <span class="section-title">Brand Hubs &amp; Discovery</span>
+          <span class="section-tag">Experience</span>
+        </div>
+        <div class="drawer-section-cards">
+          <a href="../stay.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">All Accommodations</span>
+              <span class="link-card-desc">Compare rooms across Udaipurwati &amp; Nangal</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../weddings.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Royal Weddings Hub</span>
+              <span class="link-card-desc">Destination wedding packages &amp; planning</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../events.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Banquets &amp; Offsites</span>
+              <span class="link-card-desc">Corporate summits &amp; social celebrations</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../dining.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Dining &amp; Pure Dairy</span>
+              <span class="link-card-desc">Farm-to-table dining &amp; A2 delicacies</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../experiences.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Experiences &amp; Safari</span>
+              <span class="link-card-desc">Shakambhari Temple &amp; Mansamata hills</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../gallery.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Master Visual Journal</span>
+              <span class="link-card-desc">140+ authentic high-resolution photos</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../about.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Brand Heritage Story</span>
+              <span class="link-card-desc">Roots in Shekhawati nobility &amp; hospitality</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+          <a href="../contact.html" class="drawer-link-card">
+            <div class="link-card-content">
+              <span class="link-card-title">Contact &amp; Access</span>
+              <span class="link-card-desc">Maps, route directions &amp; direct helplines</span>
+            </div>
+            <span class="link-card-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+    </nav>
+  </div>
+
+  <!-- Direct Concierge Footer -->
   <div class="mobile-drawer-footer">
-    <span class="drawer-concierge-label">Direct Concierge Desk:</span>
-    <a href="tel:+919509771500" class="drawer-phone-link">+91 95097 71500</a>
-    <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire%20about%20your%20destinations." target="_blank" rel="noopener" class="drawer-wa-link">WhatsApp Concierge →</a>
+    <div class="drawer-concierge-row">
+      <div class="drawer-concierge-info">
+        <span class="drawer-concierge-badge">Direct Concierge</span>
+        <a href="tel:+919509771500" class="drawer-phone-val">+91 95097 71500</a>
+      </div>
+      <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire%20about%20your%20destinations." target="_blank" rel="noopener" class="drawer-wa-btn">
+        <span>WhatsApp Concierge</span>
+        <span class="wa-arrow">→</span>
+      </a>
+    </div>
+    <div class="drawer-footer-sublinks">
+      <a href="../enquire.html" class="drawer-sublink-btn">Book / Enquire Online</a>
+      <a href="../destinations/index.html" class="drawer-sublink-btn">Compare Destinations</a>
+    </div>
   </div>
 </aside>
 
@@ -430,6 +612,6 @@
 
   <!-- Footer -->
 
-  <script src="../js/main.js?v=202609291242" defer></script>
+  <script src="../js/main.js?v=202609301053" defer></script>
 </body>
 </html>
