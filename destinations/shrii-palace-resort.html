@@ -24,6 +24,697 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../css/main.css?v=202609301553">
 
+  <!-- Scoped Styles for Shri Palace Resort Destination Enhancements -->
+  <style id="resort-destination-enhancements">
+    /* Key Stats Strip */
+    .resort-stats-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(18, 17, 16, 0.12);
+    }
+    @media (min-width: 768px) {
+      .resort-stats-strip {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+      }
+    }
+    .resort-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .resort-stat-num {
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--color-gold, #C5A880);
+      line-height: 1.1;
+      margin-bottom: 0.25rem;
+    }
+    .resort-stat-label {
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted, #7A7570);
+      font-weight: 600;
+    }
+
+    /* 4-Item Celebration Venues Grid */
+    .resort-venues-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+    @media (min-width: 900px) {
+      .resort-venues-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 3rem;
+      }
+    }
+    .resort-venue-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .resort-venue-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(197, 168, 128, 0.4);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+    }
+    .resort-venue-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #000;
+    }
+    .resort-venue-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .resort-venue-card:hover .resort-venue-media img {
+      transform: scale(1.05);
+    }
+    .resort-venue-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      padding: 0.35rem 0.75rem;
+      background: rgba(14, 13, 12, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(197, 168, 128, 0.3);
+      color: var(--color-gold, #C5A880);
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .resort-venue-body {
+      padding: 1.75rem;
+    }
+    .resort-venue-title {
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 0.65rem;
+    }
+    .resort-venue-text {
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: rgba(247, 244, 238, 0.78);
+      margin: 0;
+    }
+
+    /* Dedicated Cinematic Video Showcase */
+    .section-resort-cinema {
+      background: radial-gradient(circle at 50% 15%, rgba(197, 168, 128, 0.08) 0%, rgba(14, 13, 12, 1) 70%);
+      color: #FFFFFF;
+      padding: clamp(4rem, 8vw, 7rem) 0;
+      border-top: 1px solid rgba(197, 168, 128, 0.15);
+      border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .cinema-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+    @media (min-width: 1024px) {
+      .cinema-layout-grid {
+        grid-template-columns: 1.65fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+    }
+    .cinema-player-wrapper {
+      background: #08090B;
+      border: 1px solid rgba(197, 168, 128, 0.35);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px -10px rgba(197, 168, 128, 0.15);
+    }
+    .cinema-video-screen {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+    .cinema-video-screen video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      background: #000;
+    }
+    .cinema-now-playing {
+      padding: 1.5rem 1.75rem;
+      background: rgba(18, 19, 23, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .cinema-np-tag {
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: var(--color-gold, #C5A880);
+      text-transform: uppercase;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .cinema-np-tag::before {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+    .cinema-np-title {
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 1.2rem;
+      color: #FFFFFF;
+      margin: 0;
+    }
+    .cinema-np-desc {
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      font-size: 0.88rem;
+      color: rgba(247, 244, 238, 0.72);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Playlist Switcher */
+    .cinema-playlist-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    .cinema-playlist-title {
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-gold, #C5A880);
+      margin-bottom: 0.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cinema-playlist-count {
+      font-size: 0.75rem;
+      color: rgba(247, 244, 238, 0.5);
+    }
+    .cinema-track-item {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      padding: 0.85rem 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-align: left;
+      width: 100%;
+    }
+    .cinema-track-item:hover {
+      background: rgba(197, 168, 128, 0.08);
+      border-color: rgba(197, 168, 128, 0.35);
+      transform: translateX(4px);
+    }
+    .cinema-track-item.active {
+      background: rgba(197, 168, 128, 0.12);
+      border-color: var(--color-gold, #C5A880);
+      box-shadow: 0 4px 20px rgba(197, 168, 128, 0.15);
+    }
+    .track-thumb-frame {
+      position: relative;
+      width: 88px;
+      aspect-ratio: 16 / 10;
+      border-radius: 3px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #000;
+    }
+    .track-thumb-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .track-play-badge {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.45);
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      transition: background 0.2s ease;
+    }
+    .cinema-track-item:hover .track-play-badge,
+    .cinema-track-item.active .track-play-badge {
+      background: rgba(197, 168, 128, 0.75);
+      color: #08090B;
+    }
+    .track-text-details {
+      flex: 1;
+      min-width: 0;
+    }
+    .track-tag-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.25rem;
+    }
+    .track-tag-pill {
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-gold, #C5A880);
+      font-weight: 700;
+    }
+    .track-playing-indicator {
+      font-size: 0.68rem;
+      color: #22c55e;
+      font-weight: 600;
+      display: none;
+    }
+    .cinema-track-item.active .track-playing-indicator {
+      display: inline;
+    }
+    .track-main-title {
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 1.35;
+      margin-bottom: 0.2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .track-brief {
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      font-size: 0.8rem;
+      color: rgba(247, 244, 238, 0.6);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    /* Accommodations 3-Card Grid */
+    .resort-cards-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    @media (min-width: 768px) {
+      .resort-cards-grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .resort-suite-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(18, 17, 16, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(18, 17, 16, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .resort-suite-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(197, 168, 128, 0.5);
+      box-shadow: 0 20px 40px rgba(18, 17, 16, 0.1);
+    }
+    .resort-suite-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 11;
+      overflow: hidden;
+      background: #111;
+    }
+    .resort-suite-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .resort-suite-card:hover .resort-suite-media img {
+      transform: scale(1.06);
+    }
+    .resort-suite-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      padding: 0.35rem 0.75rem;
+      background: rgba(14, 13, 12, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(197, 168, 128, 0.3);
+      color: var(--color-gold, #C5A880);
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .resort-suite-content {
+      padding: 1.75rem;
+    }
+    .resort-suite-title {
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-dark, #121110);
+      margin-bottom: 0.5rem;
+    }
+    .resort-suite-desc {
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text-muted, #5A5652);
+      margin: 0;
+    }
+
+    /* Amenities & Dining 4-Card Grid */
+    .resort-amenities-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    @media (min-width: 640px) {
+      .resort-amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .resort-amenities-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .resort-amenity-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .resort-amenity-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(197, 168, 128, 0.4);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+    }
+    .resort-amenity-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #000;
+    }
+    .resort-amenity-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .resort-amenity-card:hover .resort-amenity-media img {
+      transform: scale(1.06);
+    }
+    .resort-amenity-body {
+      padding: 1.5rem;
+    }
+    .resort-amenity-title {
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+    }
+    .resort-amenity-text {
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      font-size: 0.85rem;
+      line-height: 1.55;
+      color: rgba(247, 244, 238, 0.72);
+      margin: 0;
+    }
+
+    /* Photographic Mosaic Grid with Lightbox */
+    .resort-mosaic-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    @media (min-width: 600px) {
+      .resort-mosaic-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .resort-mosaic-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.75rem;
+      }
+    }
+    .mosaic-card {
+      position: relative;
+      aspect-ratio: 16 / 11;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #08090B;
+      border: 1px solid rgba(18, 17, 16, 0.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .mosaic-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+    }
+    .mosaic-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mosaic-card:hover img {
+      transform: scale(1.06);
+    }
+    .mosaic-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(14, 13, 12, 0.1) 0%, rgba(14, 13, 12, 0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem;
+      transition: background 0.3s ease;
+    }
+    .mosaic-card:hover .mosaic-card-overlay {
+      background: linear-gradient(180deg, rgba(14, 13, 12, 0.2) 0%, rgba(14, 13, 12, 0.95) 100%);
+    }
+    .mosaic-card-badge {
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-gold, #C5A880);
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .mosaic-card-title {
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin: 0;
+      line-height: 1.35;
+    }
+    .mosaic-card-zoom-icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: rgba(14, 13, 12, 0.7);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--color-gold, #C5A880);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      opacity: 0;
+      transform: scale(0.85);
+      transition: all 0.25s ease;
+    }
+    .mosaic-card:hover .mosaic-card-zoom-icon {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Fullscreen Editorial Lightbox */
+    .resort-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .resort-lightbox.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    .resort-lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(6, 7, 9, 0.96);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      cursor: pointer;
+    }
+    .resort-lightbox-modal {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1100px;
+      max-height: 94vh;
+      padding: 1rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .resort-lightbox-stage {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-height: 72vh;
+    }
+    .resort-lightbox-img {
+      max-width: 90vw;
+      max-height: 70vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.95);
+      transition: opacity 0.2s ease;
+    }
+    .resort-lightbox-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 3.25rem;
+      height: 3.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(14, 16, 20, 0.85);
+      backdrop-filter: blur(10px);
+      color: #FFFFFF;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .resort-lightbox-btn:hover {
+      background: var(--color-gold, #C5A880);
+      color: #08090B;
+      border-color: var(--color-gold, #C5A880);
+    }
+    .resort-lightbox-btn.prev { left: -1rem; }
+    .resort-lightbox-btn.next { right: -1rem; }
+    @media (max-width: 768px) {
+      .resort-lightbox-btn {
+        width: 2.75rem;
+        height: 2.75rem;
+        font-size: 1.25rem;
+      }
+      .resort-lightbox-btn.prev { left: 0.25rem; }
+      .resort-lightbox-btn.next { right: 0.25rem; }
+    }
+    .resort-lightbox-close {
+      position: absolute;
+      top: -2.75rem;
+      right: 0;
+      z-index: 6;
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s ease;
+    }
+    .resort-lightbox-close:hover {
+      color: #FFFFFF;
+    }
+    .resort-lightbox-caption-bar {
+      margin-top: 1rem;
+      text-align: center;
+      max-width: 750px;
+    }
+    .resort-lightbox-title {
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 0.25rem;
+    }
+    .resort-lightbox-sub {
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      font-size: 0.85rem;
+      color: rgba(247, 244, 238, 0.7);
+      line-height: 1.45;
+      margin: 0;
+    }
+    .resort-lightbox-counter {
+      font-family: var(--font-royal, 'Cinzel', serif);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--color-gold, #C5A880);
+      margin-top: 0.5rem;
+    }
+  </style>
+
   <!-- Lenis Smooth Scroll -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   
@@ -36,13 +727,13 @@
     "url": "https://shriipalaceresorts.com/destinations/shrii-palace-resort.html",
     "logo": "https://shriipalaceresorts.com/assets/images/logo.webp",
     "description": "Celebration-led destination resort in Shekhawati featuring grand manicured lawns, banquet spaces, and bridal host suites.",
-    "telephone": "+91-9509771500",
+    "telephone": "+91-9461566305",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "SH 37, Near Tagore College, Gudha Gorji",
-      "addressLocality": "Jhunjhunu",
+      "streetAddress": "Sikar Rd, opp. Power house, Udaipurwati, Nangal",
+      "addressLocality": "Udaipurwati",
       "addressRegion": "Rajasthan",
-      "postalCode": "333022",
+      "postalCode": "333307",
       "addressCountry": "IN"
     }
   }
@@ -104,8 +795,8 @@
                   <span class="mega-link-desc">Lawns &amp; Real Wedding Photography</span>
                 </a>
                 <a href="../destinations/shrii-palace-resort-location.html" class="mega-sublink">
-                  <span class="mega-link-label">SH-37 Route &amp; Map</span>
-                  <span class="mega-link-desc">Gudha Gorji Highway Access</span>
+                  <span class="mega-link-label">Sikar Road Route &amp; Map</span>
+                  <span class="mega-link-desc">Opp. Power House, Udaipurwati</span>
                 </a>
               </div>
             </div>
@@ -135,8 +826,8 @@
                   <span class="mega-link-desc">Pure Milk, Artisanal Ghee &amp; Feasts</span>
                 </a>
                 <a href="../destinations/shrii-palace-marriage-garden-location.html" class="mega-sublink">
-                  <span class="mega-link-label">Sikar Road Route</span>
-                  <span class="mega-link-desc">30km Sikar, 118km Jaipur (2 hrs)</span>
+                  <span class="mega-link-label">SH-37 Route &amp; Map</span>
+                  <span class="mega-link-desc">Gudha Gorji Highway Access</span>
                 </a>
               </div>
             </div>
@@ -196,10 +887,10 @@
               <div>
                 <div class="mega-card-tag">One Central Number</div>
                 <h4 class="mega-card-title">Direct Reservations</h4>
-                <span class="mega-card-phone">+91 95097 71500</span>
+                <span class="mega-card-phone">+91 94615 66305</span>
                 <p style="font-size:0.75rem; color:var(--text-muted); line-height:1.4;">Direct reservations &amp; celebration planning for Shrii Palace Resort &amp; Shrii Palace Marriage Garden.</p>
               </div>
-              <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire." target="_blank" rel="noopener" class="mega-card-btn">
+              <a href="https://wa.me/919461566305?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire." target="_blank" rel="noopener" class="mega-card-btn">
                 <span>WhatsApp Concierge</span>
                 <span>→</span>
               </a>
@@ -218,7 +909,7 @@
     </nav>
 
     <div class="header-actions">
-      <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire%20about%20your%20destinations." target="_blank" rel="noopener" class="header-enquire-link">
+      <a href="https://wa.me/919461566305?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire%20about%20your%20destinations." target="_blank" rel="noopener" class="header-enquire-link">
         <span>Enquire</span>
         <span class="arrow-glyph">→</span>
       </a>
@@ -309,8 +1000,8 @@
           </a>
           <a href="../destinations/shrii-palace-resort-location.html" class="drawer-link-card">
             <div class="link-card-content">
-              <span class="link-card-title">SH-37 Highway Route</span>
-              <span class="link-card-desc">Gudha Gorji bypass access &amp; directions</span>
+              <span class="link-card-title">Sikar Road Route &amp; Map</span>
+              <span class="link-card-desc">Opp. Power House, Udaipurwati (Nangal)</span>
             </div>
             <span class="link-card-arrow">→</span>
           </a>
@@ -369,8 +1060,8 @@
           </a>
           <a href="../destinations/shrii-palace-marriage-garden-location.html" class="drawer-link-card">
             <div class="link-card-content">
-              <span class="link-card-title">Sikar Road Route</span>
-              <span class="link-card-desc">30km Sikar, 118km Jaipur (2 hrs drive)</span>
+              <span class="link-card-title">SH-37 Highway Route</span>
+              <span class="link-card-desc">Near Tagore College, Gudha Gorji</span>
             </div>
             <span class="link-card-arrow">→</span>
           </a>
@@ -452,9 +1143,9 @@
     <div class="drawer-concierge-row">
       <div class="drawer-concierge-info">
         <span class="drawer-concierge-badge">Direct Concierge</span>
-        <a href="tel:+919509771500" class="drawer-phone-val">+91 95097 71500</a>
+        <a href="tel:9461566305" class="drawer-phone-val">+91 94615 66305</a>
       </div>
-      <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire%20about%20your%20destinations." target="_blank" rel="noopener" class="drawer-wa-btn">
+      <a href="https://wa.me/919461566305?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire%20about%20your%20destinations." target="_blank" rel="noopener" class="drawer-wa-btn">
         <span>WhatsApp Concierge</span>
         <span class="wa-arrow">→</span>
       </a>
@@ -479,7 +1170,7 @@
           Grand celebration lawns, majestic outdoor mandap staging, pillarless indoor banquet halls, and dedicated celebration stays crafted for milestone unions.
         </p>
         <div style="margin-top: 2rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
-          <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20am%20enquiring%20about%20hosting%20an%20event%20at%20Shrii Palace Resort." target="_blank" rel="noopener" class="btn-editorial-gold">
+          <a href="https://wa.me/919461566305?text=Hello%20Shrii%20Palace%20Resorts,%20I%20am%20enquiring%20about%20hosting%20an%20event%20at%20Shrii Palace Resort." target="_blank" rel="noopener" class="btn-editorial-gold">
             <span>Enquire for Event / Wedding</span>
             <span class="arrow-glyph">→</span>
           </a>
@@ -503,24 +1194,44 @@
             </h2>
             <div class="atmosphere-narrative">
               <p>
-                Situated along SH-37 near the historic Shekhawati haveli belt, Shrii Palace Resort is purposefully engineered to host magnificent destination weddings and large-scale gatherings.
+                Situated along Sikar Road opposite the power house in Udaipurwati, Nangal, Shrii Palace Resort is purposefully engineered to host magnificent destination weddings, multi-day family milestones, and grand cultural gatherings in Shekhawati.
               </p>
               <p>
-                From dramatic Baraat arrivals through ceremonial gates to grand evening receptions across the central manicured lawn, every moment is supported by seamless Rajasthani hospitality.
+                From dramatic Baraat processions through ceremonial arrival gates to starlit evening receptions across expansive manicured lawns, every moment is supported by generous event spaces and authentic Rajasthani warmth.
               </p>
             </div>
             <a href="../weddings.html" class="editorial-text-link">
-              <span>View Wedding Capabilities</span>
+              <span>Explore Wedding Capabilities</span>
               <span class="arrow-glyph">→</span>
             </a>
+
+            <!-- Key Resort Metrics -->
+            <div class="resort-stats-strip">
+              <div class="resort-stat-item">
+                <span class="resort-stat-num">30K+</span>
+                <span class="resort-stat-label">Sq.Ft. Lawns</span>
+              </div>
+              <div class="resort-stat-item">
+                <span class="resort-stat-num">1,500+</span>
+                <span class="resort-stat-label">Guest Capacity</span>
+              </div>
+              <div class="resort-stat-item">
+                <span class="resort-stat-num">AC</span>
+                <span class="resort-stat-label">Pillarless Ballroom</span>
+              </div>
+              <div class="resort-stat-item">
+                <span class="resort-stat-num">Azure</span>
+                <span class="resort-stat-label">Pool & Deck</span>
+              </div>
+            </div>
           </div>
 
           <div class="atmosphere-craft-col">
             <div class="craft-image-frame">
-              <img src="../assets/images/_DSC5103_lg.webp" alt="Shrii Palace Resort Pavilion and Lawn View" loading="lazy">
+              <img src="../assets/Shri palace resort/unnamed (4).webp" alt="Stately Architecture and Landscaped Grounds at Shrii Palace Resort" loading="lazy">
               <div class="craft-frame-caption">
-                <span>The Celebration Lawn & Stage</span>
-                <span>Shrii Palace Resort, Rajasthan</span>
+                <span>Stately Resort Facade & Landscaped Entrance</span>
+                <span>Shrii Palace Resort • Udaipurwati, Rajasthan</span>
               </div>
             </div>
           </div>
@@ -528,40 +1239,389 @@
       </div>
     </section>
 
-    <!-- Key Venues Breakdown -->
+    <!-- Key Venues Breakdown (4 Distinct Event Spaces) -->
     <section class="section-resort-life" style="background-color: var(--color-obsidian); color: #FFFFFF;">
       <div class="container">
         <div class="resort-life-header">
           <span class="eyebrow-tag eyebrow-champagne">Spaces of Distinction</span>
           <h2 class="section-headline-light" style="color: #FFFFFF;">Celebration Venues</h2>
+          <p style="max-width: 650px; margin: 0.75rem auto 0; color: rgba(247,244,238,0.72); font-size: 1rem; line-height: 1.6;">
+            A versatile spectrum of indoor air-conditioned ballrooms, grand outdoor wedding grounds, and intimate celebration courtyards.
+          </p>
         </div>
 
-        <div class="editorial-duo-grid">
-          <article class="editorial-moment">
-            <div class="moment-media-framed">
-              <img src="../assets/images/_DSC5104_lg.webp" alt="Expansive Celebration Lawns at Shrii Palace Resort" loading="lazy">
+        <div class="resort-venues-grid">
+          <!-- Venue 01: Grand Celebration Lawn -->
+          <article class="resort-venue-card">
+            <div class="resort-venue-media">
+              <img src="../assets/Shri palace resort/unnamed (6).webp" alt="30,000+ Sq.Ft. Grand Celebration Lawns at Shrii Palace Resort" loading="lazy">
+              <span class="resort-venue-badge">Venue 01 • Open Air</span>
             </div>
-            <div class="moment-content">
-              <span class="moment-number">VENUE 01</span>
-              <h3 class="moment-subheading" style="color: #FFFFFF;">The Grand Celebration Lawn</h3>
-              <p class="moment-text" style="color: rgba(247,244,238,0.8);">
-                A vast manicured lawn lined with palm trees, open sky views, and dedicated ceremonial stage ideal for grand Sangeet nights, Varmala, and dinner receptions.
+            <div class="resort-venue-body">
+              <h3 class="resort-venue-title">The Grand Celebration Lawn</h3>
+              <p class="resort-venue-text">
+                An expansive 30,000+ sq.ft. carpet of manicured grass flanked by majestic date palms and expansive skies. Engineered for grand Sangeet nights, Varmala ceremonies, starlit dining, and fireworks for over 1,500 guests.
               </p>
             </div>
           </article>
 
-          <article class="editorial-moment">
-            <div class="moment-media-framed">
-              <img src="../assets/images/_DSC5108_lg.webp" alt="Pavilion and Stage Setting at Shrii Palace Resort" loading="lazy">
+          <!-- Venue 02: Pillarless AC Ballroom -->
+          <article class="resort-venue-card">
+            <div class="resort-venue-media">
+              <img src="../assets/Shri palace resort/unnamed (2).webp" alt="Grand Pillarless AC Banquet Ballroom at Shrii Palace Resort" loading="lazy">
+              <span class="resort-venue-badge">Venue 02 • Climate Controlled</span>
             </div>
-            <div class="moment-content">
-              <span class="moment-number">VENUE 02</span>
-              <h3 class="moment-subheading" style="color: #FFFFFF;">The Pavilion & Courtyard</h3>
-              <p class="moment-text" style="color: rgba(247,244,238,0.8);">
-                Architectural jaali screens, paved pre-function areas, and covered pavilions suited for intimate Mehendi, Haldi ceremonies, and welcoming high-tea.
+            <div class="resort-venue-body">
+              <h3 class="resort-venue-title">Imperial Pillarless AC Ballroom</h3>
+              <p class="resort-venue-text">
+                A high-ceiling indoor ballroom with crystal chandeliers, acoustic ceiling panels, and dedicated stage dais. Offers an all-weather climate-controlled sanctuary for formal banquets, ring ceremonies, and musical performances.
               </p>
             </div>
           </article>
+
+          <!-- Venue 03: Ceremonial Mandap Dais -->
+          <article class="resort-venue-card">
+            <div class="resort-venue-media">
+              <img src="../assets/Shri palace resort/unnamed (10).webp" alt="Ceremonial Mandap Stage and Dais at Shrii Palace Resort" loading="lazy">
+              <span class="resort-venue-badge">Venue 03 • Ceremonial Stage</span>
+            </div>
+            <div class="resort-venue-body">
+              <h3 class="resort-venue-title">Ceremonial Mandap & Stage Dais</h3>
+              <p class="resort-venue-text">
+                Elevated wedding stage crafted specifically for royal Mandap rituals, sacred pheras, and bridal entries. Offers pristine unobstructed sightlines from all corners of the grounds for memorable photography.
+              </p>
+            </div>
+          </article>
+
+          <!-- Venue 04: Paved Pavilion & Courtyard -->
+          <article class="resort-venue-card">
+            <div class="resort-venue-media">
+              <img src="../assets/Shri palace resort/unnamed (8).webp" alt="Pavilion and Courtyard Terraces at Shrii Palace Resort" loading="lazy">
+              <span class="resort-venue-badge">Venue 04 • Courtyard Terrace</span>
+            </div>
+            <div class="resort-venue-body">
+              <h3 class="resort-venue-title">Pavilion & Courtyard Terraces</h3>
+              <p class="resort-venue-text">
+                Sheltered architectural verandas, jaali screens, and paved event terraces designed for joyful Mehendi afternoons, vibrant Haldi rituals, and afternoon high-tea gatherings surrounded by fresh greenery.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dedicated Cinematic Video Showcase Section -->
+    <section class="section-resort-cinema" id="resortCinemaSection">
+      <div class="container">
+        <div style="text-align: center; max-width: 780px; margin: 0 auto;">
+          <span class="eyebrow-tag eyebrow-champagne">Motion & Atmosphere</span>
+          <h2 class="section-headline-light" style="color: #FFFFFF; margin-top: 0.5rem;">
+            Experience Shrii Palace Resort in Motion
+          </h2>
+          <p style="color: rgba(247,244,238,0.78); font-size: 1.05rem; line-height: 1.6; margin-top: 0.75rem;">
+            Immerse yourself in authentic live footage showcasing our grand wedding celebrations, aerial estate tours, grounds walkthroughs, and starlit evening illuminations.
+          </p>
+        </div>
+
+        <div class="cinema-layout-grid">
+          <!-- Main Responsive Video Player -->
+          <div class="cinema-player-wrapper">
+            <div class="cinema-video-screen">
+              <video id="resortMainVideo" controls preload="metadata" playsinline poster="../assets/Shri palace resort/unnamed (6).webp">
+                <source id="resortVideoSource" src="../assets/videos/lawn-celebration.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="cinema-now-playing">
+              <div class="cinema-np-tag">Now Playing Video</div>
+              <h3 class="cinema-np-title" id="resortVideoTitle">Lawn Celebrations & Wedding Festivities</h3>
+              <p class="cinema-np-desc" id="resortVideoDesc">
+                Grand wedding staging, evening illuminations, and lively celebration atmosphere across the 30,000+ sq.ft. grounds.
+              </p>
+            </div>
+          </div>
+
+          <!-- Interactive Video Playlist Switcher -->
+          <div class="cinema-playlist-panel">
+            <div class="cinema-playlist-title">
+              <span>Property Video Gallery</span>
+              <span class="cinema-playlist-count">4 Curated Films</span>
+            </div>
+
+            <!-- Video Track 1 -->
+            <button type="button" class="cinema-track-item active" 
+                    onclick="switchResortVideo('../assets/videos/lawn-celebration.mp4', '../assets/Shri palace resort/unnamed (6).webp', 'Lawn Celebrations & Wedding Festivities', 'Grand wedding staging, evening illuminations, and lively celebration atmosphere across the 30,000+ sq.ft. grounds.', this)">
+              <div class="track-thumb-frame">
+                <img src="../assets/Shri palace resort/unnamed (6).webp" alt="Wedding celebration lawn video thumbnail" loading="lazy">
+                <div class="track-play-badge">▶</div>
+              </div>
+              <div class="track-text-details">
+                <div class="track-tag-row">
+                  <span class="track-tag-pill">Celebration</span>
+                  <span class="track-playing-indicator">● Active</span>
+                </div>
+                <div class="track-main-title">Lawn Celebrations & Festivities</div>
+                <p class="track-brief">Real celebration setup with evening lighting and event energy.</p>
+              </div>
+            </button>
+
+            <!-- Video Track 2 -->
+            <button type="button" class="cinema-track-item" 
+                    onclick="switchResortVideo('../assets/videos/hero-drone.mp4', '../assets/Shri palace resort/unnamed (4).webp', 'Aerial Drone Estate Tour', 'Bird\'s-eye drone footage highlighting the stately multi-storey architecture, sprawling celebration lawns, and scenic Rajasthan surroundings.', this)">
+              <div class="track-thumb-frame">
+                <img src="../assets/Shri palace resort/unnamed (4).webp" alt="Aerial drone property tour thumbnail" loading="lazy">
+                <div class="track-play-badge">▶</div>
+              </div>
+              <div class="track-text-details">
+                <div class="track-tag-row">
+                  <span class="track-tag-pill">Aerial Drone</span>
+                  <span class="track-playing-indicator">● Active</span>
+                </div>
+                <div class="track-main-title">Aerial Drone Property Tour</div>
+                <p class="track-brief">Sprawling overview of the entire property architecture and perimeter.</p>
+              </div>
+            </button>
+
+            <!-- Video Track 3 -->
+            <button type="button" class="cinema-track-item" 
+                    onclick="switchResortVideo('../assets/videos/resort-walkthrough.mp4', '../assets/Shri palace resort/unnamed (11).webp', 'Arrival & Grounds Walkthrough', 'First-person walkthrough exploring the grand entrance archways, landscaped palm pathways, and guest arrival areas.', this)">
+              <div class="track-thumb-frame">
+                <img src="../assets/Shri palace resort/unnamed (11).webp" alt="Resort walkthrough video thumbnail" loading="lazy">
+                <div class="track-play-badge">▶</div>
+              </div>
+              <div class="track-text-details">
+                <div class="track-tag-row">
+                  <span class="track-tag-pill">Walkthrough</span>
+                  <span class="track-playing-indicator">● Active</span>
+                </div>
+                <div class="track-main-title">Arrival & Grounds Walkthrough</div>
+                <p class="track-brief">Experience the welcoming approach from entrance gates to lawns.</p>
+              </div>
+            </button>
+
+            <!-- Video Track 4 -->
+            <button type="button" class="cinema-track-item" 
+                    onclick="switchResortVideo('../assets/videos/evening-lights.mp4', '../assets/Shri palace resort/unnamed (15).webp', 'Twilight & Evening Illumination', 'Atmospheric night ambiance showcasing shimmering pool reflections, glowing ochre facade lights, and serene courtyard lanterns.', this)">
+              <div class="track-thumb-frame">
+                <img src="../assets/Shri palace resort/unnamed (15).webp" alt="Evening lights video thumbnail" loading="lazy">
+                <div class="track-play-badge">▶</div>
+              </div>
+              <div class="track-text-details">
+                <div class="track-tag-row">
+                  <span class="track-tag-pill">Night Ambience</span>
+                  <span class="track-playing-indicator">● Active</span>
+                </div>
+                <div class="track-main-title">Twilight & Evening Illumination</div>
+                <p class="track-brief">Dramatic lighting across the pool deck and exterior courtyards.</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accommodations & Host Suites Section -->
+    <section class="section-brand-atmosphere" style="background-color: var(--bg-primary);">
+      <div class="container">
+        <div style="text-align: center; max-width: 760px; margin: 0 auto;">
+          <span class="eyebrow-tag">Guest Comfort & Event Stays</span>
+          <h2 class="editorial-headline">Accommodations & Host Suites</h2>
+          <p style="font-size: 1.05rem; line-height: 1.6; color: var(--text-dark); margin-top: 0.75rem;">
+            Designed specifically for multi-day wedding parties, immediate families, and bridal preparation with dedicated air-conditioned comfort.
+          </p>
+        </div>
+
+        <div class="resort-cards-grid-3">
+          <!-- Room 1: Reception Lounge -->
+          <article class="resort-suite-card">
+            <div class="resort-suite-media">
+              <img src="../assets/Shri palace resort/unnamed (1).webp" alt="Royal Reception and Guest Welcome Lounge at Shrii Palace Resort" loading="lazy">
+              <span class="resort-suite-badge">Hospitality Desk</span>
+            </div>
+            <div class="resort-suite-content">
+              <h3 class="resort-suite-title">Royal Reception Lounge</h3>
+              <p class="resort-suite-desc">
+                Opulent air-conditioned arrival lobby featuring royal sofa seating, crystal chandeliers, and dedicated concierge desk for seamless guest check-ins and key distribution.
+              </p>
+            </div>
+          </article>
+
+          <!-- Room 2: Host & Family Suites -->
+          <article class="resort-suite-card">
+            <div class="resort-suite-media">
+              <img src="../assets/Shri palace resort/unnamed (9).webp" alt="Royal Family Host Suite at Shrii Palace Resort" loading="lazy">
+              <span class="resort-suite-badge">Host Suite</span>
+            </div>
+            <div class="resort-suite-content">
+              <h3 class="resort-suite-title">Royal Family Host Suite</h3>
+              <p class="resort-suite-desc">
+                Spacious deluxe room tailored for bride and groom families, complete with plush king bedding, climate control, generous wardrobe space, and peaceful views.
+              </p>
+            </div>
+          </article>
+
+          <!-- Room 3: Bridal Preparation Wing -->
+          <article class="resort-suite-card">
+            <div class="resort-suite-media">
+              <img src="../assets/Shri palace resort/unnamed (3).webp" alt="Bridal Dressing Wing and Traditional Doorway at Shrii Palace Resort" loading="lazy">
+              <span class="resort-suite-badge">Bridal Wing</span>
+            </div>
+            <div class="resort-suite-content">
+              <h3 class="resort-suite-title">Bridal Dressing Suite Entrance</h3>
+              <p class="resort-suite-desc">
+                Distinct private suite wing accessed through an ornate handcrafted wooden Rajasthani doorway, providing quiet sanctuary for bridal hair, makeup, and attire fittings.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Poolside Leisure & Gourmet Dining Section -->
+    <section class="section-resort-life" style="background-color: var(--color-obsidian); color: #FFFFFF;">
+      <div class="container">
+        <div class="resort-life-header">
+          <span class="eyebrow-tag eyebrow-champagne">Leisure & Feasting</span>
+          <h2 class="section-headline-light" style="color: #FFFFFF;">Poolside Leisure & Dining Facilities</h2>
+          <p style="max-width: 680px; margin: 0.75rem auto 0; color: rgba(247,244,238,0.72); font-size: 1rem; line-height: 1.6;">
+            From afternoon relaxation by the turquoise water to opulent multi-course wedding feasts and live culinary counters.
+          </p>
+        </div>
+
+        <div class="resort-amenities-grid">
+          <!-- Amenity 1: Azure Pool -->
+          <article class="resort-amenity-card">
+            <div class="resort-amenity-media">
+              <img src="../assets/Shri palace resort/unnamed (5).webp" alt="Azure Swimming Pool and Sun Deck at Shrii Palace Resort" loading="lazy">
+            </div>
+            <div class="resort-amenity-body">
+              <h3 class="resort-amenity-title">Azure Swimming Pool</h3>
+              <p class="resort-amenity-text">
+                Sparkling open-air pool mirroring the ochre hotel towers, framed by sun loungers and mountain breezes. Perfect for daytime cooldowns and poolside high-tea.
+              </p>
+            </div>
+          </article>
+
+          <!-- Amenity 2: Restaurant Dining Hall -->
+          <article class="resort-amenity-card">
+            <div class="resort-amenity-media">
+              <img src="../assets/Shri palace resort/unnamed (14).webp" alt="Garden View Restaurant Dining Hall at Shrii Palace Resort" loading="lazy">
+            </div>
+            <div class="resort-amenity-body">
+              <h3 class="resort-amenity-title">Garden View Restaurant</h3>
+              <p class="resort-amenity-text">
+                Comfortable air-conditioned dining hall serving pure vegetarian culinary delights, traditional Rajasthani thalis, and multi-cuisine fare for residential guests.
+              </p>
+            </div>
+          </article>
+
+          <!-- Amenity 3: Grand Banquet Buffets -->
+          <article class="resort-amenity-card">
+            <div class="resort-amenity-media">
+              <img src="../assets/Shri palace resort/unnamed (12).webp" alt="Banquet Buffet and Live Catering Setup at Shrii Palace Resort" loading="lazy">
+            </div>
+            <div class="resort-amenity-body">
+              <h3 class="resort-amenity-title">Grand Banquet Buffets</h3>
+              <p class="resort-amenity-text">
+                Professional culinary presentation with live interactive cooking stations, authentic Shekhawati sweets, and expansive buffet counters serving 1,500+ guests.
+              </p>
+            </div>
+          </article>
+
+          <!-- Amenity 4: Illuminated Night Deck -->
+          <article class="resort-amenity-card">
+            <div class="resort-amenity-media">
+              <img src="../assets/Shri palace resort/unnamed (15).webp" alt="Illuminated Poolside Night Deck at Shrii Palace Resort" loading="lazy">
+            </div>
+            <div class="resort-amenity-body">
+              <h3 class="resort-amenity-title">Illuminated Pool Deck</h3>
+              <p class="resort-amenity-text">
+                Magical evening illumination casting warm golden reflections across the water, providing an enchanting backdrop for cocktail hours and musical evenings.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Photographic Mosaic Grid with Interactive Lightbox -->
+    <section class="section-brand-atmosphere" style="background-color: var(--bg-primary);">
+      <div class="container">
+        <div style="text-align: center; max-width: 760px; margin: 0 auto;">
+          <span class="eyebrow-tag">Visual Perspectives</span>
+          <h2 class="editorial-headline">Resort Photographic Showcase</h2>
+          <p style="font-size: 1.05rem; line-height: 1.6; color: var(--text-dark); margin-top: 0.75rem;">
+            Explore authentic angles of our grounds, architecture, sunset horizons, and night illumination. Click any photograph to view in full resolution.
+          </p>
+        </div>
+
+        <div class="resort-mosaic-grid">
+          <!-- Photo 1: Sunset Horizon -->
+          <div class="mosaic-card" onclick="openResortLightbox(0)">
+            <img src="../assets/Shri palace resort/unnamed (7).webp" alt="Sunset horizon over celebration grounds at Shrii Palace Resort" loading="lazy">
+            <div class="mosaic-card-overlay">
+              <span class="mosaic-card-badge">Evening Panorama</span>
+              <h4 class="mosaic-card-title">Sunset Horizon Over Lawns</h4>
+            </div>
+            <div class="mosaic-card-zoom-icon">⤢</div>
+          </div>
+
+          <!-- Photo 2: Panoramic Poolside Deck -->
+          <div class="mosaic-card" onclick="openResortLightbox(1)">
+            <img src="../assets/Shri palace resort/unnamed.webp" alt="Panoramic poolside deck and hotel wings at Shrii Palace Resort" loading="lazy">
+            <div class="mosaic-card-overlay">
+              <span class="mosaic-card-badge">Property View</span>
+              <h4 class="mosaic-card-title">Panoramic Pool Deck & Hotel Wings</h4>
+            </div>
+            <div class="mosaic-card-zoom-icon">⤢</div>
+          </div>
+
+          <!-- Photo 3: Starlit Pool Reflections -->
+          <div class="mosaic-card" onclick="openResortLightbox(2)">
+            <img src="../assets/Shri palace resort/unnmed (5).webp" alt="Starlit resort pool and glowing facades at Shrii Palace Resort" loading="lazy">
+            <div class="mosaic-card-overlay">
+              <span class="mosaic-card-badge">Night Illumination</span>
+              <h4 class="mosaic-card-title">Starlit Resort Pool & Glowing Facades</h4>
+            </div>
+            <div class="mosaic-card-zoom-icon">⤢</div>
+          </div>
+
+          <!-- Photo 4: Starlit Night Villa -->
+          <div class="mosaic-card" onclick="openResortLightbox(3)">
+            <img src="../assets/Shri palace resort/unnamed (13).webp" alt="Starlit night villa and courtyard at Shrii Palace Resort" loading="lazy">
+            <div class="mosaic-card-overlay">
+              <span class="mosaic-card-badge">Estate Courtyard</span>
+              <h4 class="mosaic-card-title">Starlit Night Villa & Pathways</h4>
+            </div>
+            <div class="mosaic-card-zoom-icon">⤢</div>
+          </div>
+
+          <!-- Photo 5: Grand Arrival Gateway -->
+          <div class="mosaic-card" onclick="openResortLightbox(4)">
+            <img src="../assets/Shri palace resort/unnamed (11).webp" alt="Grand arrival gateway and landscaped entrance at Shrii Palace Resort" loading="lazy">
+            <div class="mosaic-card-overlay">
+              <span class="mosaic-card-badge">Grand Entrance</span>
+              <h4 class="mosaic-card-title">Grand Arrival Gateway & Driveway</h4>
+            </div>
+            <div class="mosaic-card-zoom-icon">⤢</div>
+          </div>
+
+          <!-- Photo 6: Architectural Facade in Daylight -->
+          <div class="mosaic-card" onclick="openResortLightbox(5)">
+            <img src="../assets/Shri palace resort/unnamed (4).webp" alt="Stately resort architectural facade at Shrii Palace Resort" loading="lazy">
+            <div class="mosaic-card-overlay">
+              <span class="mosaic-card-badge">Architecture</span>
+              <h4 class="mosaic-card-title">Stately Architectural Facade</h4>
+            </div>
+            <div class="mosaic-card-zoom-icon">⤢</div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="../gallery.html" class="btn-editorial-light">
+            <span>View Full Master Visual Journal (140+ Photos)</span>
+            <span class="arrow-glyph">→</span>
+          </a>
         </div>
       </div>
     </section>
@@ -579,17 +1639,20 @@
           <div style="background: var(--color-limestone-warm); padding: clamp(2rem, 4vw, 3.5rem); border: 1px solid rgba(18,17,16,0.08);">
             <h3 style="font-family: var(--font-royal); font-size: 1.1rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem;">Property Address</h3>
             <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-dark); margin-bottom: 1.5rem;">
-              SH 37, Near Tagore College, Gudha Gorji, Jhunjhunu District, Rajasthan – 333022
+              Sikar Rd, opp. Power house, Udaipurwati, Nangal, Rajasthan 333307
             </p>
-            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-              <a href="https://maps.google.com/?q=Tagore+College+Gudha+Gorji+Jhunjhunu+Rajasthan" target="_blank" rel="noopener" class="editorial-text-link">
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+              <a href="https://maps.google.com/?q=The+Nangal+Resort+Udaipurwati+Rajasthan" target="_blank" rel="noopener" class="editorial-text-link">
                 <span>Open in Google Maps</span>
                 <span class="arrow-glyph">→</span>
               </a>
-              <a href="tel:+919509771500" class="editorial-text-link">
-                <span>Call Concierge (+91 95097 71500)</span>
+              <a href="tel:9461566305" class="editorial-text-link">
+                <span>Call Concierge (+91 94615 66305)</span>
                 <span class="arrow-glyph">→</span>
               </a>
+            </div>
+            <div class="map-embed-wrapper" style="border-radius: 6px; overflow: hidden; border: 1px solid rgba(18,17,16,0.12);">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.7158721610163!2d75.4590723!3d27.7260576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396ccf558adea793%3A0x2916a6aac816583b!2sThe%20Nangal%20Resort!5e0!3m2!1sen!2sin!4v1792235499876!5m2!1sen!2sin" width="100%" height="380" style="border:0; display:block; width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
           </div>
         </div>
@@ -599,7 +1662,7 @@
     <!-- Final Destination CTA -->
     <section class="section-final-escape">
       <div class="escape-backdrop-frame">
-        <img src="../assets/images/_DSC5104_lg.webp" alt="Shrii Palace Resort" loading="lazy">
+        <img src="../assets/Shri palace resort/unnamed (13).webp" alt="Shrii Palace Resort" loading="lazy">
       </div>
       <div class="escape-scrim-deep"></div>
 
@@ -613,7 +1676,7 @@
           Connect directly with our event reservations desk to discuss dates, guest capacity, and personalized catering arrangements.
         </p>
         <div class="escape-buttons-group">
-          <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20plan%20an%20event%20at%20Shrii Palace Resort." target="_blank" rel="noopener" class="btn-editorial-gold">
+          <a href="https://wa.me/919461566305?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20plan%20an%20event%20at%20Shrii Palace Resort." target="_blank" rel="noopener" class="btn-editorial-gold">
             <span>WhatsApp Shrii Palace Resort Concierge</span>
             <span class="arrow-glyph">→</span>
           </a>
@@ -634,11 +1697,11 @@
         <div class="footer-brand-title">Shrii Palace Resorts</div>
         <p class="footer-brand-desc">One Brand. Two Distinct Destinations in Shekhawati, Rajasthan.</p>
         <div class="footer-contact-details">
-          <p><strong>Direct Concierge:</strong> <a href="tel:+919509771500">+91 95097 71500</a></p>
-          <p><strong>Email:</strong> <a href="mailto:book@nangalresort.com">book@nangalresort.com</a></p>
+          <p><strong>Direct Concierge:</strong> <a href="tel:9461566305">+91 94615 66305</a></p>
+          <p><strong>Email:</strong> <a href="mailto:shriipalace.tps@gmail.com">shriipalace.tps@gmail.com</a></p>
         </div>
         <div class="footer-social-links">
-          <a href="https://wa.me/919509771500" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://wa.me/919461566305" target="_blank" rel="noopener">WhatsApp</a>
           <span>•</span>
           <a href="../contact.html">Directions</a>
           <span>•</span>
@@ -649,14 +1712,14 @@
       <div class="footer-dest-col">
         <div class="footer-dest-name">01. Shrii Palace Resort</div>
         <p class="footer-dest-desc">Celebration Resort &amp; Grand Heritage Lawns</p>
-        <p class="footer-dest-address">SH 37, Near Tagore College, Gudha Gorji, Jhunjhunu, Rajasthan – 333022</p>
+        <p class="footer-dest-address">Sikar Rd, opp. Power house, Udaipurwati, Nangal, Rajasthan 333307</p>
         <a href="../destinations/shrii-palace-resort.html" class="footer-dest-link">View Destination →</a>
       </div>
 
       <div class="footer-dest-col">
         <div class="footer-dest-name">02. Shrii Palace Marriage Garden</div>
         <p class="footer-dest-desc">Aravalli Foothill Retreat, Pool &amp; Dairy</p>
-        <p class="footer-dest-address">Sikar Road, Opposite Power House, Shrii Palace Marriage Garden, Shrii Palace Resort, Rajasthan – 333307</p>
+        <p class="footer-dest-address">Sh 37, near Tagore College, Gudha Gorji, Jhunjhunu, Rajasthan 333022</p>
         <a href="../destinations/shrii-palace-marriage-garden.html" class="footer-dest-link">View Destination →</a>
       </div>
     </div>
@@ -680,8 +1743,165 @@
   </div>
 </footer>
 
-  <!-- Editorial Footer -->
+  <!-- Resort Photographic Lightbox Modal -->
+  <div id="resortLightboxModal" class="resort-lightbox" aria-hidden="true" role="dialog" aria-label="Photo Lightbox">
+    <div class="resort-lightbox-backdrop" onclick="closeResortLightbox()"></div>
+    <div class="resort-lightbox-modal">
+      <button type="button" class="resort-lightbox-close" onclick="closeResortLightbox()" aria-label="Close Lightbox">✕</button>
+      
+      <div class="resort-lightbox-stage">
+        <button type="button" class="resort-lightbox-btn prev" onclick="prevResortLightbox()" aria-label="Previous Photo">‹</button>
+        <img id="resortLightboxImg" class="resort-lightbox-img" src="" alt="Resort photo preview">
+        <button type="button" class="resort-lightbox-btn next" onclick="nextResortLightbox()" aria-label="Next Photo">›</button>
+      </div>
+
+      <div class="resort-lightbox-caption-bar">
+        <h3 id="resortLightboxTitle" class="resort-lightbox-title"></h3>
+        <p id="resortLightboxCaption" class="resort-lightbox-sub"></p>
+        <div id="resortLightboxCounter" class="resort-lightbox-counter">1 / 6</div>
+      </div>
+    </div>
+  </div>
 
   <script src="../js/main.js?v=202609301553" defer></script>
+
+  <!-- Interactive Controllers for Video Showcase and Lightbox -->
+  <script>
+    // Video Showcase Playlist Controller
+    function switchResortVideo(videoSrc, posterSrc, title, desc, element) {
+      const video = document.getElementById('resortMainVideo');
+      const source = document.getElementById('resortVideoSource');
+      const titleEl = document.getElementById('resortVideoTitle');
+      const descEl = document.getElementById('resortVideoDesc');
+
+      if (!video || !source) return;
+
+      // Update active playlist buttons
+      document.querySelectorAll('.cinema-track-item').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      if (element) {
+        element.classList.add('active');
+      }
+
+      // Update source and metadata
+      video.pause();
+      source.src = videoSrc;
+      video.poster = posterSrc;
+      if (titleEl) titleEl.textContent = title;
+      if (descEl) descEl.textContent = desc;
+
+      video.load();
+      video.play().catch(function(err) {
+        // Autoplay may be prevented by browser policy until user interacts, which is standard
+      });
+    }
+
+    // Curated Photographic Lightbox Controller
+    const RESORT_MOSAIC_DATA = [
+      {
+        src: '../assets/Shri palace resort/unnamed (7).webp',
+        title: 'Sunset Horizon Over Celebration Grounds',
+        caption: 'Golden-hour panoramic vista across the expansive lawns and surrounding desert foothills at Shrii Palace Resort.'
+      },
+      {
+        src: '../assets/Shri palace resort/unnamed.webp',
+        title: 'Panoramic Pool Deck & Hotel Wings',
+        caption: 'Architectural overview of the azure swimming pool, sun loungers, and multi-storey guest accommodation wings.'
+      },
+      {
+        src: '../assets/Shri palace resort/unnmed (5).webp',
+        title: 'Starlit Resort Pool & Glowing Facades',
+        caption: 'Atmospheric twilight reflection across the crystal water with illuminated hotel balconies and starlit skies.'
+      },
+      {
+        src: '../assets/Shri palace resort/unnamed (13).webp',
+        title: 'Starlit Night Villa & Pathways',
+        caption: 'Quiet evening courtyard illuminated by traditional warm lanterns and landscaped palm verandas.'
+      },
+      {
+        src: '../assets/Shri palace resort/unnamed (11).webp',
+        title: 'Grand Arrival Gateway & Driveway',
+        caption: 'Ceremonial driveway and regal entrance archway tailored for magnificent Baraat arrivals.'
+      },
+      {
+        src: '../assets/Shri palace resort/unnamed (4).webp',
+        title: 'Stately Architectural Facade in Daylight',
+        caption: 'Daytime perspective highlighting traditional Shekhawati royal motifs, multi-tier balconies, and manicured lawns.'
+      }
+    ];
+
+    let currentLightboxIdx = 0;
+
+    function openResortLightbox(index) {
+      if (index < 0 || index >= RESORT_MOSAIC_DATA.length) return;
+      currentLightboxIdx = index;
+      updateResortLightboxUI();
+
+      const modal = document.getElementById('resortLightboxModal');
+      if (modal) {
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        if (window.lenisInstance) window.lenisInstance.stop();
+      }
+    }
+
+    function closeResortLightbox() {
+      const modal = document.getElementById('resortLightboxModal');
+      if (modal) {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (window.lenisInstance) window.lenisInstance.start();
+      }
+    }
+
+    function nextResortLightbox() {
+      currentLightboxIdx = (currentLightboxIdx + 1) % RESORT_MOSAIC_DATA.length;
+      updateResortLightboxUI();
+    }
+
+    function prevResortLightbox() {
+      currentLightboxIdx = (currentLightboxIdx - 1 + RESORT_MOSAIC_DATA.length) % RESORT_MOSAIC_DATA.length;
+      updateResortLightboxUI();
+    }
+
+    function updateResortLightboxUI() {
+      const item = RESORT_MOSAIC_DATA[currentLightboxIdx];
+      if (!item) return;
+
+      const img = document.getElementById('resortLightboxImg');
+      const title = document.getElementById('resortLightboxTitle');
+      const caption = document.getElementById('resortLightboxCaption');
+      const counter = document.getElementById('resortLightboxCounter');
+
+      if (img) {
+        img.style.opacity = '0';
+        img.src = item.src;
+        img.alt = item.title;
+        img.onload = function() {
+          img.style.opacity = '1';
+        };
+      }
+      if (title) title.textContent = item.title;
+      if (caption) caption.textContent = item.caption;
+      if (counter) counter.textContent = (currentLightboxIdx + 1) + ' / ' + RESORT_MOSAIC_DATA.length;
+    }
+
+    // Keyboard controls for Lightbox
+    document.addEventListener('keydown', function(e) {
+      const modal = document.getElementById('resortLightboxModal');
+      if (!modal || !modal.classList.contains('active')) return;
+
+      if (e.key === 'Escape') {
+        closeResortLightbox();
+      } else if (e.key === 'ArrowRight') {
+        nextResortLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        prevResortLightbox();
+      }
+    });
+  </script>
 </body>
 </html>

@@ -24,8 +24,8 @@ template = f"""<!DOCTYPE html>
       <button class="dest-pill" data-set-destination="nangal">Nangal</button>
     </div>
     <div class="quick-contact-links">
-      <a href="tel:+919509771500">📞 +91 95097 71500</a>
-      <a href="https://wa.me/919509771500" target="_blank" rel="noopener" style="color: #10B981;">💬 WhatsApp</a>
+      <a href="tel:9461566305">📞 +91 94615 66305</a>
+      <a href="https://wa.me/919461566305" target="_blank" rel="noopener" style="color: #10B981;">💬 WhatsApp</a>
     </div>
   </div>
 

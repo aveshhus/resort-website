@@ -8,10 +8,10 @@ const RESORTS_DATA = {
     name: "Shrii Palace Resorts",
     tagline: "One Brand. Two Destinations. One Extraordinary Experience.",
     shortTagline: "Two destinations. Different experiences. One signature of hospitality.",
-    phone: "+91 95097 71500",
-    phoneDisplay: "+91 95097 71500",
-    whatsappNumber: "919509771500",
-    email: "book@nangalresort.com",
+    phone: "+91 94615 66305",
+    phoneDisplay: "+91 94615 66305",
+    whatsappNumber: "919461566305",
+    email: "shriipalace.tps@gmail.com",
     established: "Rajasthan, India",
     instagram: "https://www.instagram.com/shrii.palace/",
     facebook: "https://www.facebook.com/profile.php?id=61550515152918",
@@ -26,12 +26,13 @@ const RESORTS_DATA = {
       subtitle: "Celebration Resort & Grand Venue",
       heroHeadline: "Royal Celebrations in the Heart of Shekhawati",
       heroDescription: "A grand celebration-led destination with magnificent outdoor lawns, majestic air-conditioned banquet spaces, bridal suites, and event-ready hospitality crafted for milestone weddings.",
-      address: "SH 37, Near Tagore College, Gudha Gorji, Jhunjhunu District, Rajasthan – 333022",
-      pincode: "333022",
-      googleMapsUrl: "https://maps.google.com/?q=Tagore+College+Gudha+Gorji+Jhunjhunu+Rajasthan",
+      address: "Sikar Rd, opp. Power house, Udaipurwati, Nangal, Rajasthan 333307",
+      pincode: "333307",
+      googleMapsUrl: "https://maps.google.com/?q=The+Nangal+Resort+Udaipurwati+Rajasthan",
+      googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.7158721610163!2d75.4590723!3d27.7260576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396ccf558adea793%3A0x2916a6aac816583b!2sThe%20Nangal%20Resort!5e0!3m2!1sen!2sin!4v1792235499876!5m2!1sen!2sin",
       highlightBadge: "Grand Celebration Hub",
       heroImage: "assets/images/_DSC5147_lg.webp",
-      cardImage: "assets/images/_DSC5147_md.webp",
+      cardImage: "assets/Shri palace resort/unnamed (4).webp",
       videoReel: "assets/videos/lawn-celebration.mp4",
       vibe: "Grand royal weddings, massive outdoor lawns, luxury banqueting, and seamless celebration hospitality.",
       stats: [
@@ -54,21 +55,21 @@ const RESORTS_DATA = {
           type: "Outdoor Celebration Space",
           capacity: "Up to 1,500 Guests",
           description: "An expansive lush green lawn with a grand entry aisle and illuminated floral archways, ideal for royal Sangeet, Varmala, and grand receptions.",
-          image: "assets/images/_DSC5149_md.webp"
+          image: "assets/Shri palace resort/unnamed (6).webp"
         },
         {
           name: "The Grand Regal Banquet",
           type: "Indoor Air-Conditioned Hall",
           capacity: "Up to 500 Guests",
           description: "An opulent indoor banquet hall with high ceilings, acoustic engineering, and modern chandelier lighting for indoor dining and auspicious ceremonies.",
-          image: "assets/images/_DSC5153_md.webp"
+          image: "assets/Shri palace resort/unnamed (2).webp"
         },
         {
           name: "Courtyard & Pre-Function Arena",
           type: "Semi-Covered Gathering Area",
           capacity: "Up to 300 Guests",
           description: "Charming traditional open-air courtyard perfect for Haldi, Mehendi, High-Tea, and welcoming cocktail hours.",
-          image: "assets/images/_DSC5144_md.webp"
+          image: "assets/Shri palace resort/unnamed (8).webp"
         }
       ],
       rooms: [
@@ -78,7 +79,7 @@ const RESORTS_DATA = {
           bedType: "King Sized Bed",
           description: "Spacious luxury suites tailored for wedding hosts and couples, featuring traditional carved accents, modern vanity baths, and courtyard views.",
           features: ["Air Conditioning", "Ensuite Marble Bath", "Dressing Area", "24/7 Room Service", "High Speed Wi-Fi"],
-          image: "assets/images/_DSC5113_md.webp"
+          image: "assets/Shri palace resort/unnamed (1).webp"
         },
         {
           name: "Celebration Guest Room",
@@ -86,7 +87,7 @@ const RESORTS_DATA = {
           bedType: "Twin / Double Bed",
           description: "Comfortable and elegant accommodations designed to host wedding attendees, families, and private groups in relaxed comfort.",
           features: ["Air Conditioning", "Modern Bathroom", "Tea/Coffee Maker", "Wardrobe", "Daily Housekeeping"],
-          image: "assets/images/_DSC5114_md.webp"
+          image: "assets/Shri palace resort/unnamed (9).webp"
         }
       ],
       distances: [
@@ -104,12 +105,13 @@ const RESORTS_DATA = {
       subtitle: "Resort Stay, Poolside & Celebration Destination",
       heroHeadline: "A Tranquil Resort Retreat in the Aravalli Foothills",
       heroDescription: "Nestled away from urban noise, Shrii Palace Marriage Garden blends heritage architectural charm with serene poolside lounging, a panoramic rooftop restaurant, 3 banquet halls, and 30+ well-appointed rooms.",
-      address: "Sikar Road, Opposite Power House, Shrii Palace Marriage Garden, Shrii Palace Resort, Rajasthan – 333307",
-      pincode: "333307",
-      googleMapsUrl: "https://maps.google.com/?q=Shrii Palace Marriage Garden+Resort+Sikar+Road+Shrii Palace Resort+Rajasthan",
+      address: "Sh 37, near Tagore College, Gudha Gorji, Jhunjhunu, Rajasthan 333022",
+      pincode: "333022",
+      googleMapsUrl: "https://maps.google.com/?q=Shrii+Palace+Tagore+College+Gudha+Gorji+Jhunjhunu+Rajasthan",
+      googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3526.516575580385!2d75.52211880000002!3d27.8861168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396ccd7eaed383cd%3A0xee04a143be655f53!2sShrii%20Palace!5e0!3m2!1sen!2sin!4v1792235584691!5m2!1sen!2sin",
       highlightBadge: "Resort Retreat & Leisure",
       heroImage: "assets/images/_DSC4754_lg.webp",
-      cardImage: "assets/images/_DSC5138_md.webp",
+      cardImage: "assets/Shri Palce Marrige garden/unnamed (16).webp",
       videoReel: "assets/videos/poolside-ambience.mp4",
       vibe: "Serene resort holidays, crystal swimming pool, rooftop dining with pure A2 cow dairy, corporate offsites, and scenic mountain weddings.",
       stats: [
@@ -132,14 +134,14 @@ const RESORTS_DATA = {
           type: "Indoor Banquet & Event Space",
           capacity: "Up to 500 Guests (4,000 sq.ft.)",
           description: "Meticulously designed large banquet hall with modern AV capabilities, ideal for corporate seminars, wedding ceremonies, and gala banquets.",
-          image: "assets/images/_DSC5158_md.webp"
+          image: "assets/Shri Palce Marrige garden/unnamed (1).webp"
         },
         {
           name: "Emerald Banquet Halls I & II",
           type: "Breakout & Intimate Venues",
           capacity: "Up to 120 Guests each (1,000 sq.ft.)",
           description: "Two boutique air-conditioned banquet spaces tailored for corporate workshops, private dining, Ring ceremonies, and family gatherings.",
-          image: "assets/images/_DSC5156_md.webp"
+          image: "assets/Shri Palce Marrige garden/unnamed (9).webp"
         },
         {
           name: "Aravalli Poolside Deck & Lawn",
@@ -156,7 +158,7 @@ const RESORTS_DATA = {
           bedType: "King / Queen Sized Bed",
           description: "Comfortably furnished room with modern en-suite bathroom, high-speed Wi-Fi, air conditioning, and peaceful mountain or garden vistas.",
           features: ["2 Person Occupancy", "Attached Modern Bathroom", "24/7 Hot Water", "Tea/Coffee Maker", "Flat Screen TV", "Room Service"],
-          image: "assets/images/_DSC5115_md.webp"
+          image: "assets/Shri Palce Marrige garden/unnamed (3).webp"
         },
         {
           name: "Super Deluxe Room",
@@ -164,7 +166,7 @@ const RESORTS_DATA = {
           bedType: "Premium King Bed",
           description: "Elevated luxury with generous space, premium linen, ambient lighting, private seating nook, and sweeping views of the Aravalli hills.",
           features: ["Pool or Hill View", "Luxury Toiletries", "Mini Seating Lounge", "Air Conditioning", "Work Desk", "High Speed Wi-Fi"],
-          image: "assets/images/_DSC5117_md.webp"
+          image: "assets/Shri Palce Marrige garden/unnamed.webp"
         },
         {
           name: "Family Suite Room",
@@ -172,7 +174,7 @@ const RESORTS_DATA = {
           bedType: "Double King Beds / Multi-Bed Setup",
           description: "Expansive family room designed for vacationing groups and families with children, offering twin sleeping zones and dedicated wardrobe space.",
           features: ["4 Person Occupancy", "Spacious Floor Plan", "Ensuite Bath", "Family Sitting Area", "Climate Control", "In-Room Dining"],
-          image: "assets/images/_DSC5119_md.webp"
+          image: "assets/Shri Palce Marrige garden/unnamed (6).webp"
         }
       ],
       distances: [
@@ -187,21 +189,21 @@ const RESORTS_DATA = {
     }
   },
   gallery: [
-    { src: "assets/images/_DSC4754_lg.webp", thumb: "assets/images/_DSC4754_sm.webp", title: "Resort Architecture & Frontage", destination: "nangal", category: "architecture", caption: "Authentic Rajasthani arches and grand arrival courtyard at Shrii Palace Marriage Garden." },
+    { src: "assets/Shri Palce Marrige garden/unnamed (16).webp", thumb: "assets/Shri Palce Marrige garden/unnamed (16).webp", title: "Resort Architecture & Frontage", destination: "nangal", category: "architecture", caption: "Authentic Rajasthani arches and grand arrival courtyard at Shrii Palace Marriage Garden." },
     { src: "assets/images/_DSC5138_lg.webp", thumb: "assets/images/_DSC5138_sm.webp", title: "Resort Swimming Pool & Deck", destination: "nangal", category: "pool", caption: "Crystal blue swimming pool with sunbeds set against Aravalli foothills." },
     { src: "assets/images/_DSC5147_lg.webp", thumb: "assets/images/_DSC5147_sm.webp", title: "Grand Celebration Lawn", destination: "shrii-palace-resort", category: "weddings", caption: "Sprawling manicured lawn tailored for royal destination weddings." },
     { src: "assets/images/_DSC5149_lg.webp", thumb: "assets/images/_DSC5149_sm.webp", title: "Wedding Mandap Setting", destination: "shrii-palace-resort", category: "weddings", caption: "Elegantly illuminated open-air stage for sacred vows and evening ceremonies." },
-    { src: "assets/images/_DSC5158_lg.webp", thumb: "assets/images/_DSC5158_sm.webp", title: "4,000 sq.ft. Grand Banquet Hall", destination: "nangal", category: "events", caption: "State-of-the-art indoor banquet and conference hall." },
-    { src: "assets/images/_DSC5156_lg.webp", thumb: "assets/images/_DSC5156_sm.webp", title: "Banquet Dining Setup", destination: "nangal", category: "dining", caption: "Opulent banquet dining and reception arrangement." },
-    { src: "assets/images/_DSC5113_lg.webp", thumb: "assets/images/_DSC5113_sm.webp", title: "Super Deluxe Suite Interior", destination: "nangal", category: "rooms", caption: "Warm wooden textures, heritage aesthetics, and plush bedding." },
-    { src: "assets/images/_DSC5115_lg.webp", thumb: "assets/images/_DSC5115_sm.webp", title: "Deluxe Bedroom", destination: "nangal", category: "rooms", caption: "Clean contemporary comforts with traditional Rajasthani warmth." },
+    { src: "assets/Shri Palce Marrige garden/unnamed (1).webp", thumb: "assets/Shri Palce Marrige garden/unnamed (1).webp", title: "4,000 sq.ft. Grand Banquet Hall", destination: "nangal", category: "events", caption: "State-of-the-art indoor banquet and conference hall." },
+    { src: "assets/Shri Palce Marrige garden/unnamed (4).webp", thumb: "assets/Shri Palce Marrige garden/unnamed (4).webp", title: "Banquet Dining Setup", destination: "nangal", category: "dining", caption: "Opulent banquet dining and reception arrangement." },
+    { src: "assets/Shri Palce Marrige garden/unnamed (3).webp", thumb: "assets/Shri Palce Marrige garden/unnamed (3).webp", title: "Super Deluxe Suite Interior", destination: "nangal", category: "rooms", caption: "Warm wooden textures, heritage aesthetics, and plush bedding." },
+    { src: "assets/Shri Palce Marrige garden/unnamed.webp", thumb: "assets/Shri Palce Marrige garden/unnamed.webp", title: "Deluxe Bedroom", destination: "nangal", category: "rooms", caption: "Clean contemporary comforts with traditional Rajasthani warmth." },
     { src: "assets/images/_DSC5117_lg.webp", thumb: "assets/images/_DSC5117_sm.webp", title: "Royal Guest Suite", destination: "shrii-palace-resort", category: "rooms", caption: "Spacious bridal and host accommodation with private vanity lounge." },
-    { src: "assets/images/_DSC5119_lg.webp", thumb: "assets/images/_DSC5119_sm.webp", title: "Family Accommodation Suite", destination: "nangal", category: "rooms", caption: "Multi-occupancy comfort tailored for extended family vacations." },
-    { src: "assets/images/_DSC5142_lg.webp", thumb: "assets/images/_DSC5142_sm.webp", title: "Resort Facade at Sunset", destination: "nangal", category: "architecture", caption: "Golden hour glow highlighting the heritage stone carvings." },
+    { src: "assets/Shri Palce Marrige garden/unnamed (6).webp", thumb: "assets/Shri Palce Marrige garden/unnamed (6).webp", title: "Family Accommodation Suite", destination: "nangal", category: "rooms", caption: "Multi-occupancy comfort tailored for extended family vacations." },
+    { src: "assets/Shri Palce Marrige garden/unnamed (14).webp", thumb: "assets/Shri Palce Marrige garden/unnamed (14).webp", title: "Resort Facade at Sunset", destination: "nangal", category: "architecture", caption: "Golden hour glow highlighting the heritage stone carvings." },
     { src: "assets/images/_DSC5140_lg.webp", thumb: "assets/images/_DSC5140_sm.webp", title: "Poolside Evening Lounge", destination: "nangal", category: "pool", caption: "Ambient lighting and tranquil mountain breeze by the poolside." },
     { src: "assets/images/_DSC5153_lg.webp", thumb: "assets/images/_DSC5153_sm.webp", title: "Grand Indoor Ballroom", destination: "shrii-palace-resort", category: "events", caption: "High ceiling AC hall with stage for corporate meets and indoor Sangeet." },
     { src: "assets/images/_DSC5144_lg.webp", thumb: "assets/images/_DSC5144_sm.webp", title: "Central Heritage Courtyard", destination: "shrii-palace-resort", category: "architecture", caption: "Intimate gathering courtyard for Mehendi and cultural evenings." },
-    { src: "assets/images/_DSC5160_lg.webp", thumb: "assets/images/_DSC5160_sm.webp", title: "Corporate Conference Hall", destination: "nangal", category: "events", caption: "Seating layout configured for corporate presentations and business summits." }
+    { src: "assets/Shri Palce Marrige garden/unnamed (9).webp", thumb: "assets/Shri Palce Marrige garden/unnamed (9).webp", title: "Corporate Conference Hall", destination: "nangal", category: "events", caption: "Seating layout configured for corporate presentations and business summits." }
   ],
   experiences: [
     {
@@ -223,7 +225,7 @@ const RESORTS_DATA = {
       destination: "Shrii Palace Resort & Shrii Palace Marriage Garden Region",
       description: "Explore the world-famous painted havelis, frescoed cenotaphs, and historical forts of Nawalgarh, Mandawa, and Gudha Gorji.",
       tag: "Art & Culture",
-      image: "assets/images/_DSC5144_md.webp"
+      image: "assets/Shri palace resort/unnamed (8).webp"
     },
     {
       title: "Farm-Fresh A2 Milk & Royal Rajasthani Feasts",

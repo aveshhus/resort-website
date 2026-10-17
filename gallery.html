@@ -22,7 +22,404 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/main.css?v=202609301553">
+  <link rel="stylesheet" href="css/main.css?v=202610171630">
+
+  <!-- Gallery Dedicated Responsive & Lightbox Styles -->
+  <style id="gallery-perfect-styles">
+    /* Gallery Tabs & Mobile Horizontal Scroll */
+    .filter-pills-bar {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      overflow-x: auto !important;
+      scrollbar-width: none !important;
+      -webkit-overflow-scrolling: touch !important;
+      gap: 0.75rem !important;
+      margin-top: 2.25rem !important;
+      padding-bottom: 0.6rem !important;
+    }
+    .filter-pills-bar::-webkit-scrollbar {
+      display: none !important;
+    }
+    @media (min-width: 992px) {
+      .filter-pills-bar {
+        flex-wrap: wrap !important;
+        overflow-x: visible !important;
+        gap: 0.85rem 1.25rem !important;
+      }
+    }
+    .filter-pill {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.55rem !important;
+      padding: 0.7rem 1.5rem !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      background: rgba(14, 16, 20, 0.65) !important;
+      backdrop-filter: blur(14px) !important;
+      -webkit-backdrop-filter: blur(14px) !important;
+      color: rgba(255, 255, 255, 0.9) !important;
+      font-family: var(--font-royal, 'Cinzel', serif) !important;
+      font-size: 0.74rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.16em !important;
+      text-transform: uppercase !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      cursor: pointer !important;
+      border-radius: 9999px !important;
+      transition: all 0.25s ease !important;
+    }
+    .filter-pill:hover {
+      background: rgba(197, 168, 128, 0.22) !important;
+      color: #FFFFFF !important;
+      border-color: var(--color-gold, #C5A880) !important;
+      transform: translateY(-2px) !important;
+    }
+    .filter-pill.active {
+      background: var(--color-gold, #C5A880) !important;
+      color: var(--color-obsidian-deep, #08090B) !important;
+      border-color: var(--color-gold, #C5A880) !important;
+      box-shadow: 0 10px 25px -5px rgba(197, 168, 128, 0.45) !important;
+    }
+    .tab-count-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-width: 1.35rem !important;
+      height: 1.35rem !important;
+      padding: 0 0.35rem !important;
+      font-size: 0.68rem !important;
+      font-weight: 800 !important;
+      border-radius: 9999px !important;
+      background: rgba(255, 255, 255, 0.16) !important;
+      color: inherit !important;
+      transition: all 0.25s ease !important;
+    }
+    .filter-pill.active .tab-count-badge {
+      background: var(--color-obsidian-deep, #08090B) !important;
+      color: var(--color-gold, #C5A880) !important;
+    }
+
+    /* Category Count Bar */
+    .gallery-count-bar {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      margin-bottom: 2.25rem !important;
+      padding-bottom: 1.25rem !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+    .gallery-count-text {
+      font-family: var(--font-royal, 'Cinzel', serif) !important;
+      font-size: 0.85rem !important;
+      letter-spacing: 0.1em !important;
+      text-transform: uppercase !important;
+      color: var(--text-secondary, #A0A5B0) !important;
+    }
+    .gallery-count-text strong {
+      color: var(--color-gold-bright, #D9BA8F) !important;
+      font-weight: 700 !important;
+    }
+    .gallery-count-text em {
+      font-style: normal !important;
+      color: #FFFFFF !important;
+      font-weight: 600 !important;
+    }
+
+    /* Master Gallery Grid */
+    .editorial-gallery-grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 1.75rem !important;
+      transition: opacity 0.2s ease, transform 0.2s ease !important;
+    }
+    .editorial-gallery-grid.gallery-fading {
+      opacity: 0.25 !important;
+      transform: scale(0.995) !important;
+    }
+    @media (min-width: 640px) {
+      .editorial-gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+      }
+    }
+    @media (min-width: 1024px) {
+      .editorial-gallery-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 2.25rem !important;
+      }
+    }
+
+    /* Card Styling */
+    .gallery-item-card {
+      position: relative !important;
+      border-radius: 4px !important;
+      overflow: hidden !important;
+      background: #101217 !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.6) !important;
+      cursor: pointer !important;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+    }
+    .gallery-item-card:hover,
+    .gallery-item-card:focus-visible {
+      transform: translateY(-5px) !important;
+      border-color: rgba(197, 168, 128, 0.45) !important;
+      box-shadow: 0 24px 60px -10px rgba(197, 168, 128, 0.18), 0 20px 45px -15px rgba(0, 0, 0, 0.8) !important;
+      outline: none !important;
+    }
+    .editorial-photo-wrap {
+      position: relative !important;
+      width: 100% !important;
+      aspect-ratio: 16 / 11 !important;
+      overflow: hidden !important;
+      background: #0E1014 !important;
+    }
+    .editorial-photo-wrap img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .gallery-item-card:hover .editorial-photo-wrap img {
+      transform: scale(1.06) !important;
+    }
+    .gallery-card-overlay {
+      position: absolute !important;
+      inset: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      padding: 1.5rem !important;
+      background: linear-gradient(180deg, rgba(8, 10, 14, 0.45) 0%, rgba(8, 10, 14, 0.15) 35%, rgba(8, 10, 14, 0.94) 100%) !important;
+      transition: background 0.25s ease !important;
+    }
+    .gallery-item-card:hover .gallery-card-overlay {
+      background: linear-gradient(180deg, rgba(8, 10, 14, 0.65) 0%, rgba(8, 10, 14, 0.3) 30%, rgba(8, 10, 14, 0.98) 100%) !important;
+    }
+    .gallery-location-badge {
+      display: inline-block !important;
+      font-family: var(--font-royal, 'Cinzel', serif) !important;
+      font-size: 0.68rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.15em !important;
+      text-transform: uppercase !important;
+      padding: 0.35rem 0.75rem !important;
+      background: rgba(14, 16, 20, 0.8) !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      color: var(--color-gold-bright, #D9BA8F) !important;
+      border-radius: 2px !important;
+    }
+    .gallery-card-info {
+      transform: translateY(6px) !important;
+      transition: transform 0.25s ease !important;
+    }
+    .gallery-item-card:hover .gallery-card-info {
+      transform: translateY(0) !important;
+    }
+    .gallery-card-title {
+      font-family: var(--font-royal, 'Cinzel', serif) !important;
+      font-size: 1.08rem !important;
+      font-weight: 600 !important;
+      color: #FFFFFF !important;
+      margin-bottom: 0.4rem !important;
+      line-height: 1.35 !important;
+    }
+    .gallery-card-caption-snippet {
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif) !important;
+      font-size: 0.82rem !important;
+      color: rgba(247, 244, 238, 0.78) !important;
+      line-height: 1.5 !important;
+      margin-bottom: 0.75rem !important;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 2 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
+      opacity: 0.9 !important;
+    }
+    .gallery-card-action {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+      font-family: var(--font-royal, 'Cinzel', serif) !important;
+      font-size: 0.72rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.16em !important;
+      text-transform: uppercase !important;
+      color: var(--color-gold, #C5A880) !important;
+      opacity: 0 !important;
+      transform: translateY(6px) !important;
+      transition: all 0.25s ease !important;
+    }
+    .gallery-item-card:hover .gallery-card-action {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    /* Lightbox Modal */
+    .editorial-lightbox {
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: 10000 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease !important;
+    }
+    .editorial-lightbox.active,
+    .editorial-lightbox.open {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+    }
+    .lightbox-backdrop {
+      position: absolute !important;
+      inset: 0 !important;
+      background: rgba(6, 7, 9, 0.96) !important;
+      backdrop-filter: blur(28px) !important;
+      -webkit-backdrop-filter: blur(28px) !important;
+      cursor: pointer !important;
+    }
+    .lightbox-container {
+      position: relative !important;
+      z-index: 2 !important;
+      width: 100% !important;
+      max-width: 1100px !important;
+      max-height: 94vh !important;
+      padding: 1rem 1.5rem 1.5rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      box-sizing: border-box !important;
+    }
+    .lightbox-media-wrap {
+      position: relative !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      max-height: 70vh !important;
+    }
+    .lightbox-image {
+      max-width: 90vw !important;
+      max-height: 68vh !important;
+      width: auto !important;
+      height: auto !important;
+      object-fit: contain !important;
+      border-radius: 4px !important;
+      border: 1px solid rgba(255, 255, 255, 0.14) !important;
+      box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.95) !important;
+      transition: opacity 0.25s ease !important;
+    }
+    .lightbox-nav-btn {
+      position: absolute !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      z-index: 5 !important;
+      width: 3.25rem !important;
+      height: 3.25rem !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 50% !important;
+      border: 1px solid rgba(255, 255, 255, 0.18) !important;
+      background: rgba(14, 16, 20, 0.75) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      color: #FFFFFF !important;
+      font-size: 1.5rem !important;
+      line-height: 1 !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+    }
+    .lightbox-nav-btn:hover {
+      background: var(--color-gold, #C5A880) !important;
+      color: var(--color-obsidian-deep, #08090B) !important;
+      border-color: var(--color-gold, #C5A880) !important;
+      transform: translateY(-50%) scale(1.08) !important;
+    }
+    .lightbox-nav-btn.prev-btn { left: -1rem !important; }
+    .lightbox-nav-btn.next-btn { right: -1rem !important; }
+    @media (max-width: 768px) {
+      .lightbox-nav-btn {
+        width: 2.75rem !important;
+        height: 2.75rem !important;
+        font-size: 1.25rem !important;
+      }
+      .lightbox-nav-btn.prev-btn { left: 0.25rem !important; }
+      .lightbox-nav-btn.next-btn { right: 0.25rem !important; }
+    }
+    .lightbox-close-btn {
+      position: absolute !important;
+      top: -2.75rem !important;
+      right: 0 !important;
+      z-index: 6 !important;
+      width: 2.5rem !important;
+      height: 2.5rem !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 50% !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      background: rgba(14, 16, 20, 0.7) !important;
+      color: #FFFFFF !important;
+      font-size: 1.25rem !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+    }
+    .lightbox-close-btn:hover {
+      background: var(--color-gold, #C5A880) !important;
+      color: var(--color-obsidian-deep, #08090B) !important;
+      border-color: var(--color-gold, #C5A880) !important;
+      transform: rotate(90deg) !important;
+    }
+    .lightbox-meta-panel {
+      width: 100% !important;
+      max-width: 900px !important;
+      margin-top: 1rem !important;
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 0.35rem !important;
+    }
+    .lightbox-top-meta {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.85rem !important;
+      font-family: var(--font-royal, 'Cinzel', serif) !important;
+      font-size: 0.72rem !important;
+      letter-spacing: 0.16em !important;
+      text-transform: uppercase !important;
+    }
+    .lightbox-location-tag {
+      color: var(--color-gold-bright, #D9BA8F) !important;
+      font-weight: 700 !important;
+    }
+    .lightbox-counter-badge {
+      color: rgba(255, 255, 255, 0.6) !important;
+      font-weight: 600 !important;
+    }
+    .lightbox-title {
+      font-family: var(--font-royal, 'Cinzel', serif) !important;
+      font-size: clamp(1.1rem, 2vw, 1.45rem) !important;
+      color: #FFFFFF !important;
+      font-weight: 600 !important;
+      margin: 0 !important;
+    }
+    .lightbox-caption-text {
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif) !important;
+      font-size: 0.86rem !important;
+      color: rgba(247, 244, 238, 0.8) !important;
+      max-width: 680px !important;
+      line-height: 1.6 !important;
+      margin: 0 !important;
+    }
+  </style>
 
   <!-- Lenis Smooth Scroll -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
@@ -83,8 +480,8 @@
                   <span class="mega-link-desc">Lawns &amp; Real Wedding Photography</span>
                 </a>
                 <a href="destinations/shrii-palace-resort-location.html" class="mega-sublink">
-                  <span class="mega-link-label">SH-37 Route &amp; Map</span>
-                  <span class="mega-link-desc">Gudha Gorji Highway Access</span>
+                  <span class="mega-link-label">Sikar Road Route &amp; Map</span>
+                  <span class="mega-link-desc">Opp. Power House, Udaipurwati</span>
                 </a>
               </div>
             </div>
@@ -114,8 +511,8 @@
                   <span class="mega-link-desc">Pure Milk, Artisanal Ghee &amp; Feasts</span>
                 </a>
                 <a href="destinations/shrii-palace-marriage-garden-location.html" class="mega-sublink">
-                  <span class="mega-link-label">Sikar Road Route</span>
-                  <span class="mega-link-desc">30km Sikar, 118km Jaipur (2 hrs)</span>
+                  <span class="mega-link-label">SH-37 Route &amp; Map</span>
+                  <span class="mega-link-desc">Gudha Gorji Highway Access</span>
                 </a>
               </div>
             </div>
@@ -175,10 +572,10 @@
               <div>
                 <div class="mega-card-tag">One Central Number</div>
                 <h4 class="mega-card-title">Direct Reservations</h4>
-                <span class="mega-card-phone">+91 95097 71500</span>
+                <span class="mega-card-phone">+91 94615 66305</span>
                 <p style="font-size:0.75rem; color:var(--text-muted); line-height:1.4;">Direct reservations &amp; celebration planning for Shrii Palace Resort &amp; Shrii Palace Marriage Garden.</p>
               </div>
-              <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire." target="_blank" rel="noopener" class="mega-card-btn">
+              <a href="https://wa.me/919461566305?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire." target="_blank" rel="noopener" class="mega-card-btn">
                 <span>WhatsApp Concierge</span>
                 <span>→</span>
               </a>
@@ -197,7 +594,7 @@
     </nav>
 
     <div class="header-actions">
-      <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire%20about%20your%20destinations." target="_blank" rel="noopener" class="header-enquire-link">
+      <a href="https://wa.me/919461566305?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire%20about%20your%20destinations." target="_blank" rel="noopener" class="header-enquire-link">
         <span>Enquire</span>
         <span class="arrow-glyph">→</span>
       </a>
@@ -288,8 +685,8 @@
           </a>
           <a href="destinations/shrii-palace-resort-location.html" class="drawer-link-card">
             <div class="link-card-content">
-              <span class="link-card-title">SH-37 Highway Route</span>
-              <span class="link-card-desc">Gudha Gorji bypass access &amp; directions</span>
+              <span class="link-card-title">Sikar Road Route &amp; Map</span>
+              <span class="link-card-desc">Opp. Power House, Udaipurwati (Nangal)</span>
             </div>
             <span class="link-card-arrow">→</span>
           </a>
@@ -348,8 +745,8 @@
           </a>
           <a href="destinations/shrii-palace-marriage-garden-location.html" class="drawer-link-card">
             <div class="link-card-content">
-              <span class="link-card-title">Sikar Road Route</span>
-              <span class="link-card-desc">30km Sikar, 118km Jaipur (2 hrs drive)</span>
+              <span class="link-card-title">SH-37 Highway Route</span>
+              <span class="link-card-desc">Near Tagore College, Gudha Gorji</span>
             </div>
             <span class="link-card-arrow">→</span>
           </a>
@@ -431,9 +828,9 @@
     <div class="drawer-concierge-row">
       <div class="drawer-concierge-info">
         <span class="drawer-concierge-badge">Direct Concierge</span>
-        <a href="tel:+919509771500" class="drawer-phone-val">+91 95097 71500</a>
+        <a href="tel:9461566305" class="drawer-phone-val">+91 94615 66305</a>
       </div>
-      <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire%20about%20your%20destinations." target="_blank" rel="noopener" class="drawer-wa-btn">
+      <a href="https://wa.me/919461566305?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20enquire%20about%20your%20destinations." target="_blank" rel="noopener" class="drawer-wa-btn">
         <span>WhatsApp Concierge</span>
         <span class="wa-arrow">→</span>
       </a>
@@ -458,107 +855,61 @@
           Authentic moments, architectural craft, sweeping green lawns, and noble banqueting across Shrii Palace Resort and Shrii Palace Marriage Garden.
         </p>
 
-        <!-- Filter Bar -->
-        <div class="filter-pills-bar">
-          <button class="filter-pill active" data-filter="all">All Media</button>
-          <button class="filter-pill" data-filter="shrii-palace-resort">Shrii Palace Resort</button>
-          <button class="filter-pill" data-filter="shrii-palace-marriage-garden">Shrii Palace Marriage Garden</button>
-          <button class="filter-pill" data-filter="weddings">Weddings & Lawns</button>
-          <button class="filter-pill" data-filter="architecture">Architecture & Grounds</button>
-          <button class="filter-pill" data-filter="dining">Dining & Banquets</button>
+        <!-- Filter Bar (Six Canonical Tabs) -->
+        <div class="filter-pills-bar" role="tablist" aria-label="Gallery Categories">
+          <button class="filter-pill active" data-filter="all" role="tab" aria-selected="true">All Media</button>
+          <button class="filter-pill" data-filter="shri-palace-resort" role="tab" aria-selected="false">Shri Palace Resort</button>
+          <button class="filter-pill" data-filter="shri-palace-marriage-garden" role="tab" aria-selected="false">Shri Palace Marriage Garden</button>
+          <button class="filter-pill" data-filter="weddings" role="tab" aria-selected="false">Weddings &amp; Lawns</button>
+          <button class="filter-pill" data-filter="architecture" role="tab" aria-selected="false">Architecture &amp; Grounds</button>
+          <button class="filter-pill" data-filter="dining" role="tab" aria-selected="false">Dining &amp; Banquets</button>
         </div>
       </div>
     </section>
 
-    <!-- Gallery Grid -->
-    <section class="section-brand-atmosphere" style="background-color: var(--bg-primary);">
+    <!-- Master Gallery Section -->
+    <section class="section-brand-atmosphere" style="background-color: var(--bg-primary); padding-top: 3.5rem; padding-bottom: 5.5rem;">
       <div class="container">
-        <div class="editorial-gallery-grid">
-          
-          <div class="gallery-item-card gallery-span-8" data-dest="shrii-palace-marriage-garden" data-cat="architecture">
-            <div class="editorial-photo-wrap">
-              <img src="assets/images/_DSC5118_lg.webp" alt="Grand Arrival Promenade at Shrii Palace Marriage Garden" loading="lazy">
-              <div class="editorial-photo-caption">
-                <strong>The Arrival Promenade</strong> • Shrii Palace Marriage Garden Destination
-              </div>
-            </div>
+        <!-- Live Category & Count Bar -->
+        <div class="gallery-count-bar">
+          <div class="gallery-count-text" id="galleryCountDisplay">
+            Showing <strong>33</strong> photographs in <em>All Media</em>
           </div>
-
-          <div class="gallery-item-card gallery-span-4" data-dest="shrii-palace-marriage-garden" data-cat="architecture">
-            <div class="editorial-photo-wrap">
-              <img src="assets/images/_DSC5114_lg.webp" alt="Handcrafted Terracotta Murals" loading="lazy">
-              <div class="editorial-photo-caption">
-                <strong>Handcrafted Murals</strong> • Rajasthani Craft
-              </div>
-            </div>
+          <div style="font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-sand-deep); font-family: var(--font-royal);">
+            ✦ Authentic Property Photography
           </div>
+        </div>
 
-          <div class="gallery-item-card gallery-span-6" data-dest="shrii-palace-resort" data-cat="weddings">
-            <div class="editorial-photo-wrap">
-              <img src="assets/images/_DSC5104_lg.webp" alt="Celebration Lawn and Palm Trees" loading="lazy">
-              <div class="editorial-photo-caption">
-                <strong>Celebration Lawns</strong> • Shrii Palace Resort
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item-card gallery-span-6" data-dest="shrii-palace-marriage-garden" data-cat="architecture">
-            <div class="editorial-photo-wrap">
-              <img src="assets/images/_DSC5117_lg.webp" alt="Mountain View Entrance Gateway" loading="lazy">
-              <div class="editorial-photo-caption">
-                <strong>Aravalli Gateway</strong> • Shrii Palace Marriage Garden
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item-card gallery-span-4" data-dest="shrii-palace-marriage-garden" data-cat="architecture">
-            <div class="editorial-photo-wrap">
-              <img src="assets/images/_DSC5151_lg.webp" alt="Verandah Lounge and Cane Chairs" loading="lazy">
-              <div class="editorial-photo-caption">
-                <strong>Verandah Lounge</strong> • Courtyard Living
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item-card gallery-span-4" data-dest="shrii-palace-marriage-garden" data-cat="dining">
-            <div class="editorial-photo-wrap">
-              <img src="assets/images/_DSC5135_lg.webp" alt="Banquet Long Table Facing Tree Canopy" loading="lazy">
-              <div class="editorial-photo-caption">
-                <strong>Banquet Dining</strong> • Royal Feasts
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item-card gallery-span-4" data-dest="shrii-palace-marriage-garden" data-cat="dining">
-            <div class="editorial-photo-wrap">
-              <img src="assets/images/_DSC5142_lg.webp" alt="Buffet Counter and Dining Hall" loading="lazy">
-              <div class="editorial-photo-caption">
-                <strong>Buffet Counter</strong> • Culinary Hall
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item-card gallery-span-6" data-dest="shrii-palace-resort" data-cat="weddings">
-            <div class="editorial-photo-wrap">
-              <img src="assets/images/_DSC5108_lg.webp" alt="Ceremonial Stage and Lawn" loading="lazy">
-              <div class="editorial-photo-caption">
-                <strong>Ceremonial Pavilion</strong> • Shrii Palace Resort
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item-card gallery-span-6" data-dest="shrii-palace-marriage-garden" data-cat="architecture">
-            <div class="editorial-photo-wrap">
-              <img src="assets/images/_DSC5158_lg.webp" alt="Landscaped Jaali Screen Entrance" loading="lazy">
-              <div class="editorial-photo-caption">
-                <strong>Garden Portal</strong> • Shrii Palace Marriage Garden
-              </div>
-            </div>
-          </div>
-
+        <!-- Master Editorial Gallery Grid -->
+        <div class="editorial-gallery-grid" id="editorialGalleryGrid">
+          <!-- Dynamically populated and filtered by js/galleryController.js -->
         </div>
       </div>
     </section>
+
+    <!-- Polished Editorial Lightbox Modal -->
+    <div class="editorial-lightbox" id="editorialLightbox" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="lightbox-backdrop" aria-label="Close Lightbox"></div>
+      <div class="lightbox-container">
+        <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close Lightbox (Esc)">✕</button>
+        
+        <div class="lightbox-media-wrap">
+          <button class="lightbox-nav-btn prev-btn" id="lightboxPrevBtn" aria-label="Previous Photograph (Left Arrow)">‹</button>
+          <img src="" alt="" class="lightbox-image" id="lightboxImg">
+          <button class="lightbox-nav-btn next-btn" id="lightboxNextBtn" aria-label="Next Photograph (Right Arrow)">›</button>
+        </div>
+
+        <div class="lightbox-meta-panel">
+          <div class="lightbox-top-meta">
+            <span class="lightbox-location-tag" id="lightboxLocation">Shri Palace Resort</span>
+            <span style="color: rgba(255,255,255,0.3);">•</span>
+            <span class="lightbox-counter-badge" id="lightboxCounter">1 / 33</span>
+          </div>
+          <h2 class="lightbox-title" id="lightboxTitle">Photograph Title</h2>
+          <p class="lightbox-caption-text" id="lightboxCaption">Photograph description and authentic property details.</p>
+        </div>
+      </div>
+    </div>
 
     <!-- Global CTA -->
     <section class="section-final-escape">
@@ -577,8 +928,8 @@
           Connect directly with our concierge desk to arrange a guided property walkthrough or reserve your stay.
         </p>
         <div class="escape-buttons-group">
-          <a href="https://wa.me/919509771500?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20plan%20a%20visit." target="_blank" rel="noopener" class="btn-editorial-gold">
-            <span>WhatsApp Concierge (+91 95097 71500)</span>
+          <a href="https://wa.me/919461566305?text=Hello%20Shrii%20Palace%20Resorts,%20I%20would%20like%20to%20plan%20a%20visit." target="_blank" rel="noopener" class="btn-editorial-gold">
+            <span>WhatsApp Concierge (+91 94615 66305)</span>
             <span class="arrow-glyph">→</span>
           </a>
         </div>
@@ -598,11 +949,11 @@
         <div class="footer-brand-title">Shrii Palace Resorts</div>
         <p class="footer-brand-desc">One Brand. Two Distinct Destinations in Shekhawati, Rajasthan.</p>
         <div class="footer-contact-details">
-          <p><strong>Direct Concierge:</strong> <a href="tel:+919509771500">+91 95097 71500</a></p>
-          <p><strong>Email:</strong> <a href="mailto:book@nangalresort.com">book@nangalresort.com</a></p>
+          <p><strong>Direct Concierge:</strong> <a href="tel:9461566305">+91 94615 66305</a></p>
+          <p><strong>Email:</strong> <a href="mailto:shriipalace.tps@gmail.com">shriipalace.tps@gmail.com</a></p>
         </div>
         <div class="footer-social-links">
-          <a href="https://wa.me/919509771500" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://wa.me/919461566305" target="_blank" rel="noopener">WhatsApp</a>
           <span>•</span>
           <a href="contact.html">Directions</a>
           <span>•</span>
@@ -613,14 +964,14 @@
       <div class="footer-dest-col">
         <div class="footer-dest-name">01. Shrii Palace Resort</div>
         <p class="footer-dest-desc">Celebration Resort &amp; Grand Heritage Lawns</p>
-        <p class="footer-dest-address">SH 37, Near Tagore College, Gudha Gorji, Jhunjhunu, Rajasthan – 333022</p>
+        <p class="footer-dest-address">Sikar Rd, opp. Power house, Udaipurwati, Nangal, Rajasthan 333307</p>
         <a href="destinations/shrii-palace-resort.html" class="footer-dest-link">View Destination →</a>
       </div>
 
       <div class="footer-dest-col">
         <div class="footer-dest-name">02. Shrii Palace Marriage Garden</div>
         <p class="footer-dest-desc">Aravalli Foothill Retreat, Pool &amp; Dairy</p>
-        <p class="footer-dest-address">Sikar Road, Opposite Power House, Shrii Palace Marriage Garden, Shrii Palace Resort, Rajasthan – 333307</p>
+        <p class="footer-dest-address">Sh 37, near Tagore College, Gudha Gorji, Jhunjhunu, Rajasthan 333022</p>
         <a href="destinations/shrii-palace-marriage-garden.html" class="footer-dest-link">View Destination →</a>
       </div>
     </div>
@@ -647,5 +998,6 @@
   <!-- Editorial Footer -->
 
   <script src="js/main.js?v=202609301553" defer></script>
+  <script src="js/galleryController.js" defer></script>
 </body>
 </html>
