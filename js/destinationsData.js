@@ -211,14 +211,14 @@ const RESORTS_DATA = {
       destination: "Both (14 km from Shrii Palace Marriage Garden / 22 km from Shrii Palace Resort)",
       description: "Pay homage at the ancient Shakambhari Devi Shaktipeeth nestled in a serene mountain gorge, an easy 20-minute drive from the resorts.",
       tag: "Spiritual Heritage",
-      image: "assets/images/_DSC5142_md.webp"
+      image: "assets/images/shakambhari_mata_pilgrimage.webp"
     },
     {
       title: "Mansamata Sanctuary & Kot Dam Safari",
       destination: "Shrii Palace Marriage Garden (10 km)",
       description: "Embark on guided open-top Jeep safaris across the rugged Aravalli slopes, Kot Dam lake bed, and wildlife sanctuary corridors.",
       tag: "Eco Adventure",
-      image: "assets/images/_DSC4754_md.webp"
+      image: "assets/images/mansamata_kot_dam_safari.webp"
     },
     {
       title: "Shekhawati Open-Air Art Gallery",
